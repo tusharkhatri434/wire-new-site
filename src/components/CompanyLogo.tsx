@@ -1,0 +1,14 @@
+import { cn } from "@/lib/utils";
+interface CompanyLogoProps {
+  className?: string;
+}
+const CompanyLogo = ({
+  className
+}: CompanyLogoProps) => {
+  return <div className={cn("flex items-center space-x-3 bg-white rounded-sm", className)}>
+      <div className="h-12 sm:h-14 md:h-16 lg:h-18 flex-shrink-0">
+        <img alt="Maheshwari Wires Logo" className="h-full w-auto object-contain filter brightness-110 contrast-110" src="/lovable-uploads/4b08319e-d6ea-4de7-b408-d2e3836e50e1.png" />
+      </div>
+    </div>;
+};
+export default CompanyLogo;
