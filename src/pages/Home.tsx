@@ -7,6 +7,7 @@ import ProductSlider from "@/components/ProductSlider";
 import IndustrySlider from "@/components/IndustrySlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Award, Factory, ShieldCheck, Star, Users, ChevronRight, TrendingUp, Zap, Globe, Target, Quote } from "lucide-react";
+import HeroSlider from "@/components/HeroSlider";
 const Home = () => {
   const products = [{
     id: "edm-wire",
@@ -101,7 +102,8 @@ const Home = () => {
   }];
   return <div className="flex flex-col">
       {/* Enhanced Hero Section */}
-      <HeroSection title="Leading the Wirevolution" subtitle="Where innovation meets metallurgy — crafting wires that empower industries, elevate performance, and define reliability." backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png" buttonText="Explore Our Product Range" buttonLink="/products" />
+      {/* <HeroSection title="Leading the Wirevolution" subtitle="Where innovation meets metallurgy — crafting wires that empower industries, elevate performance, and define reliability." backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png" buttonText="Explore Our Product Range" buttonLink="/products" /> */}
+      <HeroSlider />
 
       {/* Company Introduction - Solutions, Not Just Supplies */}
       <AnimatedSection animation="fade-in">

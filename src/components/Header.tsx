@@ -259,7 +259,8 @@ const Header = ({
           >
             <span className="flex items-center">
               {item.icon}
-              {item.label}
+              <Link to={item.path}>
+              {item.label}</Link>
             </span>
             <ChevronDown className={cn("h-3 w-3 transition-all duration-300", openDropdowns[itemKey] && "transform rotate-180")} />
           </button>
@@ -393,7 +394,7 @@ const Header = ({
                       <span className="flex items-center relative z-10">
                         <span className="hidden xl:inline">{item.icon}</span>
                         <span className={cn("whitespace-nowrap", item.icon ? "xl:ml-1" : "")}>
-                          {item.label}
+                         <Link to={item.path}> {item.label} </Link>
                         </span>
                       </span>
                       <ChevronDown className={cn("ml-1 h-3 w-3 transition-transform duration-300", openDropdowns[itemKey] && "transform rotate-180")} />
@@ -410,7 +411,7 @@ const Header = ({
                         } : { width: '280px', maxHeight: '70vh' }}
                         onMouseLeave={isDesktop ? () => setOpenDropdowns(prev => ({...prev, [itemKey]: false})) : undefined}
                       >
-                        <Link 
+                        {/* <Link 
                           to={item.path} 
                           className="block w-full text-left px-3 py-2 text-brand-blue font-bold hover:bg-gray-50 transition-all duration-300 border-b border-brand-blue/10 text-xs mb-2" 
                           onClick={() => {
@@ -422,7 +423,7 @@ const Header = ({
                             <span className="hidden xl:inline">{item.icon}</span>
                             <span className={cn(item.icon ? "xl:ml-1" : "")}>All {item.label}</span>
                           </div>
-                        </Link>
+                        </Link> */}
                         
                         <div className={item.label === 'Products' ? "grid grid-cols-2 gap-1 px-2" : "space-y-1"}>
                           {item.children.map((child, childIndex) => 
