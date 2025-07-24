@@ -51,7 +51,7 @@ const ProductCard = ({ product }) => {
         {/* Learn More Button */}
         <div className="mt-auto pt-6">
           <button className="w-full bg-[#001F5B] text-white font-semibold py-2 rounded-md flex justify-center items-center gap-2 hover:bg-[#002a7f] transition-all duration-200">
-            Learn More
+            View Details
             <ArrowRight className="w-4 h-4" />
           </button>
         </div>

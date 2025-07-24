@@ -1,12 +1,13 @@
 import HeroSection from "@/components/HeroSection";
 import SectionHeading from "@/components/SectionHeading";
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useSearchParams } from "react-router-dom";
 import { allProducts } from "../data/productCardData.tsx";
 import ProductCard from "@/components/ProductCard";
 
 const Products = () => {
   const location = useLocation();
+  const [searchParams] = useSearchParams();
   const { hash } = location;
 
   const [searchQuery, setSearchQuery] = useState("");
@@ -41,6 +42,16 @@ const Products = () => {
   // Filter logic
   useEffect(() => {
     let result = allProducts;
+    const queyParams = searchParams.get('q');
+    console.log(queyParams)
+    if(queyParams){
+        result = result.filter((product) =>
+        product.title.toLowerCase().includes(queyParams.toLowerCase())
+      );
+      console.log(result)
+      setFilteredProducts(result);
+      return;
+    }
 
     if (selectedCategory !== "All Categories") {
       result = result.filter((product) => product.category === selectedCategory);
@@ -100,7 +111,7 @@ const Products = () => {
             </div>
 
             {/* Product List */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {filteredProducts.length > 0 ? (
                 filteredProducts.map((data, idx) => (
                   <ProductCard key={idx} product={data} />
