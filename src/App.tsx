@@ -13,6 +13,7 @@ import Infrastructure from "./pages/Infrastructure";
 import Connect from "./pages/Connect";
 import NotFound from "./pages/NotFound";
 import CustomerShowcase from "./components/CustomerShowcase";
+import ProductPage from "./pages/ProductPage";
 
 const queryClient = new QueryClient();
 
@@ -28,6 +29,7 @@ const App = () => (
               <Route index element={<Home />} />
               <Route path="foundation" element={<Foundation />} />
               <Route path="products" element={<Products />} />
+               <Route path="/products/:id" element={<ProductPage />}/>
               <Route path="infrastructure" element={<Infrastructure />} />
               <Route path="connect" element={<Connect />} />
               <Route path="customers" element={<CustomerShowcase />} />
