@@ -8,9 +8,9 @@ const ProductCard = ({ product }) => {
       {/* Image with top-left tags */}
       <div className="relative">
         <img
-          src={"/lovable-uploads/4e574527-b0ae-47a4-b06f-2f0a522be5a2.png"}
+          src={product.image}
           alt={product.heading}
-          className="w-full h-52 object-cover"
+          className="w-full h-96 object-cover"
         />
         {product.tags?.length > 0 && (
           <div className="absolute top-3 left-3 flex flex-wrap gap-2">
@@ -51,7 +51,7 @@ const ProductCard = ({ product }) => {
 
         {/* Learn More Button */}
         <div className="mt-auto pt-6">
-          <Link to={"/products/123"}>
+          <Link to={`/products/${product.link}`}>
           <button className="w-full bg-[#001F5B] text-white font-semibold py-2 rounded-md flex justify-center items-center gap-2 hover:bg-[#002a7f] transition-all duration-200">
             View Details
             <ArrowRight className="w-4 h-4" />

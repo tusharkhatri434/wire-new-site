@@ -606,3 +606,617 @@
 //   },
 // ]
 
+// const welding=[
+//   {
+//     id: 18,
+//     name: "Copper Wire for Induction Brazing",
+//     image: "/lovable-uploads/product/copperwireforinductionbrazing.webp",
+//     description: "Copper Wire for Induction Brazing is a high-conductivity, precision-engineered wire designed for efficient and clean brazing of ferrous and non-ferrous components. It performs exceptionally well in induction heating setups, ensuring minimal oxidation and high joint integrity.",
+//     keyFeatures: [
+//       "High electrical and thermal conductivity",
+//       "Excellent flow during induction heating",
+//       "Low fume emission",
+//       "Smooth surface finish for consistent feed"
+//     ],
+//     technicalSpecifications: {
+//       "Material Composition": "≥ 99.9% Pure Copper",
+//       "Diameter Range": "0.8 mm – 6 mm",
+//       "Melting Point": "~1085°C",
+//       "Tensile Strength": "210 – 260 MPa",
+//       "Elongation": "≥ 30%",
+//       "Coil Size": "5 kg, 10 kg, or custom"
+//     },
+//     advantages: [
+//       "Precise heating for repeatable joints",
+//       "High-speed processing with minimal spatter",
+//       "Environment-friendly, low smoke and slag"
+//     ],
+//     applications: [
+//       "HVAC component joining",
+//       "Electrical motor coil terminals",
+//       "Copper pipe and tubing joints",
+//       "Automotive & appliance assembly"
+//     ]
+//   },
+//   {
+//     id: 19,
+//     name: "Brazing Wire",
+//     image: "/lovable-uploads/product/Brazingringfinal.webp",
+//     description: "Brazing Wire is a versatile, alloy-based joining material engineered for high-strength metal bonding. It offers excellent capillary action and low-temperature fluidity, making it ideal for applications requiring leak-proof joints.",
+//     keyFeatures: [
+//       "Available in various compositions: copper, silver, brass, etc.",
+//       "Clean flow and minimal porosity",
+//       "Smooth feed performance in manual and automated systems",
+//       "Excellent joint strength and ductility"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Cu, Zn, Ag, P (varies)",
+//       "Diameter Range": "0.8 mm – 3 mm",
+//       "Melting Range": "600°C – 900°C",
+//       "Standard Forms": "Spools, Coils, Cut Rods"
+//     },
+//     advantages: [
+//       "Reliable for dissimilar metal joints",
+//       "Consistent wetting and bond strength",
+//       "Long shelf-life and oxidation resistance"
+//     ],
+//     applications: [
+//       "Industrial HVAC and refrigeration",
+//       "Electrical systems & plumbing",
+//       "Tool fabrication and repairs"
+//     ]
+//   },
+//   {
+//     id: 20,
+//     name: "Induction Brazing Wire & Rings",
+//     image: "/lovable-uploads/product/copperwireforinductionbrazing.webp",
+//     description: "These pre-formed wires and rings are designed specifically for induction brazing, allowing faster cycle times and consistent joint quality. The closed-loop design simplifies production and eliminates excess filler usage.",
+//     keyFeatures: [
+//       "Ready-to-use rings reduce operator error",
+//       "Uniform ring sizes for consistent capillary action",
+//       "Available in a variety of brazing alloys",
+//       "Compatible with all major induction brazing systems"
+//     ],
+//     technicalSpecifications: {
+//       "Alloy Types": "Copper, Brass, Silver-based",
+//       "Outer Diameter": "10 mm – 100 mm",
+//       "Wire Diameter": "1 mm – 3 mm",
+//       "Melting Point": "600°C – 900°C",
+//       "Tolerances": "±0.1 mm"
+//     },
+//     advantages: [
+//       "Improved process speed & repeatability",
+//       "Waste reduction and cost efficiency",
+//       "Ideal for high-volume manufacturing"
+//     ],
+//     applications: [
+//       "Heat exchangers and HVAC",
+//       "Automotive fuel/brake line systems",
+//       "Precision electrical assemblies"
+//     ]
+//   },
+//   {
+//     id: 21,
+//     name: "Brass Brazing Wire (RBCuZn-C)",
+//     image: "/lovable-uploads/product/brassbrazingwirefinal.webp",
+//     description: "RBCuZn-C is a general-purpose brass brazing alloy with excellent flow characteristics. It offers medium strength and is especially effective in brazing copper, steel, and cast iron under neutral atmospheres.",
+//     keyFeatures: [
+//       "Smooth flow and strong capillary action",
+//       "High joint strength and corrosion resistance",
+//       "Good machinability post-brazing",
+//       "Available in spooled or straight wire form"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Cu 60%, Zn 40% approx.",
+//       "Melting Range": "890°C – 900°C",
+//       "Tensile Strength": "~300 MPa",
+//       "Standard": "AWS A5.8 RBCuZn-C",
+//       "Wire Diameter": "1.6 mm – 3.2 mm"
+//     },
+//     advantages: [
+//       "Cost-effective alternative to silver-based alloys",
+//       "Easily adaptable in torch, furnace, or induction brazing",
+//       "Strong joints with minimal voids"
+//     ],
+//     applications: [
+//       "Bicycles and furniture frames",
+//       "Copper-brass jointing in air-conditioners",
+//       "Mild steel and galvanized steel joining"
+//     ]
+//   },
+//   {
+//     id: 22,
+//     name: "Copper Phosphor Brazing Wire",
+//     image: "/lovable-uploads/product/CopperPhosphorusBrazingwire.webp",
+//     description: "This self-fluxing brazing alloy is specifically designed for copper-to-copper joints. The phosphorus content eliminates the need for external flux when brazing copper, improving workflow and reducing contamination risks.",
+//     keyFeatures: [
+//       "Self-fluxing on copper",
+//       "Free-flowing and excellent wetting characteristics",
+//       "Strong mechanical bond and leak-proof joints",
+//       "Corrosion-resistant post-brazing"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Cu 92%, P 8% approx.",
+//       "Melting Point": "710°C – 880°C",
+//       "Diameter": "1.5 mm – 3 mm",
+//       "Standard": "AWS BCuP-2, BCuP-3, etc."
+//     },
+//     advantages: [
+//       "No flux needed for copper joints",
+//       "Excellent in narrow gaps",
+//       "Time-saving and cleaner process"
+//     ],
+//     applications: [
+//       "Copper piping in HVAC & refrigeration",
+//       "Plumbing systems",
+//       "Solar panel heat exchangers"
+//     ]
+//   },
+//   {
+//     id: 23,
+//     name: "ER Cu Si-A (Silicon Bronze Welding Wire)",
+//     image: "/lovable-uploads/product/ErCuSiafinal.webp",
+//     description: "A copper-silicon alloy filler wire designed for welding copper, brass, and steel. It offers strong, corrosion-resistant joints with excellent weldability and minimal spatter in MIG/TIG processes.",
+//     keyFeatures: [
+//       "Excellent corrosion resistance",
+//       "Low spatter with smooth bead finish",
+//       "Good mechanical strength",
+//       "Ideal for galvanized and dissimilar metals"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Copper + ~3% Silicon",
+//       "Melting Point": "~980°C",
+//       "Diameter Range": "1.2 mm – 3.2 mm",
+//       "Standard": "AWS A5.7 ER Cu Si-A"
+//     },
+//     advantages: [
+//       "Strong joints for dissimilar metals",
+//       "Good for surfacing and overlays",
+//       "High durability and conductivity"
+//     ],
+//     applications: [
+//       "Automotive parts",
+//       "Artistic metalwork",
+//       "Railways, HVAC systems"
+//     ]
+//   },
+//   {
+//     id: 24,
+//     name: "ER Cu (Pure Copper Welding Wire)",
+//     image: "/lovable-uploads/product/ERCUfinal.webp",
+//     description: "A high-conductivity, pure copper wire ideal for TIG and oxy-acetylene welding of copper and deoxidized copper parts.",
+//     keyFeatures: [
+//       "Superior electrical and thermal conductivity",
+//       "Porosity-free welds",
+//       "Compatible with TIG and Oxy-fuel welding",
+//       "Best for electrical-grade copper"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "≥99.9% Pure Copper",
+//       "Melting Point": "~1085°C",
+//       "Diameter Range": "1 mm – 3.2 mm",
+//       "Standard": "AWS A5.7 ER Cu"
+//     },
+//     advantages: [
+//       "Strong and clean welds",
+//       "Corrosion-resistant",
+//       "Excellent ductility"
+//     ],
+//     applications: [
+//       "Electrical terminals",
+//       "Bus bars",
+//       "Copper tank manufacturing"
+//     ]
+//   },
+//   {
+//     id: 25,
+//     name: "ER Cu Sn-C (Tin Bronze Welding Wire – C Type)",
+//     image: "/lovable-uploads/product/ER_CUS_C_Final.webp",
+//     description: "Tin-bronze alloy wire for joining/surfacing on cast bronze, brass, and copper alloys. Known for strength and wear resistance.",
+//     keyFeatures: [
+//       "High strength and toughness",
+//       "Great for overlays",
+//       "Excellent on copper alloy castings",
+//       "Stable arc and neat bead"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Copper + ~8% Tin",
+//       "Melting Point": "~1000°C",
+//       "Diameter Range": "1.2 mm – 3.2 mm",
+//       "Standard": "AWS A5.7 ER Cu Sn-C"
+//     },
+//     advantages: [
+//       "Seawater and wear-resistant",
+//       "High mechanical integrity",
+//       "Low crack tendency"
+//     ],
+//     applications: [
+//       "Bearings, bushings",
+//       "Marine components",
+//       "General bronze repairs"
+//     ]
+//   },
+//   {
+//     id: 26,
+//     name: "ER Cu Sn-A (Tin Bronze Welding Wire – A Type)",
+//     image: "/lovable-uploads/product/ERCUSnA.webp",
+//     description: "Phosphor bronze filler wire designed for strength and flexibility in bronze and copper alloy welding.",
+//     keyFeatures: [
+//       "High fatigue and corrosion resistance",
+//       "Smooth arc, controlled bead",
+//       "MIG/TIG compatible",
+//       "High tensile strength"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Copper + ~5% Tin",
+//       "Melting Point": "~985°C",
+//       "Diameter Range": "1.2 mm – 3.2 mm",
+//       "Standard": "AWS A5.7 ER Cu Sn-A"
+//     },
+//     advantages: [
+//       "Excellent elongation",
+//       "Perfect color match for bronze",
+//       "Good for structural and artistic welds"
+//     ],
+//     applications: [
+//       "Bronze sculpture repair",
+//       "Heat exchanger systems",
+//       "Instrumentation and components"
+//     ]
+//   },
+//   {
+//     id: 27,
+//     name: "CuAl A1 (Aluminum Bronze Welding Wire – A1 Grade)",
+//     image: "/lovable-uploads/product/CuAlA1final.webp",
+//     description: "Engineered for welding in marine and high-wear settings, CuAl A1 resists saltwater corrosion and provides solid structural welds.",
+//     keyFeatures: [
+//       "High impact resistance",
+//       "Excellent cavitation and corrosion protection",
+//       "Welds steel, cast iron, and copper alloys",
+//       "Ideal for saline environments"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Cu + ~8% Aluminum",
+//       "Melting Point": "~1040°C",
+//       "Diameter Range": "1.2 mm – 3.2 mm",
+//       "Standard": "AWS A5.7 ER Cu Al-A1"
+//     },
+//     advantages: [
+//       "Long-lasting performance",
+//       "Ideal for overlays and builds",
+//       "Exceptional marine utility"
+//     ],
+//     applications: [
+//       "Propellers, ship parts",
+//       "Hydraulic systems",
+//       "Pumps, offshore rigs"
+//     ]
+//   },
+//   {
+//     id: 28,
+//     name: "CuAl A2 (Aluminum Bronze Welding Wire – A2 Grade)",
+//     image: "/lovable-uploads/product/CuAlA2final.webp",
+//     description: "This wire is a tougher version of CuAl A1 with enhanced strength from added nickel and iron—great for steel-to-bronze joints.",
+//     keyFeatures: [
+//       "High hardness and wear resistance",
+//       "Excellent in erosive and marine environments",
+//       "Reliable metallurgical bonding",
+//       "Dynamic load tolerant"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Cu + ~10% Al + Fe, Ni",
+//       "Melting Point": "~1050°C",
+//       "Diameter Range": "1.2 mm – 3.2 mm",
+//       "Standard": "AWS A5.7 ER Cu Al-A2"
+//     },
+//     advantages: [
+//       "Superior in heavy-duty tasks",
+//       "Perfect for surfacing jobs",
+//       "Resilient in underwater applications"
+//     ],
+//     applications: [
+//       "Impellers, shafts",
+//       "Mill rolls",
+//       "Subsea repairs"
+//     ]
+//   },
+//   {
+//     id: 29,
+//     name: "Sudronic (Special Copper-Based Welding Alloy)",
+//     image: "/lovable-uploads/product/sudronic_wire.webp",
+//     description: "A proprietary, high-performance copper alloy wire for industrial repair and heavy wear zones.",
+//     keyFeatures: [
+//       "Designed for extreme conditions",
+//       "Low spatter, stable arc",
+//       "High bond strength",
+//       "Works across various metals"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Proprietary Copper Alloy",
+//       "Melting Point": "~980°C – 1100°C",
+//       "Diameter Range": "1.2 mm – 3.2 mm",
+//       "Standard": "Internal / Custom"
+//     },
+//     advantages: [
+//       "Excellent for repair and maintenance",
+//       "High wear resistance",
+//       "User-friendly weldability"
+//     ],
+//     applications: [
+//       "Tool & die",
+//       "Heavy-duty industrial parts",
+//       "High-temperature joints"
+//     ]
+//   },
+//   {
+//     id: 30,
+//     name: "4043 (Aluminum-Silicon Welding Wire)",
+//     image: "/lovable-uploads/product/aluminium4043final.webp",
+//     description: "The most commonly used aluminum wire with 5% silicon for improved weldability and corrosion resistance.",
+//     keyFeatures: [
+//       "Smooth flow, good wetting",
+//       "Low hot-cracking risk",
+//       "Clean finish",
+//       "Great conductivity"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Aluminum + ~5% Silicon",
+//       "Melting Range": "566°C – 573°C",
+//       "Diameter Range": "1 mm – 3.2 mm",
+//       "Standard": "AWS A5.10 ER4043"
+//     },
+//     advantages: [
+//       "Excellent for casting and wrought aluminum",
+//       "Reliable weld strength",
+//       "Minimal post-weld finishing"
+//     ],
+//     applications: [
+//       "Auto frames",
+//       "Aluminum tanks",
+//       "Refrigeration units"
+//     ]
+//   },
+//   {
+//     id: 31,
+//     name: "5357 (Aluminum-Magnesium Welding Wire)",
+//     image: "/lovable-uploads/product/Aluminium5357final.webp",
+//     description: "A structural-grade wire with 5% magnesium for strength, ductility, and marine-grade corrosion resistance.",
+//     keyFeatures: [
+//       "Tough, strong welds",
+//       "Saltwater and corrosion resistant",
+//       "Good anodizing compatibility",
+//       "Stable arc performance"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Aluminum + ~5% Magnesium",
+//       "Melting Range": "573°C – 649°C",
+//       "Diameter Range": "1 mm – 3.2 mm",
+//       "Standard": "AWS A5.10 ER5356"
+//     },
+//     advantages: [
+//       "Stronger than ER4043",
+//       "Ideal for structural jobs",
+//       "Long service life"
+//     ],
+//     applications: [
+//       "Ships, trailers",
+//       "Pipelines",
+//       "Pressure vessels"
+//     ]
+//   },
+//   {
+//     id: 32,
+//     name: "4047 (Aluminum High-Silicon Welding Wire)",
+//     image: "/lovable-uploads/product/Aluminium4047final.webp",
+//     description: "With 12% silicon, this wire gives leak-proof, highly fluid welds with excellent anodized appearance—best for precision tasks.",
+//     keyFeatures: [
+//       "Smooth, leak-free joints",
+//       "High fluidity and reduced shrinkage",
+//       "Excellent for thin aluminum",
+//       "Beautiful finish post-anodizing"
+//     ],
+//     technicalSpecifications: {
+//       "Composition": "Aluminum + ~12% Silicon",
+//       "Melting Range": "573°C – 582°C",
+//       "Diameter Range": "1 mm – 3.2 mm",
+//       "Standard": "AWS A5.10 ER4047"
+//     },
+//     advantages: [
+//       "Better anodizing color match",
+//       "Great for cast repair and tubing",
+//       "High visual appeal"
+//     ],
+//     applications: [
+//       "HVAC tubes",
+//       "Fuel and water tanks",
+//       "Thin aluminum weldments"
+//     ]
+//   }
+// ]
+
+
+
+[
+  {
+    id: 1,
+    name: 'Plain Brass Wire',
+    image: '/lovable-uploads/product/Diffusedcoatedwirefinal.webp'
+  },
+  {
+    id: 2,
+    name: 'Diffused Coated Wire',
+    image: '/lovable-uploads/product/Diffusedcoatedwirefinal.webp'
+  },
+  {
+    id: 3,
+    name: 'Zinc Diffused Coated Wire',
+    image: '/lovable-uploads/product/zincdiffusedcoatedwire.webp'
+  },
+  {
+    id: 4,
+    name: 'Zinc Coated Wire',
+    image: '/lovable-uploads/product/zinccoatedwirefinal.webp'
+  },
+  {
+    id: 5,
+    name: 'EDM Wire',
+    image: '/lovable-uploads/product/EDMWIREFINAL.webp'
+  },
+  {
+    id: 6,
+    name: 'Zari Wire',
+    image: '/lovable-uploads/product/zariwirefinal.webp'
+  },
+  {
+    id: 7,
+    name: 'Copper Extrusions',
+    image: '/lovable-uploads/product/copperextrusionfinal.webp'
+  },
+  {
+    id: 8,
+    name: 'Molly Wire',
+    image: '/lovable-uploads/product/molly_wire.webp'
+  },
+  {
+    id: 9,
+    name: 'Copper Wire',
+    image: '/lovable-uploads/product/copperwirefinal.webp'
+  },
+  {
+    id: 10,
+    name: 'Resin',
+    image: '/lovable-uploads/product/resinfinal.webp'
+  },
+  {
+    id: 11,
+    name: 'Ointment Oil',
+    image: '/lovable-uploads/product/Ointmentgelfinal.webp'
+  },
+  {
+    id: 12,
+    name: 'Filter',
+    image: '/lovable-uploads/product/Filterfinal.webp'
+  },
+  {
+    id: 13,
+    name: 'Current Pickup Assembly',
+    image: '/lovable-uploads/product/CurrentPickupFinal.webp'
+  },
+  {
+    id: 131,
+    name: 'Diamond EDM Pickup',
+    image: '/lovable-uploads/product/DiamondEdmwireGuideFinal.webp'
+  },
+  {
+    id: 132,
+    name: 'Current Pickup (Standard)',
+    image: '/lovable-uploads/product/CurrentPickupFinal.webp'
+  },
+  {
+    id: 14,
+    name: 'Mineral (EDM Stone)',
+    image: '/lovable-uploads/product/Mineralfinal.webp'
+  },
+  {
+    id: 15,
+    name: 'Rust Remover',
+    image: '/lovable-uploads/product/rustremoverfinal.webp'
+  },
+  { id: 16, name: 'Tube Electrodes', image: undefined },
+  {
+    id: 161,
+    name: 'Copper Tube Electrode',
+    image: '/lovable-uploads/product/Coppertubeelectrodefinal.webp'
+  },
+  {
+    id: 162,
+    name: 'Brass Tube Electrode',
+    image: '/lovable-uploads/product/BrassTubeElectrode.webp'
+  },
+  { id: 17, name: 'Drill Guide', image: undefined },
+  {
+    id: 171,
+    name: 'Japanese Drill Guide',
+    image: '/lovable-uploads/product/japenesedrillguidefinal.webp'
+  },
+  {
+    id: 172,
+    name: 'EDM Drill Guide (Standard)',
+    image: '/lovable-uploads/product/EDMDreillguidefina.webp'
+  },
+  {
+    id: 18,
+    name: 'Copper Wire for Induction Brazing',
+    image: '/lovable-uploads/product/copperwireforinductionbrazing.webp'
+  },
+  {
+    id: 19,
+    name: 'Brazing Wire',
+    image: '/lovable-uploads/product/Brazingringfinal.webp'
+  },
+  {
+    id: 20,
+    name: 'Induction Brazing Wire & Rings',
+    image: '/lovable-uploads/product/copperwireforinductionbrazing.webp'
+  },
+  {
+    id: 21,
+    name: 'Brass Brazing Wire (RBCuZn-C)',
+    image: '/lovable-uploads/product/brassbrazingwirefinal.webp'
+  },
+  {
+    id: 22,
+    name: 'Copper Phosphor Brazing Wire',
+    image: '/lovable-uploads/product/CopperPhosphorusBrazingwire.webp'
+  },
+  {
+    id: 23,
+    name: 'ER Cu Si-A (Silicon Bronze Welding Wire)',
+    image: '/lovable-uploads/product/ErCuSiafinal.webp'
+  },
+  {
+    id: 24,
+    name: 'ER Cu (Pure Copper Welding Wire)',
+    image: '/lovable-uploads/product/ERCUfinal.webp'
+  },
+  {
+    id: 25,
+    name: 'ER Cu Sn-C (Tin Bronze Welding Wire – C Type)',
+    image: '/lovable-uploads/product/ER_CUS_C_Final.webp'
+  },
+  {
+    id: 26,
+    name: 'ER Cu Sn-A (Tin Bronze Welding Wire – A Type)',
+    image: '/lovable-uploads/product/ERCUSnA.webp'
+  },
+  {
+    id: 27,
+    name: 'CuAl A1 (Aluminum Bronze Welding Wire – A1 Grade)',
+    image: '/lovable-uploads/product/CuAlA1final.webp'
+  },
+  {
+    id: 28,
+    name: 'CuAl A2 (Aluminum Bronze Welding Wire – A2 Grade)',
+    image: '/lovable-uploads/product/CuAlA2final.webp'
+  },
+  {
+    id: 29,
+    name: 'Sudronic (Special Copper-Based Welding Alloy)',
+    image: '/lovable-uploads/product/sudronic_wire.webp'
+  },
+  {
+    id: 30,
+    name: '4043 (Aluminum-Silicon Welding Wire)',
+    image: '/lovable-uploads/product/aluminium4043final.webp'
+  },
+  {
+    id: 31,
+    name: '5357 (Aluminum-Magnesium Welding Wire)',
+    image: '/lovable-uploads/product/Aluminium5357final.webp'
+  },
+  {
+    id: 32,
+    name: '4047 (Aluminum High-Silicon Welding Wire)',
+    image: '/lovable-uploads/product/Aluminium4047final.webp'
+  }
+]

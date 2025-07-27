@@ -14,7 +14,11 @@ import {
   Box,
   Folder,
   MapPin,
-  Users
+  Users,
+  Package,
+  Layers,
+  Zap,
+  ShoppingCart
 } from "lucide-react";
 
 // Company logo
@@ -26,10 +30,20 @@ interface HeaderProps {
 
 // Define the menu structure
 interface MenuItem {
+  id: number;
   label: string;
   path: string;
   icon?: React.ReactNode;
   children?: MenuItem[];
+}
+
+// Enhanced hierarchical product data with link property
+interface ProductItem {
+  id: number;
+  name: string;
+  link?: boolean; // New property to determine if item is clickable/linkable
+  path?: string;  // Optional path for linking
+  children?: ProductItem[];
 }
 
 const Header = ({
@@ -37,6 +51,7 @@ const Header = ({
 }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openDropdowns, setOpenDropdowns] = useState<{ [key: string]: boolean }>({});
+  const [expandedProductCategories, setExpandedProductCategories] = useState<Set<number>>(new Set());
   const [isScrolled, setIsScrolled] = useState(scrolled);
   const location = useLocation();
   const { isMobile, isTablet, isDesktop } = useDeviceType();
@@ -65,6 +80,7 @@ const Header = ({
   useEffect(() => {
     setIsMenuOpen(false);
     setOpenDropdowns({});
+    setExpandedProductCategories(new Set());
   }, [location]);
 
   // Close dropdowns when clicking outside
@@ -93,6 +109,197 @@ const Header = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isMenuOpen, openDropdowns]);
+
+  // Enhanced hierarchical product data with link property
+  const productsData: ProductItem[] = [
+    {
+      "id": 1,
+      "name": "Non-Ferrous wire",
+      "link": false,
+      "path": "/products/non-ferrous-wire",
+      "children": [
+        { "id": 2, "name": "EDM Wire", "link": true, "path": "/products/1" },
+        { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/zari-wire" },
+        { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/copper-extrusions" },
+        { "id": 5, "name": "Molly Wire", "link": true, "path": "/products/molly-wire" },
+        { "id": 6, "name": "Copper wire", "link": true, "path": "/products/copper-wire" },
+        {
+          "id": 7,
+          "name": "plain brass wire",
+          "link": true,
+          "path": "/products/plain-brass-wire",
+          "children": [
+            {
+              "id": 8,
+              "name": "diffused coated wire",
+              "link": true,
+              "path": "/products/diffused-coated-wire",
+              "children": [
+                {
+                  "id": 9,
+                  "name": "Zinc diffused coated wire",
+                  "link": true,
+                  "path": "/products/zinc-diffused-coated-wire",
+                  "children": [
+                    { "id": 10, "name": "Zinc coated wire", "link": true, "path": "/products/zinc-coated-wire" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Brazing And Welding",
+      "link": true,
+      "path": "/products/brazing-and-welding",
+      "children": [
+        { "id": 12, "name": "Copper Wire for Induction Brazing", "link": true, "path": "/products/copper-wire-induction-brazing" },
+        { "id": 13, "name": "Brazing wire", "link": true, "path": "/products/brazing-wire" },
+        {
+          "id": 14,
+          "name": "Induction Brazing Wire & Rings",
+          "link": true,
+          "path": "/products/induction-brazing-wire-rings",
+          "children": [
+            { "id": 15, "name": "Brass Brazing RBCuZn-c", "link": true, "path": "/products/brass-brazing-rbcuzn-c" },
+            { "id": 16, "name": "Copper Phosphor Brazing Wire", "link": true, "path": "/products/copper-phosphor-brazing-wire" }
+          ]
+        },
+        {
+          "id": 17,
+          "name": "Welding Wire",
+          "link": true,
+          "path": "/products/welding-wire",
+          "children": [
+            { "id": 18, "name": "Copper alloy", "link": true, "path": "/products/copper-alloy" },
+            {
+              "id": 19,
+              "name": "Aluminum",
+              "link": true,
+              "path": "/products/aluminum",
+              "children": [
+                { "id": 20, "name": "4043", "link": true, "path": "/products/aluminum-4043" },
+                { "id": 21, "name": "5357", "link": true, "path": "/products/aluminum-5357" },
+                { "id": 22, "name": "4047", "link": true, "path": "/products/aluminum-4047" }
+              ]
+            },
+            { "id": 23, "name": "Er Cu Sia", "link": true, "path": "/products/er-cu-sia" },
+            { "id": 24, "name": "Er Cu", "link": true, "path": "/products/er-cu" },
+            { "id": 25, "name": "Er Cu SuC", "link": true, "path": "/products/er-cu-suc" },
+            { "id": 26, "name": "Er Cu Sn A", "link": true, "path": "/products/er-cu-sn-a" },
+            { "id": 27, "name": "CuAl A1", "link": true, "path": "/products/cual-a1" },
+            { "id": 28, "name": "Cu Al A2", "link": true, "path": "/products/cu-al-a2" },
+            { "id": 29, "name": "Sudronic", "link": true, "path": "/products/sudronic" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "Consumables",
+      "link": true,
+      "path": "/products/consumables",
+      "children": [
+        { "id": 31, "name": "Resin", "link": true, "path": "/products/resin" },
+        { "id": 32, "name": "Ointment oil", "link": true, "path": "/products/ointment-oil" },
+        { "id": 33, "name": "Filter", "link": true, "path": "/products/filter" },
+        {
+          "id": 34,
+          "name": "current pickup",
+          "link": false, // Example of non-linkable item
+          "children": [
+            { "id": 35, "name": "Diamond edm", "link": true, "path": "/products/diamond-edm" },
+            { "id": 36, "name": "Current Pickup", "link": true, "path": "/products/current-pickup" }
+          ]
+        },
+        { "id": 37, "name": "mineral", "link": true, "path": "/products/mineral" },
+        { "id": 38, "name": "Rust Remover", "link": true, "path": "/products/rust-remover" },
+        {
+          "id": 39,
+          "name": "Tube Electrode",
+          "link": true,
+          "path": "/products/tube-electrode",
+          "children": [
+            {
+              "id": 40,
+              "name": "Copper Tube and Brass tube",
+              "link": true,
+              "path": "/products/copper-tube-brass-tube",
+              "children": [
+                {
+                  "id": 41,
+                  "name": "Drill Guide",
+                  "link": true,
+                  "path": "/products/drill-guide",
+                  "children": [
+                    { "id": 42, "name": "Japanese Drill guide", "link": true, "path": "/products/japanese-drill-guide" },
+                    { "id": 43, "name": "Edm Drill Guide", "link": true, "path": "/products/edm-drill-guide" }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ];
+
+  // Get product category icons
+  const getProductCategoryIcon = (name: string) => {
+    if (name.includes('Non-Ferrous')) return <Layers className="w-3 h-3 text-blue-500" />;
+    if (name.includes('Brazing')) return <Zap className="w-3 h-3 text-orange-500" />;
+    if (name.includes('Consumables')) return <ShoppingCart className="w-3 h-3 text-green-500" />;
+    return <Package className="w-3 h-3 text-gray-400" />;
+  };
+
+  // Toggle product category expansion
+  const toggleProductCategory = (categoryId: number, event?: React.MouseEvent) => {
+    if (event) {
+      event.stopPropagation();
+    }
+    const newExpanded = new Set(expandedProductCategories);
+    if (newExpanded.has(categoryId)) {
+      newExpanded.delete(categoryId);
+    } else {
+      newExpanded.add(categoryId);
+    }
+    setExpandedProductCategories(newExpanded);
+  };
+
+  // Handle product item click
+  const handleProductItemClick = (item: ProductItem, event: React.MouseEvent) => {
+    const hasChildren = item.children && item.children.length > 0;
+    
+    // If item has children, toggle expansion
+    if (hasChildren) {
+      event.preventDefault();
+      toggleProductCategory(item.id, event);
+    }
+    
+    // If item is linkable and has a path, navigate
+    if (item.link && item.path && !hasChildren) {
+      window.scrollTo(0, 0);
+      setIsMenuOpen(false);
+      setOpenDropdowns({});
+    }
+  };
+
+  // Get total product count
+  const getTotalProducts = (items: ProductItem[]): number => {
+    let count = 0;
+    items.forEach(item => {
+      count += 1;
+      if (item.children) {
+        count += getTotalProducts(item.children);
+      }
+    });
+    return count;
+  };
+
+  const totalProducts = getTotalProducts(productsData);
   
   const isActive = (path: string) => {
     if (path === "/customers") return false;
@@ -144,89 +351,211 @@ const Header = ({
     });
   };
 
-  // Enhanced menu structure with reorganized products
+  // Enhanced menu structure with new products
   const menuItems: MenuItem[] = [
     {
+      id: 1,
       label: "Home",
       path: "/",
       icon: <Home className="h-3 w-3 mr-1" />
     },
     {
+      id: 2,
       label: "Foundation",
       path: "/foundation",
       icon: <Folder className="h-3 w-3 mr-1" />,
       children: [
-        { label: "Legacy", path: "/foundation#legacy" },
-        // { label: "Foundation (MIC)", path: "/foundation#foundation" },
-        // { label: "Maheshwari Wires", path: "/foundation#maheshwari-wires" },
-        { label: "Capabilities", path: "/infrastructure" },
-        { label: "Certifications", path: "/foundation#certifications" },
-        { label: "Make in India Movement", path: "/foundation#make-in-india" }
+        { id: 21, label: "Legacy", path: "/foundation#legacy" },
+        { id: 22, label: "Capabilities", path: "/infrastructure" },
+        { id: 23, label: "Certifications", path: "/foundation#certifications" },
+        { id: 24, label: "Make in India Movement", path: "/foundation#make-in-india" }
       ]
     },
     {
+      id: 3,
       label: "Products",
       path: "/products",
       icon: <Box className="h-3 w-3 mr-1" />,
-      children: [
-        // EDM Wire
-        { label: "EDM Wire", path: "/products#edm-wire" },
-        { label: "• M-Cut Plain Wire", path: "/products#edm-wire-mcut-plain" },
-        { label: "• M-Cut Zincor Wire", path: "/products#edm-wire-zincor" },
-        { label: "• M-Cut Dynamic Diffused", path: "/products#edm-wire-dynamic" },
-        
-        // Brazing Wire
-        { label: "Brazing Wire", path: "/products#brazing-wire" },
-        { label: "• Brass Brazing Wire", path: "/products#brass-brazing-wire" },
-        { label: "• Brass Brazing Rings", path: "/products#brass-brazing-rings" },
-        { label: "• PhosCopper", path: "/products#phoscopper" },
-        
-        // Welding Wire
-        { label: "Welding Wire", path: "/products#welding-wire" },
-        { label: "• Copper MIG Wire", path: "/products#copper-mig-welding" },
-        { label: "• Filler Wire", path: "/products#filler-wire" },
-        { label: "• Sudronic Wire", path: "/products#sudronic-wire" },
-        
-        // Copper Wire
-        { label: "Copper Wire", path: "/products#copper-wire" },
-        { label: "• Phosphor Bronze Wire", path: "/products#phosphor-bronze" },
-        { label: "• Brass Wire", path: "/products#brass-wire" },
-        
-        // Copper Extrusions
-        { label: "Copper Extrusions", path: "/products#copper-extrusions" },
-        { label: "• Copper Busbars", path: "/products#copper-busbars" },
-        { label: "• Tube Electrode", path: "/products#tube-electrode" }
-      ]
+      children: [] // Will be populated dynamically from productsData
     },
     {
+      id: 4,
       label: "Infrastructure",
       path: "/infrastructure",
       icon: <Building className="h-3 w-3 mr-1" />
     },
     {
+      id: 5,
       label: "Customers",
       path: "/customers",
       icon: <Users className="h-3 w-3 mr-1" />
     },
     {
+      id: 6,
       label: "Connect",
       path: "/connect",
       icon: <MapPin className="h-3 w-3 mr-1" />
     }
   ];
 
+  // Render product item recursively with enhanced click handling
+  const renderProductItem = (item: ProductItem, level: number = 0) => {
+    const hasChildren = item.children && item.children.length > 0;
+    const isExpanded = expandedProductCategories.has(item.id);
+    const paddingLeft = level * 12;
+    const isClickable = item.link && item.path;
+
+    const ItemContent = () => (
+      <div 
+        className={cn(
+          "flex items-center gap-2 p-2 rounded-md transition-colors text-xs",
+          level === 0 ? 'font-semibold text-brand-blue border-b border-gray-100 mb-1' : 
+          level === 1 ? 'font-medium text-gray-700' : 
+          'text-gray-600',
+          (isClickable || hasChildren) ? 'cursor-pointer hover:bg-gray-50' : 'cursor-default'
+        )}
+        style={{ paddingLeft: `${8 + paddingLeft}px` }}
+        onClick={(e) => handleProductItemClick(item, e)}
+      >
+        {hasChildren && (
+          <div className="flex-shrink-0">
+            {isExpanded ? (
+              <ChevronDown className="w-3 h-3 text-gray-500" />
+            ) : (
+              <ChevronDown className="w-3 h-3 text-gray-500 -rotate-90" />
+            )}
+          </div>
+        )}
+        
+        <div className="flex-shrink-0">
+          {getProductCategoryIcon(item.name)}
+        </div>
+        
+        <span className="flex-1 capitalize truncate" title={item.name}>
+          {item.name}
+        </span>
+        
+        {hasChildren && (
+          <span className="text-xs bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded-full">
+            {item.children!.length}
+          </span>
+        )}
+      </div>
+    );
+
+    return (
+      <div key={item.id} style={{ breakInside: 'avoid', marginBottom: '2px' }}>
+        {isClickable && !hasChildren ? (
+          <Link to={item.path!} onClick={() => {
+            handleNavigation();
+            setOpenDropdowns({});
+          }}>
+            <ItemContent />
+          </Link>
+        ) : (
+          <ItemContent />
+        )}
+
+        {hasChildren && isExpanded && (
+          <div className="border-l border-gray-200 ml-4">
+            {item.children!.map(child => renderProductItem(child, level + 1))}
+          </div>
+        )}
+      </div>
+    );
+  };
+
   // Render a dropdown item (recursive)
   const renderDropdownItem = (item: MenuItem, index: number, level: number = 0, parentKey: string = '') => {
     const hasChildren = item.children && item.children.length > 0;
     const itemKey = parentKey ? `${parentKey}-${index}` : `menu-${index}`;
     
+    // Special handling for Products menu
+    if (item.label === "Products") {
+      return (
+        <div key={itemKey} className={isMobile ? "border-t border-gray-100 first:border-t-0" : ""}>
+          <button 
+            data-dropdown={itemKey}
+            className={cn(
+              isMobile ? 
+                "w-full flex justify-between items-center px-3 py-2 rounded-lg font-semibold text-xs transition-all duration-300 hover:bg-white hover:text-brand-blue border border-transparent hover:border-brand-blue/20 hover:shadow-lg" : 
+                "px-3 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center hover:bg-white hover:text-brand-blue text-xs border border-transparent hover:border-brand-blue/20 hover:shadow-lg",
+              isActive(item.path) || openDropdowns[itemKey] ? 
+                "bg-white text-brand-blue shadow-lg border-brand-blue/20" : 
+                "text-brand-blue"
+            )} 
+            onClick={(e) => toggleDropdown(e, itemKey)}
+            aria-expanded={openDropdowns[itemKey]}
+            aria-haspopup="true"
+          >
+            <span className="flex items-center">
+              {item.icon}
+              <Link to={item.path}>
+                {item.label} ({totalProducts})
+              </Link>
+            </span>
+            <ChevronDown className={cn("h-3 w-3 transition-all duration-300", openDropdowns[itemKey] && "transform rotate-180")} />
+          </button>
+          
+          {openDropdowns[itemKey] && (
+            <div 
+              ref={(ref) => addDropdownRef(itemKey, ref)}
+              className={isMobile ? 
+                "pl-3 mt-2 border-l-2 border-brand-gold ml-4 bg-white rounded-lg py-2 shadow-lg animate-slide-in-up max-h-80 overflow-y-auto" : 
+                "absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl py-3 z-[60] border border-brand-blue/10 animate-scale-in overflow-y-auto"}
+              style={!isMobile ? { 
+                width: '420px', 
+                maxHeight: '70vh',
+              } : {}}
+            >
+              {/* Header */}
+              {/* <div className="px-3 pb-2 mb-2 border-b border-gray-200">
+                <Link 
+                  to={item.path} 
+                  className="flex items-center text-brand-blue font-bold hover:text-brand-blue/80 transition-colors text-xs"
+                  onClick={() => {
+                    handleNavigation();
+                    setOpenDropdowns({});
+                  }}
+                >
+                  {item.icon}
+                  All Products ({totalProducts} items)
+                </Link>
+                <p className="text-xs text-gray-500 mt-1">Click categories to expand • Blue items are clickable</p>
+              </div> */}
+              
+              {/* Product Categories */}
+              <div className="px-2">
+                {productsData.map(category => renderProductItem(category))}
+              </div>
+
+              {/* Footer */}
+              <div className="border-t border-gray-200 px-3 pt-2 mt-2">
+                <Link
+                  to="/products"
+                  className="block w-full text-center bg-brand-blue text-white px-3 py-1.5 rounded-md text-xs font-medium hover:bg-brand-blue/90 transition-colors"
+                  onClick={() => {
+                    handleNavigation();
+                    setOpenDropdowns({});
+                  }}
+                >
+                  View Complete Catalog
+                </Link>
+              </div>
+            </div>
+          )}
+        </div>
+      );
+    }
+
+    // Regular menu item handling
     if (!isMobile && hasChildren && level > 0) {
       return (
         <div key={itemKey} className="relative group/submenu">
           <button 
             className="flex w-full items-center justify-between px-3 py-2 text-brand-blue hover:bg-white hover:text-brand-blue transition-all duration-300 rounded-lg text-xs font-medium border border-transparent hover:border-brand-blue/20 hover:shadow-lg"
             onClick={(e) => e.preventDefault()}
-            aria-haspopup="true"
+            aria-haspopus="true"
           >
             <span className="font-semibold">{item.label}</span>
             <ChevronDown className="h-3 w-3 ml-2 transform -rotate-90 transition-transform group-hover/submenu:scale-110" />
@@ -260,7 +589,8 @@ const Header = ({
             <span className="flex items-center">
               {item.icon}
               <Link to={item.path}>
-              {item.label}</Link>
+                {item.label}
+              </Link>
             </span>
             <ChevronDown className={cn("h-3 w-3 transition-all duration-300", openDropdowns[itemKey] && "transform rotate-180")} />
           </button>
@@ -271,19 +601,12 @@ const Header = ({
               className={isMobile ? 
                 "pl-3 mt-2 border-l-2 border-brand-gold ml-4 bg-white rounded-lg py-2 shadow-lg animate-slide-in-up" : 
                 "absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl py-3 z-[60] border border-brand-blue/10 animate-scale-in overflow-y-auto"}
-              style={!isMobile && item.label === 'Products' ? { 
-                width: '500px', 
-                maxHeight: '70vh',
-                columnCount: 2,
-                columnGap: '1rem',
-                columnFill: 'balance'
-              } : !isMobile ? { width: '280px', maxHeight: '70vh' } : {}}
+              style={!isMobile ? { width: '280px', maxHeight: '70vh' } : {}}
             >
-              {level === 0 && !isMobile && (
+              {/* {level === 0 && !isMobile && (
                 <Link 
                   to={item.path} 
                   className="block w-full text-left px-3 py-2 text-brand-blue font-bold hover:bg-gray-50 transition-all duration-300 border-b border-brand-blue/10 rounded-t-lg text-xs mb-2" 
-                  style={{ breakInside: 'avoid', columnSpan: item.label === 'Products' ? 'all' : 'none' }}
                   onClick={() => {
                     handleNavigation();
                     setOpenDropdowns({});
@@ -294,11 +617,11 @@ const Header = ({
                     All {item.label}
                   </div>
                 </Link>
-              )}
+              )} */}
               
-              <div className={item.label === 'Products' && !isMobile ? "space-y-1" : "space-y-1"}>
+              <div className="space-y-1">
                 {item.children?.map((child, childIndex) => (
-                  <div key={childIndex} style={!isMobile && item.label === 'Products' ? { breakInside: 'avoid', marginBottom: '4px' } : {}}>
+                  <div key={childIndex}>
                     {renderDropdownItem(child, childIndex, level + 1, itemKey)}
                   </div>
                 ))}
@@ -376,7 +699,7 @@ const Header = ({
             {menuItems.map((item, index) => {
               const itemKey = `menu-${index}`;
               
-              if (item.children) {
+              if (item.children || item.label === "Products") {
                 return (
                   <div key={itemKey} className="relative group" ref={(ref) => addDropdownRef(itemKey, ref)}>
                     <button 
@@ -394,7 +717,9 @@ const Header = ({
                       <span className="flex items-center relative z-10">
                         <span className="hidden xl:inline">{item.icon}</span>
                         <span className={cn("whitespace-nowrap", item.icon ? "xl:ml-1" : "")}>
-                         <Link to={item.path}> {item.label} </Link>
+                          <Link to={item.path}>
+                            {item.label}
+                          </Link>
                         </span>
                       </span>
                       <ChevronDown className={cn("ml-1 h-3 w-3 transition-transform duration-300", openDropdowns[itemKey] && "transform rotate-180")} />
@@ -406,30 +731,71 @@ const Header = ({
                       <div 
                         className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-2xl py-3 z-50 border border-brand-blue/10 animate-scale-in overflow-y-auto"
                         style={item.label === 'Products' ? { 
-                          width: '500px', 
+                          width: '420px', 
                           maxHeight: '70vh',
                         } : { width: '280px', maxHeight: '70vh' }}
                         onMouseLeave={isDesktop ? () => setOpenDropdowns(prev => ({...prev, [itemKey]: false})) : undefined}
                       >
-                        {/* <Link 
-                          to={item.path} 
-                          className="block w-full text-left px-3 py-2 text-brand-blue font-bold hover:bg-gray-50 transition-all duration-300 border-b border-brand-blue/10 text-xs mb-2" 
-                          onClick={() => {
-                            handleNavigation();
-                            setOpenDropdowns({});
-                          }}
-                        >
-                          <div className="flex items-center">
-                            <span className="hidden xl:inline">{item.icon}</span>
-                            <span className={cn(item.icon ? "xl:ml-1" : "")}>All {item.label}</span>
-                          </div>
-                        </Link> */}
-                        
-                        <div className={item.label === 'Products' ? "grid grid-cols-2 gap-1 px-2" : "space-y-1"}>
-                          {item.children.map((child, childIndex) => 
-                            renderDropdownItem(child, childIndex, 1, itemKey)
-                          )}
-                        </div>
+                        {item.label === "Products" ? (
+                          <>
+                            {/* Header */}
+                            {/* <div className="px-3 pb-2 mb-2 border-b border-gray-200">
+                              <Link 
+                                to={item.path} 
+                                className="flex items-center text-brand-blue font-bold hover:text-brand-blue/80 transition-colors text-xs"
+                                onClick={() => {
+                                  handleNavigation();
+                                  setOpenDropdowns({});
+                                }}
+                              >
+                                <span className="hidden xl:inline">{item.icon}</span>
+                                <span className={cn(item.icon ? "xl:ml-1" : "")}>All Products ({totalProducts} items)</span>
+                              </Link>
+                              <p className="text-xs text-gray-500 mt-1">Click categories to expand • Blue items are clickable</p>
+                            </div> */}
+                            
+                            {/* Product Categories */}
+                            <div className="px-2">
+                              {productsData.map(category => renderProductItem(category))}
+                            </div>
+
+                            {/* Footer */}
+                            <div className="border-t border-gray-200 px-3 pt-2 mt-2">
+                              <Link
+                                to="/products"
+                                className="block w-full text-center bg-brand-blue text-white px-3 py-1.5 rounded-md text-xs font-medium hover:bg-brand-blue/90 transition-colors"
+                                onClick={() => {
+                                  handleNavigation();
+                                  setOpenDropdowns({});
+                                }}
+                              >
+                                View Complete Catalog
+                              </Link>
+                            </div>
+                          </>
+                        ) : (
+                          <>
+                            {/* <Link 
+                              to={item.path} 
+                              className="block w-full text-left px-3 py-2 text-brand-blue font-bold hover:bg-gray-50 transition-all duration-300 border-b border-brand-blue/10 text-xs mb-2" 
+                              onClick={() => {
+                                handleNavigation();
+                                setOpenDropdowns({});
+                              }}
+                            >
+                              <div className="flex items-center">
+                                <span className="hidden xl:inline">{item.icon}</span>
+                                <span className={cn(item.icon ? "xl:ml-1" : "")}>All {item.label}</span>
+                              </div>
+                            </Link> */}
+                            
+                            <div className="space-y-1">
+                              {item.children?.map((child, childIndex) => 
+                                renderDropdownItem(child, childIndex, 1, itemKey)
+                              )}
+                            </div>
+                          </>
+                        )}
                       </div>
                     )}
                   </div>
@@ -507,7 +873,7 @@ const Header = ({
             {menuItems.map((item, index) => {
               const itemKey = `mobile-menu-${index}`;
                 
-              if (item.children) {
+              if (item.children || item.label === "Products") {
                 return renderDropdownItem(item, index, 0, 'mobile');
               }
               
