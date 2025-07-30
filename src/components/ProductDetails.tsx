@@ -1,71 +1,262 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const ProductDetails = ({ productData }) => {
-  if (!productData) return <div className="text-center text-gray-500">Product not found.</div>;
- console.log(productData)
-  const { product,name, description, keyFeatures, technicalSpecifications, advantages, applications, image } = productData;
+  // Debug: Log what we're receiving
+  console.log('ProductDetails received:', productData);
+  
+      const navigate = useNavigate();
+
+  const data = productData;
+  
+  if (!data) return <div className="text-center text-gray-500 py-8">Product not found.</div>;
+
+  const { 
+    product, 
+    name, 
+    description, 
+    keyFeatures, 
+    technicalSpecifications, 
+    advantages, 
+    applications, 
+    image, 
+    packagingAndDelivery, 
+    complianceAndQuality, 
+    customizationOptions, 
+    handlingAndStorage, 
+    certifications, 
+    availableAddOns, 
+    note, 
+    variants 
+  } = data;
+
+  const renderSection = (title, content, type = 'list') => {
+    if (!content) return null;
+    
+    return (
+      <section className="mb-8">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">{title}</h2>
+        {type === 'list' && Array.isArray(content) && (
+          <ul className="list-disc list-inside space-y-2 text-gray-600 pl-4">
+            {content.map((item, i) => (
+              <li key={i} className="leading-relaxed">{item}</li>
+            ))}
+          </ul>
+        )}
+        {type === 'object' && typeof content === 'object' && !Array.isArray(content) && (
+          <div className="grid gap-3">
+            {Object.entries(content).map(([key, value]) => (
+              <div key={key} className="bg-gray-50 p-4 rounded-lg">
+                <h3 className="font-semibold text-gray-700 mb-2">{key}</h3>
+                {typeof value === 'object' && !Array.isArray(value) ? (
+                  <div className="space-y-1">
+                    {Object.entries(value).map(([subKey, subValue]) => (
+                      <p key={subKey} className="text-sm text-gray-600">
+                        <span className="font-medium">{subKey}:</span> {String(subValue)}
+                      </p>
+                    ))}
+                  </div>
+                ) : Array.isArray(value) ? (
+                  <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                    {value.map((item, idx) => (
+                      <li key={idx}>{item}</li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="text-gray-600 text-sm">{String(value)}</p>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+        {type === 'text' && typeof content === 'string' && (
+          <p className="text-gray-600 leading-relaxed bg-yellow-50 p-4 rounded-lg border-l-4 border-yellow-400">
+            {content}
+          </p>
+        )}
+      </section>
+    );
+  };
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-8 space-y-10 bg-b">
-      {/* Section 1: Image + Heading */}
-      <div className="flex flex-col md:flex-row items-center justify-between gap-20">
-        <div className='w-full md:max-w-fit h-96'>
-        <img src={image} alt={product} className="h-full p-2 w-full rounded-xl shadow-md  object-cover md:object-contain" />
-        </div>
-        <div className="flex-1">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">{product ?? name}</h1>
-          <h2 className="text-2xl font-semibold mb-2 text-gray-800">Description</h2>
-          <p className="text-gray-600 leading-relaxed">{description}</p>
+    <div className="max-w-7xl mx-auto px-4 py-8 bg-gray-50 min-h-screen">
+      {/* Back Button */}
+      <button onClick={()=>navigate(-1)} className="mb-6 bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition-colors">
+        ← Back
+      </button>
+
+      {/* Header Section with Image and Product Info */}
+      <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-8 mb-8 text-white">
+        <div className="flex flex-col lg:flex-row items-center gap-8">
+          <div className="lg:w-1/3">
+            <div className="bg-white p-4 rounded-xl shadow-lg">
+              <img 
+                src={image} 
+                alt={product || name} 
+                className="w-full h-64 object-contain rounded-lg" 
+              />
+            </div>
+          </div>
+          <div className="lg:w-2/3">
+            <h1 className="text-4xl font-bold mb-4">{product || name}</h1>
+            <p className="text-blue-100 leading-relaxed text-lg">
+              {description}
+            </p>
+          </div>
         </div>
       </div>
 
-      {/* Section 2: Description */}
-      <section>
-
-         <h2 className='text-2xl font-semibold mb-2 text-gray-800'>Key Features</h2>
-          <ul className="list-disc list-inside space-y-1 text-gray-600 p-2">
-            {keyFeatures.map((feature, i) => (
-              <li key={i}>{feature}</li>
-            ))}
-          </ul>
-      </section>
-
-      {/* Section 3: Technical Specifications Table */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-2 text-gray-800">Technical Specifications</h2>
-        <div className="overflow-auto">
-          <table className="min-w-full border border-gray-300 text-sm">
-            <tbody>
-              {Object.entries(technicalSpecifications).map(([key, value]) => (
-                <tr key={key} className="even:bg-gray-50">
-                  <td className="border px-4 py-2 font-medium text-gray-700">{key}</td>
-                  <td className="border px-4 py-2 text-gray-600">{value}</td>
-                </tr>
+      {/* Main Content */}
+      <div className="bg-white rounded-2xl p-8 shadow-lg">
+        
+        {/* Key Features */}
+        {keyFeatures && (
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Key Features</h2>
+            <div className="grid md:grid-cols-2 gap-3">
+              {keyFeatures.map((feature, i) => (
+                <div key={i} className="flex items-start gap-3 bg-green-50 p-4 rounded-lg">
+                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                  <span className="text-gray-700">{feature}</span>
+                </div>
               ))}
-            </tbody>
-          </table>
+            </div>
+          </section>
+        )}
+
+        {/* Technical Specifications */}
+        {technicalSpecifications && (
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800">Technical Specifications</h2>
+            <div className="overflow-x-auto bg-gray-50 rounded-lg">
+              <table className="w-full border-collapse">
+                <tbody>
+                  {Object.entries(technicalSpecifications).map(([key, value]) => (
+                    <tr key={key} className="border-b border-gray-200 hover:bg-white transition-colors">
+                      <td className="px-6 py-4 font-semibold text-gray-700 bg-gray-100 w-1/3">{key}</td>
+                      <td className="px-6 py-4 text-gray-600">{String(value)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {/* Advantages */}
+        {advantages && renderSection("Advantages", advantages)}
+
+        {/* Packaging and Delivery */}
+        {packagingAndDelivery && (
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">Packaging & Delivery</h2>
+            <div className="overflow-x-auto bg-gray-50 rounded-lg">
+              <table className="w-full border-collapse">
+                <tbody>
+                  {Object.entries(packagingAndDelivery).map(([key, value]) => (
+                    <tr key={key} className="border-b border-gray-200 hover:bg-white transition-colors">
+                      <td className="px-6 py-4 font-semibold text-gray-700 bg-gray-100 w-1/3">{key}</td>
+                      <td className="px-6 py-4 text-gray-600">{String(value)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {/* Compliance and Quality */}
+        {complianceAndQuality && (
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">Compliance & Quality</h2>
+            <div className="overflow-x-auto bg-gray-50 rounded-lg">
+              <table className="w-full border-collapse">
+                <tbody>
+                  {Object.entries(complianceAndQuality).map(([key, value]) => (
+                    <tr key={key} className="border-b border-gray-200 hover:bg-white transition-colors">
+                      <td className="px-6 py-4 font-semibold text-gray-700 bg-gray-100 w-1/3">{key}</td>
+                      <td className="px-6 py-4 text-gray-600">{String(value)}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {/* Customization Options */}
+        {customizationOptions && (
+          <section className="mb-10">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">Customization Options</h2>
+            <div className="overflow-x-auto bg-gray-50 rounded-lg">
+              <table className="w-full border-collapse">
+                <tbody>
+                  {Array.isArray(customizationOptions) ? 
+                    customizationOptions.map((option, index) => (
+                      <tr key={index} className="border-b border-gray-200 hover:bg-white transition-colors">
+                        <td className="px-6 py-4 font-semibold text-gray-700 bg-gray-100 w-1/3">Option {index + 1}</td>
+                        <td className="px-6 py-4 text-gray-600">{String(option)}</td>
+                      </tr>
+                    )) :
+                    Object.entries(customizationOptions).map(([key, value]) => (
+                      <tr key={key} className="border-b border-gray-200 hover:bg-white transition-colors">
+                        <td className="px-6 py-4 font-semibold text-gray-700 bg-gray-100 w-1/3">{key}</td>
+                        <td className="px-6 py-4 text-gray-600">{String(value)}</td>
+                      </tr>
+                    ))
+                  }
+                </tbody>
+              </table>
+            </div>
+          </section>
+        )}
+
+        {/* Handling and Storage */}
+        {handlingAndStorage && renderSection("Handling & Storage", handlingAndStorage, 'object')}
+
+        {/* Certifications */}
+        {certifications && (
+          <section className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">Certifications</h2>
+            <div className="flex flex-wrap gap-3">
+              {certifications.map((cert, i) => (
+                <span key={i} className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full font-medium">
+                  {cert}
+                </span>
+              ))}
+            </div>
+          </section>
+        )}
+
+        {/* Available Add-ons */}
+        {availableAddOns && renderSection("Available Add-ons", availableAddOns)}
+
+        {/* Applications */}
+        {applications && renderSection("Applications", applications)}
+
+        {/* Variants */}
+        {variants && renderSection("Product Variants", variants, 'object')}
+
+        {/* Note */}
+        {note && renderSection("Important Note", note, 'text')}
+
+        {/* Get Quote Button */}
+        <div className="mt-10 text-center">
+          <button className="bg-blue-900 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-800 transition-colors shadow-lg">
+            Get Your Quote
+          </button>
         </div>
-      </section>
 
-      {/* Section 4: Advantages */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-2 text-gray-800">Advantages</h2>
-        <ul className="list-disc list-inside space-y-1 text-gray-600">
-          {advantages.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </section>
-
-      {/* Section 5: Applications */}
-      <section>
-        <h2 className="text-2xl font-semibold mb-2 text-gray-800">Applications</h2>
-        <ul className="list-disc list-inside space-y-1 text-gray-600">
-          {applications.map((item, i) => (
-            <li key={i}>{item}</li>
-          ))}
-        </ul>
-      </section>
+        {/* Company Branding */}
+        <div className="mt-8 text-center">
+          <div className="inline-flex items-center gap-2 text-gray-600">
+            {/* <div className="w-8 h-8 bg-blue-900 rounded"></div>
+            <span className="font-bold text-lg">MAHESHWARI WIRES</span>
+            <span className="text-sm">PRIVATE LIMITED</span> */}
+            <img className='h-14' src='/lovable-uploads/4b08319e-d6ea-4de7-b408-d2e3836e50e1.png' />
+          </div>
+        </div>
+      </div>
     </div>
   );
 };

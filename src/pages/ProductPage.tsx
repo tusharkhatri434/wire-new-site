@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import products from '../data/products';
+import products from '../data/products_pro';
 import ProductDetails from '../components/ProductDetails';
 
 const ProductPage = () => {
@@ -41,7 +41,7 @@ const ProductPage = () => {
 // };
 
   return (
-    <div className="bg-white mt-16">
+    <div className="pt-14 bg-gray-50">
       <ProductDetails productData={product} />
     </div>
   );

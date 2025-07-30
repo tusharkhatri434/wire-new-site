@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, ArrowRight } from 'lucide-react';
 import { useDeviceType } from '@/hooks/use-mobile';
@@ -135,71 +134,150 @@ const ProductSlider = ({
           onTouchEnd={handleTouchEnd}
         >
           {products.map((product, index) => (
-            <div
-              key={product.id}
-              className={cn(
-                "flex-shrink-0 px-3 select-none h-full",
-                isMobile ? "w-full" : isTablet ? "w-1/2" : "w-1/3"
-              )}
-            >
-              <div className="group/card relative bg-white rounded-xl overflow-hidden hover-lift transition-all duration-500 depth-2 hover:depth-4 border border-gray-200 hover:border-brand-blue/30 shadow-lg hover:shadow-2xl">
-                {/* Category Badge */}
-                <div className="absolute top-4 left-4 z-20 bg-brand-blue text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
-                  {product.category}
-                </div>
-
-                {/* Image Container */}
-                <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
-                  <img 
-                    src={product.image} 
-                    alt={product.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
-                  
-                  {/* Floating Elements */}
-                  <div className="absolute top-6 right-6 w-3 h-3 bg-brand-gold/60 rounded-full animate-float opacity-70" />
-                  <div className="absolute bottom-6 left-6 w-2 h-2 bg-white/50 rounded-full animate-float" style={{ animationDelay: '2s' }} />
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-brand-blue mb-3 font-poppins group-hover/card:text-blue-600 transition-colors duration-300 line-clamp-2">
-                    {product.title}
-                  </h3>
-                  <p className="text-gray-600 mb-4 font-montserrat text-sm leading-relaxed group-hover/card:text-gray-700 transition-colors line-clamp-3">
-                    {product.description}
-                  </p>
-
-                  {/* Features */}
-                  <div className="space-y-2 mb-6">
-                    {product.features.slice(0, 3).map((feature, featureIndex) => (
-                      <div key={featureIndex} className="flex items-start text-sm">
-                        <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-gold flex-shrink-0 mr-2 mt-2"></span>
-                        <span className="text-gray-600 group-hover/card:text-gray-700 transition-colors">{feature}</span>
-                      </div>
-                    ))}
+            product.id !== "View_All_Products" ? (
+              <div
+                key={product.id}
+                className={cn(
+                  "flex-shrink-0 px-3 select-none h-full",
+                  isMobile ? "w-full" : isTablet ? "w-1/2" : "w-1/3"
+                )}
+              >
+                <div className="group/card relative bg-white rounded-xl overflow-hidden hover-lift transition-all duration-500 depth-2 hover:depth-4 border border-gray-200 hover:border-brand-blue/30 shadow-lg hover:shadow-2xl">
+                  {/* Category Badge */}
+                  <div className="absolute top-4 left-4 z-20 bg-brand-blue text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
+                    {product.category}
                   </div>
 
-                  {/* CTA Button */}
-                  <Button 
-                    asChild 
-                    className="w-full bg-brand-blue hover:bg-blue-900 text-white transition-all duration-300 group-hover/card:shadow-lg"
-                  >
-                    <Link to="/products" className="flex items-center justify-center">
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-1" />
-                    </Link>
-                  </Button>
-                </div>
+                  {/* Image Container */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                    <img 
+                      src={product.image} 
+                      alt={product.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
+                    
+                    {/* Floating Elements */}
+                    <div className="absolute top-6 right-6 w-3 h-3 bg-brand-gold/60 rounded-full animate-float opacity-70" />
+                    <div className="absolute bottom-6 left-6 w-2 h-2 bg-white/50 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+                  </div>
 
-                {/* Enhanced Hover Effect Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/5 via-transparent to-brand-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                
-                {/* Enhanced Bottom Accent */}
-                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-brand-gold via-yellow-400 to-brand-gold group-hover/card:w-full transition-all duration-700" />
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-brand-blue mb-3 font-poppins group-hover/card:text-blue-600 transition-colors duration-300 line-clamp-2">
+                      {product.title}
+                    </h3>
+                    <p className="text-gray-600 mb-4 font-montserrat text-sm leading-relaxed group-hover/card:text-gray-700 transition-colors line-clamp-3">
+                      {product.description}
+                    </p>
+
+                    {/* Features */}
+                    <div className="space-y-2 mb-6">
+                      {product.features.slice(0, 3).map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start text-sm">
+                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-gold flex-shrink-0 mr-2 mt-2"></span>
+                          <span className="text-gray-600 group-hover/card:text-gray-700 transition-colors">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <Button 
+                      asChild 
+                      className="w-full bg-brand-blue hover:bg-blue-900 text-white transition-all duration-300 group-hover/card:shadow-lg"
+                    >
+                      <Link to={`/products/${product.id}`} className="flex items-center justify-center">
+                        Know More
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Enhanced Hover Effect Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/5 via-transparent to-brand-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  {/* Enhanced Bottom Accent */}
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-brand-gold via-yellow-400 to-brand-gold group-hover/card:w-full transition-all duration-700" />
+                </div>
               </div>
-            </div>
+            ) : (
+              // View All Products Card
+              <div
+                key={product.id}
+                className={cn(
+                  "flex-shrink-0 px-3 select-none h-full",
+                  isMobile ? "w-full" : isTablet ? "w-1/2" : "w-1/3"
+                )}
+              >
+                <div className="group/card relative bg-white rounded-xl overflow-hidden hover-lift transition-all duration-500 depth-2 hover:depth-4 border border-gray-200 hover:border-brand-blue/30 shadow-lg hover:shadow-2xl">
+                  {/* Image Container - View All Products Design */}
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gradient-to-br from-brand-blue/10 to-brand-blue/20 flex flex-col items-center justify-center">
+                    {/* Icon */}
+                    <div className="mb-4 p-4 bg-brand-blue rounded-full group-hover/card:bg-blue-900 transition-colors duration-300 group-hover/card:scale-110 transform">
+                      <svg 
+                        className="w-8 h-8 text-white" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" 
+                        />
+                      </svg>
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-lg font-bold text-brand-blue text-center group-hover/card:text-blue-900 transition-colors duration-300">
+                      View All Products
+                    </h3>
+                    
+                    {/* Floating Elements */}
+                    <div className="absolute top-6 right-6 w-3 h-3 bg-brand-gold/60 rounded-full animate-float opacity-70" />
+                    <div className="absolute bottom-6 left-6 w-2 h-2 bg-white/50 rounded-full animate-float" style={{ animationDelay: '2s' }} />
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-bold text-brand-blue mb-3 font-poppins group-hover/card:text-blue-600 transition-colors duration-300">
+                      Explore Our Full Range
+                    </h3>
+                    <p className="text-gray-600 mb-4 font-montserrat text-sm leading-relaxed group-hover/card:text-gray-700 transition-colors">
+                      Discover our complete collection of premium wire solutions and industrial products tailored for your needs.
+                    </p>
+
+                    {/* Features */}
+                    <div className="space-y-2 mb-6">
+                      {['Complete product catalog', 'Detailed specifications', 'Compare & choose'].map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-start text-sm">
+                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-gold flex-shrink-0 mr-2 mt-2"></span>
+                          <span className="text-gray-600 group-hover/card:text-gray-700 transition-colors">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA Button */}
+                    <Button 
+                      asChild 
+                      className="w-full bg-brand-blue hover:bg-blue-900 text-white transition-all duration-300 group-hover/card:shadow-lg"
+                    >
+                      <Link to="/products" className="flex items-center justify-center">
+                        View All Products
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-1" />
+                      </Link>
+                    </Button>
+                  </div>
+
+                  {/* Enhanced Hover Effect Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-brand-gold/5 via-transparent to-brand-blue/5 opacity-0 group-hover/card:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                  
+                  {/* Enhanced Bottom Accent */}
+                  <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-brand-gold via-yellow-400 to-brand-gold group-hover/card:w-full transition-all duration-700" />
+                </div>
+              </div>
+            )
           ))}
         </div>
       </div>

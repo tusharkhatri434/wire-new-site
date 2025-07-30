@@ -1027,13 +1027,13 @@ const ProductDetails = [
   }
 ]
 
-// const arr = ProductDetails.map((item)=>{
-//   const id = item.id;
-//   const name = item.name || item.product;
-//   const image = item.image;
+const arr = ProductDetails.map((item)=>{
+  const id = item.id;
+  const name = item.name || item.product;
+  const image = item.image;
 
-//   return{id,name,image};
-// });
+  return{id};
+});
 
-// console.log(arr);
+console.log(arr);
 export default ProductDetails;

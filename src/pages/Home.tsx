@@ -44,14 +44,25 @@ const Home = () => {
     description: "Blending tradition with durability for decorative and functional applications.",
     features: ["Tarnish resistant", "Consistent plating", "Flexible yet strong", "True-to-color finishing"],
     category: "Decorative Wires"
-  }, {
-    id: "consumables",
-    title: "Consumables",
+  },
+  // , {
+  //   id: "consumables",
+  //   title: "Consumables",
+  //   image: "/lovable-uploads/a05ed1e3-8bb7-43c2-a3f3-e3e33bd8ab6d.png",
+  //   description: "Filters, rings, resins & beyond - everything you need for optimal wire processing.",
+  //   features: ["EDM machine filters", "Dielectric resins", "Pickup electrodes", "Process enhancers"],
+  //   category: "Process Support"
+  // }, 
+  {
+    id: "View_All_Products",
+    title: "View All Products",
     image: "/lovable-uploads/a05ed1e3-8bb7-43c2-a3f3-e3e33bd8ab6d.png",
-    description: "Filters, rings, resins & beyond - everything you need for optimal wire processing.",
+    description: "Lorem ipseme ",
     features: ["EDM machine filters", "Dielectric resins", "Pickup electrodes", "Process enhancers"],
     category: "Process Support"
-  }];
+  }
+];
+
   const achievements = [{
     title: "Presidential Recognition",
     description: "Awarded by the President of India for providing essential brazing alloys during critical stages of national development.",
@@ -69,6 +80,7 @@ const Home = () => {
     description: "Supporting India's self-reliance movement by developing indigenous high-precision manufacturing capabilities.",
     icon: <Star className="h-5 w-5 text-brand-gold" />
   }];
+
   const industries = [{
     title: "Defense & Aerospace",
     description: "For mission-critical assemblies requiring the highest precision and reliability standards.",
@@ -99,7 +111,8 @@ const Home = () => {
     description: "Serving international markets with world-class wire solutions.",
     icon: <Globe className="h-6 w-6 text-white" />,
     stats: "15+ Countries"
-  }];
+  }
+];
   return <div className="flex flex-col">
       {/* Enhanced Hero Section */}
       {/* <HeroSection title="Leading the Wirevolution" subtitle="Where innovation meets metallurgy — crafting wires that empower industries, elevate performance, and define reliability." backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png" buttonText="Explore Our Product Range" buttonLink="/products" /> */}

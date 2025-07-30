@@ -116,136 +116,260 @@ const Header = ({
       "id": 1,
       "name": "Non-Ferrous wire",
       "link": false,
-      "path": "/products/non-ferrous-wire",
+      "path": "/products",
       "children": [
-        { "id": 2, "name": "EDM Wire", "link": true, "path": "/products/1" },
-        { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/zari-wire" },
-        { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/copper-extrusions" },
-        { "id": 5, "name": "Molly Wire", "link": true, "path": "/products/molly-wire" },
-        { "id": 6, "name": "Copper wire", "link": true, "path": "/products/copper-wire" },
-        {
-          "id": 7,
-          "name": "plain brass wire",
-          "link": true,
-          "path": "/products/plain-brass-wire",
-          "children": [
+        { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/6" },
+        { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/7" },
+        { "id": 5, "name": "Molly Wire", "link": true, "path": "/products/8" },
+        { "id": 6, "name": "Copper wire", "link": true, "path": "/products/9" },
+        { "id": 2, "name": "EDM Wire", "link": true, "path": "/products/5", 
+          "children":[
+            {
+              "id": 7,
+              "name": "plain brass wire",
+              "link": true,
+              "path": "/products/1"
+            },
             {
               "id": 8,
               "name": "diffused coated wire",
               "link": true,
-              "path": "/products/diffused-coated-wire",
-              "children": [
-                {
-                  "id": 9,
-                  "name": "Zinc diffused coated wire",
-                  "link": true,
-                  "path": "/products/zinc-diffused-coated-wire",
-                  "children": [
-                    { "id": 10, "name": "Zinc coated wire", "link": true, "path": "/products/zinc-coated-wire" }
-                  ]
-                }
-              ]
-            }
+              "path": "/products/2",
+            },
+            {
+             "id": 9,
+             "name": "Zinc diffused coated wire",
+             "link": true,
+             "path": "/products/3",
+            },
+            { "id": 10, "name": "Zinc coated wire", "link": true, "path": "/products/4" }
           ]
-        }
-      ]
-    },
-    {
+        }]
+    },{
       "id": 11,
       "name": "Brazing And Welding",
-      "link": true,
-      "path": "/products/brazing-and-welding",
-      "children": [
-        { "id": 12, "name": "Copper Wire for Induction Brazing", "link": true, "path": "/products/copper-wire-induction-brazing" },
-        { "id": 13, "name": "Brazing wire", "link": true, "path": "/products/brazing-wire" },
-        {
-          "id": 14,
-          "name": "Induction Brazing Wire & Rings",
-          "link": true,
-          "path": "/products/induction-brazing-wire-rings",
-          "children": [
-            { "id": 15, "name": "Brass Brazing RBCuZn-c", "link": true, "path": "/products/brass-brazing-rbcuzn-c" },
-            { "id": 16, "name": "Copper Phosphor Brazing Wire", "link": true, "path": "/products/copper-phosphor-brazing-wire" }
-          ]
+      "link": false,
+      "path": "/products",
+      "children":[
+      {
+        "id": 12,
+       "name": "Copper Wire for Induction Brazing",
+       "link": true,
+       "path": "/products/18",
         },
         {
-          "id": 17,
-          "name": "Welding Wire",
-          "link": true,
-          "path": "/products/welding-wire",
-          "children": [
-            { "id": 18, "name": "Copper alloy", "link": true, "path": "/products/copper-alloy" },
-            {
-              "id": 19,
-              "name": "Aluminum",
-              "link": true,
-              "path": "/products/aluminum",
-              "children": [
-                { "id": 20, "name": "4043", "link": true, "path": "/products/aluminum-4043" },
-                { "id": 21, "name": "5357", "link": true, "path": "/products/aluminum-5357" },
-                { "id": 22, "name": "4047", "link": true, "path": "/products/aluminum-4047" }
-              ]
-            },
-            { "id": 23, "name": "Er Cu Sia", "link": true, "path": "/products/er-cu-sia" },
-            { "id": 24, "name": "Er Cu", "link": true, "path": "/products/er-cu" },
-            { "id": 25, "name": "Er Cu SuC", "link": true, "path": "/products/er-cu-suc" },
-            { "id": 26, "name": "Er Cu Sn A", "link": true, "path": "/products/er-cu-sn-a" },
-            { "id": 27, "name": "CuAl A1", "link": true, "path": "/products/cual-a1" },
-            { "id": 28, "name": "Cu Al A2", "link": true, "path": "/products/cu-al-a2" },
-            { "id": 29, "name": "Sudronic", "link": true, "path": "/products/sudronic" }
-          ]
+        "id": 13,
+       "name": "Brazing wire",
+       "link": true,
+       "path": "/products/19",
+       "children":[
+        {
+        "id": 14,
+       "name": "Induction Brazing Wire & Rings",
+       "link": true,
+       "path": "/products/20"
+        },
+        {
+        "id": 15  ,
+       "name": "Brass Brazing RBCuZn-c",
+       "link": true,
+       "path": "/products/21"
+        },
+        {
+        "id": 16,
+       "name": "Copper Phosphor Brazing Wire",
+       "link": true,
+       "path": "/products/22"
         }
+       ]
+        },
+         {
+        "id": 16,
+       "name": " Welding Wire",
+       "link": false,
+       "path": "/products",
+       "children":[
+      {
+        "id": 17,
+       "name": "Copper Alloy",
+       "link": false,
+       "path": "/products",
+       "children":[
+      {
+        "id": 18,
+       "name": "Er Cu Sia",
+       "link": true,
+       "path": "/products/23",
+      },
+         {
+        "id": 19,
+       "name": "Er Cu",
+       "link": true,
+       "path": "/products/24",
+      },
+         {
+        "id": 20,
+       "name": "Er Cu SnC",
+       "link": true,
+       "path": "/products/25",
+      },
+         {
+        "id": 21,
+       "name": "Er Cu Sn A",
+       "link": true,
+       "path": "/products/26",
+      },
+         {
+        "id": 22,
+       "name": "CuAl A1",
+       "link": true,
+       "path": "/products/27",
+      },
+         {
+        "id": 23,
+       "name": "CuAl A2",
+       "link": true,
+       "path": "/products/28",
+      },
+         {
+        "id": 24,
+       "name": "Sudronic",
+       "link": true,
+       "path": "/products/29",
+      },
+       ]
+      },
+      {
+        "id": 25,
+       "name": "Aluminum",
+       "link": false,
+       "path": "/products",
+       "children":[
+        {
+        "id": 26,
+       "name": "4043",
+       "link": true,
+       "path": "/products/30",
+      },
+        {
+        "id": 27,
+       "name": "5357",
+       "link": true,
+       "path": "/products/31",
+      },
+        {
+        "id": 28,
+       "name": "4047",
+       "link": true,
+       "path": "/products/32",
+      }
+       ]
+      }
+       ]
+        },
       ]
     },
-    {
-      "id": 30,
-      "name": "Consumables",
-      "link": true,
-      "path": "/products/consumables",
-      "children": [
-        { "id": 31, "name": "Resin", "link": true, "path": "/products/resin" },
-        { "id": 32, "name": "Ointment oil", "link": true, "path": "/products/ointment-oil" },
-        { "id": 33, "name": "Filter", "link": true, "path": "/products/filter" },
+      {
+      "id": 29,
+      "name": " Consumables",
+      "link": false,
+      "path": "/products",
+       "children":[
         {
+          "id": 30,
+          "name": "Resin",
+          "link": true,
+          "path": "/products/10"
+        },
+        {
+          "id": 31,
+          "name": "Ointment Oil",
+          "link": true,
+          "path": "/products/11"
+        },
+        {
+          "id": 32,
+          "name": "Filter",
+          "link": true,
+          "path": "/products/12"
+        },
+        {
+          "id": 33,
+          "name": "Current Pickup Assembly",
+          "link": true,
+          "path": "/products/13",
+          "children":[
+          {
           "id": 34,
-          "name": "current pickup",
-          "link": false, // Example of non-linkable item
-          "children": [
-            { "id": 35, "name": "Diamond edm", "link": true, "path": "/products/diamond-edm" },
-            { "id": 36, "name": "Current Pickup", "link": true, "path": "/products/current-pickup" }
+          "name": "Diamond EDM Pickup",
+          "link": true,
+          "path": "/products/131"
+        },
+        {
+          "id": 35,
+          "name": "Current Pickup (Standard)",
+          "link": true,
+          "path": "/products/132"
+        },
           ]
         },
-        { "id": 37, "name": "mineral", "link": true, "path": "/products/mineral" },
-        { "id": 38, "name": "Rust Remover", "link": true, "path": "/products/rust-remover" },
+   
+        {
+          "id": 36,
+          "name": "Mineral",
+          "link": true,
+          "path": "/products/14"
+        },
+        {
+          "id": 37,
+          "name": "Rust Remover",
+          "link": true,
+          "path": "/products/15"
+        },
+        {
+          "id": 42,
+          "name": " Tube Electrode",
+          "link": false,
+          "path": "/products/15",
+          "children":[
+          {
+          "id": 38,
+          "name": "Copper Tube Electrode",
+          "link": true,
+          "path": "/products/161"
+        },
         {
           "id": 39,
-          "name": "Tube Electrode",
+          "name": "Brass Tube Electrode",
           "link": true,
-          "path": "/products/tube-electrode",
-          "children": [
-            {
-              "id": 40,
-              "name": "Copper Tube and Brass tube",
-              "link": true,
-              "path": "/products/copper-tube-brass-tube",
-              "children": [
-                {
-                  "id": 41,
-                  "name": "Drill Guide",
-                  "link": true,
-                  "path": "/products/drill-guide",
-                  "children": [
-                    { "id": 42, "name": "Japanese Drill guide", "link": true, "path": "/products/japanese-drill-guide" },
-                    { "id": 43, "name": "Edm Drill Guide", "link": true, "path": "/products/edm-drill-guide" }
-                  ]
-                }
-              ]
-            }
+          "path": "/products/162"
+        },
           ]
+        },
+        {
+          "id": 43,
+          "name": "Drill Guide",
+          "link": false,
+          "path": "/products/171",
+          "children":[
+          {
+          "id": 40,
+          "name": "Japanese Drill Guide",
+          "link": true,
+          "path": "/products/171"
+        },
+        {
+          "id": 41,
+          "name": "EDM Drill Guide (Standard)",
+          "link": true,
+          "path": "/products/172"
+        }]
         }
-      ]
+       ]
     }
-  ];
+
+    
+  ]
 
   // Get product category icons
   const getProductCategoryIcon = (name: string) => {
