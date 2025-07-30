@@ -14,13 +14,13 @@ const slides: Slide[] = [
   },
   {
     image: "/lovable-uploads/slider-2.png",
-    title: "Tech Innovations",
-    subtitle: "Step into the future with us.",
+    title: "Leading the Wirevolution",
+    subtitle: "Where innovation meets metallurgy and define reliability.",
   },
   {
     image: "/lovable-uploads/slider-3.jpg",
-    title: "Urban Adventures",
-    subtitle: "Uncover the pulse of modern cities.",
+  title: "Leading the Wirevolution",
+    subtitle: "Where innovation meets metallurgy and define reliability.",
   },
 ]
 
@@ -66,8 +66,8 @@ export default function HeroSlider() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center text-center px-4">
-        <h1 className="text-4xl sm:text-5xl text-yellow-500 font-bold drop-shadow-lg mb-4">
+      <div className="absolute inset-0 bg-black/50 flex flex-col justify-center pl-24">
+        <h1 className="text-4xl sm:text-5xl text-yellow-500 font-bold drop-shadow-lg md:mb-4">
           {title}
         </h1>
         <p className="text-lg sm:text-xl text-white drop-shadow-md">

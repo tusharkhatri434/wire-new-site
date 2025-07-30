@@ -45,21 +45,13 @@ const Home = () => {
     features: ["Tarnish resistant", "Consistent plating", "Flexible yet strong", "True-to-color finishing"],
     category: "Decorative Wires"
   },
-  // , {
-  //   id: "consumables",
-  //   title: "Consumables",
-  //   image: "/lovable-uploads/a05ed1e3-8bb7-43c2-a3f3-e3e33bd8ab6d.png",
-  //   description: "Filters, rings, resins & beyond - everything you need for optimal wire processing.",
-  //   features: ["EDM machine filters", "Dielectric resins", "Pickup electrodes", "Process enhancers"],
-  //   category: "Process Support"
-  // }, 
   {
     id: "View_All_Products",
-    title: "View All Products",
-    image: "/lovable-uploads/a05ed1e3-8bb7-43c2-a3f3-e3e33bd8ab6d.png",
-    description: "Lorem ipseme ",
-    features: ["EDM machine filters", "Dielectric resins", "Pickup electrodes", "Process enhancers"],
-    category: "Process Support"
+    title: "Explore Our Full Range",
+    image: "/lovable-uploads/product/image.png",
+    description: "Discover our complete collection of premium wire solutions.",
+    features: ["Complete product catalog", "Detailed specifications", "Pickup electrodes", "Compare & choose"],
+    category: "Decorative Wires"
   }
 ];
 
