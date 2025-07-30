@@ -89,11 +89,11 @@ const ProductDetails = ({ productData }) => {
       <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-8 mb-8 text-white">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="lg:w-1/3">
-            <div className="bg-white p-4 rounded-xl shadow-lg">
+            <div className="bg-white p-2 rounded-xl shadow-lg">
               <img 
                 src={image} 
                 alt={product || name} 
-                className="w-full h-64 object-contain rounded-lg" 
+                className="w-full h-96  object-contain rounded-lg" 
               />
             </div>
           </div>
@@ -115,8 +115,8 @@ const ProductDetails = ({ productData }) => {
             <h2 className="text-2xl font-semibold mb-4 text-gray-800">Key Features</h2>
             <div className="grid md:grid-cols-2 gap-3">
               {keyFeatures.map((feature, i) => (
-                <div key={i} className="flex items-start gap-3 bg-green-50 p-4 rounded-lg">
-                  <div className="w-2 h-2 bg-green-500 rounded-full mt-2 flex-shrink-0"></div>
+                <div key={i} className="flex items-start gap-3 bg-blue-50 p-4 rounded-lg">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full mt-2 flex-shrink-0"></div>
                   <span className="text-gray-700">{feature}</span>
                 </div>
               ))}

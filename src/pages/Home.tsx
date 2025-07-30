@@ -222,7 +222,7 @@ const Home = () => {
                     <Quote className="h-6 w-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <blockquote className="text-lg md:text-xl text-gray-700 not-italic not-italic mb-6 italic">
+                    <blockquote className="text-lg md:text-xl text-gray-700 not-italic mb-6 italic">
                       "Maheshwari Wires has consistently delivered high-quality products that meet our exacting standards for aerospace applications. Their technical expertise and commitment to quality make them a valuable partner in our critical projects."
                     </blockquote>
                     <div className="flex items-center">
