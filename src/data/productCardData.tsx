@@ -541,7 +541,7 @@ export const allProducts = [
       "Smooth surface finish",
       "Compatible with most EDM machines"
     ],
-     image: '/lovable-uploads/product/edmplainbrasswirefinal.webp',
+     image: '/lovable-uploads/product/plain_brass_emd_wire_final.jpg',
      link:1,
     category: "Non-Ferrous Wire",
     subcategory: "Wire Products"
@@ -690,7 +690,7 @@ export const allProducts = [
       "Suited for automation"
     ],
     tags: ["Rings", "Wire", "Induction"],
-     image: '/lovable-uploads/product/copperwireforinductionbrazing.webp',
+     image: '/lovable-uploads/product/Brazing_ring_final.webp',
      link:20,
     category: "Brazing and Welding",
     subcategory: "Brazing Wire"

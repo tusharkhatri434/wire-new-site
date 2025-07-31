@@ -2,7 +2,7 @@ const ProductDetails = [
  {
   id: 1,
   product: "Plain Brass Wire",
-  image: "/lovable-uploads/product/edmplainbrasswirefinal.webp",
+  image: "/lovable-uploads/product/plain_brass_emd_wire_final.jpg",
   description: "Plain Brass Wire is a high-precision wire primarily composed of copper and zinc, offering exceptional mechanical strength, corrosion resistance, and electrical conductivity. It is widely used in various industrial applications due to its excellent machinability and smooth surface finish. The uniform diameter and ductility of the wire make it ideal for electrical discharge machining (EDM) and other technical applications requiring accuracy. Manufactured with tight tolerances and a bright finish, it ensures minimal deviation, clean cuts, and extended life during high-speed operations.",
   keyFeatures: [
     "Smooth, polished surface with uniform diameter",
@@ -959,7 +959,7 @@ const ProductDetails = [
   {
     id: 20,
     name: "Induction Brazing Wire & Rings",
-    image: "/lovable-uploads/product/copperwireforinductionbrazing.webp",
+    image: "/lovable-uploads/product/Brazing_ring_final.webp",
     description: "These pre-formed wires and rings are designed specifically for induction brazing, allowing faster cycle times and consistent joint quality. The closed-loop design simplifies production and eliminates excess filler usage.",
     keyFeatures: [
       "Pre-formed rings enable uniform brazing",
