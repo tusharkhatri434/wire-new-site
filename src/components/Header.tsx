@@ -382,6 +382,7 @@ const Header = ({
   // Toggle product category expansion
   const toggleProductCategory = (categoryId: number, event?: React.MouseEvent) => {
     if (event) {
+      event.preventDefault();
       event.stopPropagation();
     }
     const newExpanded = new Set(expandedProductCategories);
@@ -393,7 +394,18 @@ const Header = ({
     setExpandedProductCategories(newExpanded);
   };
 
-  // Handle product item click
+  // Handle product item text click (for navigation)
+  const handleProductTextClick = (item: ProductItem, event: React.MouseEvent) => {
+    // Only navigate if item is linkable and has a path
+    if (item.link && item.path) {
+      event.stopPropagation();
+      window.scrollTo(0, 0);
+      setIsMenuOpen(false);
+      setOpenDropdowns({});
+    }
+  };
+
+  // Handle product item click (for items without children or non-linkable items)
   const handleProductItemClick = (item: ProductItem, event: React.MouseEvent) => {
     const hasChildren = item.children && item.children.length > 0;
     
@@ -403,7 +415,7 @@ const Header = ({
       toggleProductCategory(item.id, event);
     }
     
-    // If item is linkable and has a path, navigate
+    // If item is linkable and has a path and no children, navigate
     if (item.link && item.path && !hasChildren) {
       window.scrollTo(0, 0);
       setIsMenuOpen(false);
@@ -535,50 +547,75 @@ const Header = ({
           "flex items-center gap-2 p-2 rounded-md transition-colors text-xs",
           level === 0 ? 'font-semibold text-brand-blue border-b border-gray-100 mb-1' : 
           level === 1 ? 'font-medium text-gray-700' : 
-          'text-gray-600',
-          (isClickable || hasChildren) ? 'cursor-pointer hover:bg-gray-50' : 'cursor-default'
+          'text-gray-600'
         )}
         style={{ paddingLeft: `${8 + paddingLeft}px` }}
-        onClick={(e) => handleProductItemClick(item, e)}
       >
+        {/* Chevron Button - Only show if has children */}
         {hasChildren && (
-          <div className="flex-shrink-0">
+          <button
+            className="flex-shrink-0 p-1 hover:bg-gray-100 rounded transition-colors touch-manipulation"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleProductCategory(item.id, e);
+            }}
+            type="button"
+          >
             {isExpanded ? (
               <ChevronDown className="w-3 h-3 text-gray-500" />
             ) : (
               <ChevronDown className="w-3 h-3 text-gray-500 -rotate-90" />
             )}
-          </div>
+          </button>
         )}
         
         <div className="flex-shrink-0">
           {getProductCategoryIcon(item.name)}
         </div>
         
-        <span className="flex-1 capitalize truncate" title={item.name}>
-          {item.name}
-        </span>
+        {/* Product Name - Clickable if linkable */}
+        {isClickable ? (
+          <Link
+            to={item.path!}
+            className="flex-1 capitalize truncate hover:text-brand-blue transition-colors font-medium underline-offset-2 hover:underline" 
+            title={item.name}
+            onClick={(e) => {
+              e.stopPropagation();
+              handleNavigation();
+              setOpenDropdowns({});
+            }}
+          >
+            {item.name}
+          </Link>
+        ) : (
+          <span 
+            className={cn(
+              "flex-1 capitalize truncate",
+              hasChildren ? "cursor-pointer hover:text-brand-blue transition-colors" : "cursor-default"
+            )} 
+            title={item.name}
+            onClick={hasChildren ? (e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleProductCategory(item.id, e);
+            } : undefined}
+          >
+            {item.name}
+          </span>
+        )}
         
-        {hasChildren && (
+        {/* {hasChildren && (
           <span className="text-xs bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded-full">
             {item.children!.length}
           </span>
-        )}
+        )} */}
       </div>
     );
 
     return (
       <div key={item.id} style={{ breakInside: 'avoid', marginBottom: '2px' }}>
-        {isClickable && !hasChildren ? (
-          <Link to={item.path!} onClick={() => {
-            handleNavigation();
-            setOpenDropdowns({});
-          }}>
-            <ItemContent />
-          </Link>
-        ) : (
-          <ItemContent />
-        )}
+        <ItemContent />
 
         {hasChildren && isExpanded && (
           <div className="border-l border-gray-200 ml-4">
@@ -598,7 +635,7 @@ const Header = ({
     if (item.label === "Products") {
       return (
         <div key={itemKey} className={isMobile ? "border-t border-gray-100 first:border-t-0" : ""}>
-          <button 
+                      <button 
             data-dropdown={itemKey}
             className={cn(
               isMobile ? 
@@ -609,13 +646,25 @@ const Header = ({
                 "text-brand-blue"
             )} 
             onClick={(e) => toggleDropdown(e, itemKey)}
+            onMouseEnter={() => {
+              if (isDesktop && !isMobile) {
+                setOpenDropdowns(prev => {
+                  const newState = { ...prev };
+                  Object.keys(newState).forEach(k => {
+                    if (k !== itemKey) newState[k] = false;
+                  });
+                  newState[itemKey] = true;
+                  return newState;
+                });
+              }
+            }}
             aria-expanded={openDropdowns[itemKey]}
             aria-haspopup="true"
           >
             <span className="flex items-center">
               {item.icon}
               <Link to={item.path}>
-                {item.label} ({totalProducts})
+                {item.label}
               </Link>
             </span>
             <ChevronDown className={cn("h-3 w-3 transition-all duration-300", openDropdowns[itemKey] && "transform rotate-180")} />
@@ -626,28 +675,12 @@ const Header = ({
               ref={(ref) => addDropdownRef(itemKey, ref)}
               className={isMobile ? 
                 "pl-3 mt-2 border-l-2 border-brand-gold ml-4 bg-white rounded-lg py-2 shadow-lg animate-slide-in-up max-h-80 overflow-y-auto" : 
-                "absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl py-3 z-[60] border border-brand-blue/10 animate-scale-in overflow-y-auto"}
+                "absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl py-3 z-[9999] border border-brand-blue/10 animate-scale-in overflow-y-auto"}
               style={!isMobile ? { 
                 width: '420px', 
                 maxHeight: '70vh',
               } : {}}
             >
-              {/* Header */}
-              {/* <div className="px-3 pb-2 mb-2 border-b border-gray-200">
-                <Link 
-                  to={item.path} 
-                  className="flex items-center text-brand-blue font-bold hover:text-brand-blue/80 transition-colors text-xs"
-                  onClick={() => {
-                    handleNavigation();
-                    setOpenDropdowns({});
-                  }}
-                >
-                  {item.icon}
-                  All Products ({totalProducts} items)
-                </Link>
-                <p className="text-xs text-gray-500 mt-1">Click categories to expand • Blue items are clickable</p>
-              </div> */}
-              
               {/* Product Categories */}
               <div className="px-2">
                 {productsData.map(category => renderProductItem(category))}
@@ -673,7 +706,7 @@ const Header = ({
     }
 
     // Regular menu item handling
-    if (!isMobile && hasChildren && level > 0) {
+    if (!isMobile && !isTablet && hasChildren && level > 0) {
       return (
         <div key={itemKey} className="relative group/submenu">
           <button 
@@ -684,7 +717,7 @@ const Header = ({
             <span className="font-semibold">{item.label}</span>
             <ChevronDown className="h-3 w-3 ml-2 transform -rotate-90 transition-transform group-hover/submenu:scale-110" />
           </button>
-          <div className="absolute left-full top-0 mt-0 ml-2 w-60 bg-white rounded-xl shadow-2xl py-2 z-[70] hidden group-hover/submenu:block border border-brand-blue/10 animate-scale-in">
+          <div className="absolute left-full top-0 mt-0 ml-2 w-60 bg-white rounded-xl shadow-2xl py-2 z-[9999] hidden group-hover/submenu:block border border-brand-blue/10 animate-scale-in">
             {item.children?.map((child, childIndex) => 
               renderDropdownItem(child, childIndex, level + 1, itemKey)
             )}
@@ -724,25 +757,14 @@ const Header = ({
               ref={(ref) => addDropdownRef(itemKey, ref)}
               className={isMobile ? 
                 "pl-3 mt-2 border-l-2 border-brand-gold ml-4 bg-white rounded-lg py-2 shadow-lg animate-slide-in-up" : 
-                "absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl py-3 z-[60] border border-brand-blue/10 animate-scale-in overflow-y-auto"}
+                "absolute top-full left-0 mt-2 bg-white rounded-xl shadow-2xl py-3 z-[9999] border border-brand-blue/10 animate-scale-in overflow-y-auto"}
               style={!isMobile ? { width: '280px', maxHeight: '70vh' } : {}}
-            >
-              {/* {level === 0 && !isMobile && (
-                <Link 
-                  to={item.path} 
-                  className="block w-full text-left px-3 py-2 text-brand-blue font-bold hover:bg-gray-50 transition-all duration-300 border-b border-brand-blue/10 rounded-t-lg text-xs mb-2" 
-                  onClick={() => {
-                    handleNavigation();
-                    setOpenDropdowns({});
-                  }}
-                >
-                  <div className="flex items-center">
-                    {item.icon}
-                    All {item.label}
-                  </div>
-                </Link>
-              )} */}
-              
+              onMouseLeave={() => {
+                if (isDesktop && !isMobile) {
+                  setOpenDropdowns(prev => ({...prev, [itemKey]: false}));
+                }
+              }}
+            >              
               <div className="space-y-1">
                 {item.children?.map((child, childIndex) => (
                   <div key={childIndex}>
@@ -784,7 +806,7 @@ const Header = ({
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 w-full flex flex-col bg-white shadow-xl border-b border-brand-blue/20 transition-all duration-300" ref={headerRef}>
+    <header className="fixed top-0 left-0 right-0 z-[9998] w-full flex flex-col bg-white shadow-xl border-b border-brand-blue/20 transition-all duration-300" ref={headerRef}>
       {/* Enhanced Top Info Bar - More compact */}
       <div className="bg-gradient-to-r from-brand-blue to-brand-blue/95 text-white py-1 px-4 hidden lg:block">
         <div className="container mx-auto flex justify-between items-center text-xs">
@@ -819,7 +841,7 @@ const Header = ({
           </Link>
 
           {/* Enhanced Desktop Navigation - Smaller and more compact */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden md:flex items-center space-x-1">
             {menuItems.map((item, index) => {
               const itemKey = `menu-${index}`;
               
@@ -835,7 +857,18 @@ const Header = ({
                           "text-brand-blue hover:bg-white hover:text-brand-blue hover:shadow-lg border border-transparent hover:border-brand-blue/20"
                       )} 
                       onClick={(e) => toggleDropdown(e, itemKey)}
-                      onMouseEnter={isDesktop ? (e) => toggleDropdown(e, itemKey) : undefined}
+                      onMouseEnter={() => {
+                        if (isDesktop) {
+                          setOpenDropdowns(prev => {
+                            const newState = { ...prev };
+                            Object.keys(newState).forEach(k => {
+                              if (k !== itemKey) newState[k] = false;
+                            });
+                            newState[itemKey] = true;
+                            return newState;
+                          });
+                        }
+                      }}
                       aria-expanded={openDropdowns[itemKey]}
                     >
                       <span className="flex items-center relative z-10">
@@ -853,31 +886,19 @@ const Header = ({
 
                     {openDropdowns[itemKey] && (
                       <div 
-                        className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-2xl py-3 z-50 border border-brand-blue/10 animate-scale-in overflow-y-auto"
+                        className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-2xl py-3 z-[9999] border border-brand-blue/10 animate-scale-in overflow-y-auto"
                         style={item.label === 'Products' ? { 
                           width: '420px', 
                           maxHeight: '70vh',
                         } : { width: '280px', maxHeight: '70vh' }}
-                        onMouseLeave={isDesktop ? () => setOpenDropdowns(prev => ({...prev, [itemKey]: false})) : undefined}
+                        onMouseLeave={() => {
+                          if (isDesktop) {
+                            setOpenDropdowns(prev => ({...prev, [itemKey]: false}));
+                          }
+                        }}
                       >
                         {item.label === "Products" ? (
                           <>
-                            {/* Header */}
-                            {/* <div className="px-3 pb-2 mb-2 border-b border-gray-200">
-                              <Link 
-                                to={item.path} 
-                                className="flex items-center text-brand-blue font-bold hover:text-brand-blue/80 transition-colors text-xs"
-                                onClick={() => {
-                                  handleNavigation();
-                                  setOpenDropdowns({});
-                                }}
-                              >
-                                <span className="hidden xl:inline">{item.icon}</span>
-                                <span className={cn(item.icon ? "xl:ml-1" : "")}>All Products ({totalProducts} items)</span>
-                              </Link>
-                              <p className="text-xs text-gray-500 mt-1">Click categories to expand • Blue items are clickable</p>
-                            </div> */}
-                            
                             {/* Product Categories */}
                             <div className="px-2">
                               {productsData.map(category => renderProductItem(category))}
@@ -899,20 +920,6 @@ const Header = ({
                           </>
                         ) : (
                           <>
-                            {/* <Link 
-                              to={item.path} 
-                              className="block w-full text-left px-3 py-2 text-brand-blue font-bold hover:bg-gray-50 transition-all duration-300 border-b border-brand-blue/10 text-xs mb-2" 
-                              onClick={() => {
-                                handleNavigation();
-                                setOpenDropdowns({});
-                              }}
-                            >
-                              <div className="flex items-center">
-                                <span className="hidden xl:inline">{item.icon}</span>
-                                <span className={cn(item.icon ? "xl:ml-1" : "")}>All {item.label}</span>
-                              </div>
-                            </Link> */}
-                            
                             <div className="space-y-1">
                               {item.children?.map((child, childIndex) => 
                                 renderDropdownItem(child, childIndex, 1, itemKey)
@@ -954,7 +961,7 @@ const Header = ({
             variant="ghost" 
             size="icon" 
             className={cn(
-              "lg:hidden relative overflow-hidden transition-all duration-300 hover:scale-110 w-8 h-8",
+              "md:hidden relative overflow-hidden transition-all duration-300 hover:scale-110 w-8 h-8",
               isMenuOpen ? "bg-brand-blue text-white shadow-lg" : "text-brand-blue hover:bg-brand-blue/10 border border-brand-blue/20"
             )} 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
@@ -979,7 +986,7 @@ const Header = ({
 
       {/* Enhanced Mobile Navigation - More compact */}
       {isMenuOpen && (
-        <div className="lg:hidden fixed top-[60px] sm:top-[70px] left-0 right-0 bg-white shadow-2xl border-b border-brand-blue/20 animate-slide-in-up z-40 max-h-[calc(100vh-80px)] overflow-y-auto">
+        <div className="md:hidden fixed top-[60px] sm:top-[70px] left-0 right-0 bg-white shadow-2xl border-b border-brand-blue/20 animate-slide-in-up z-[9997] max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="container mx-auto flex flex-col space-y-1 p-3">
             <div className="border-b border-brand-blue/20 pb-3 mb-3 bg-gradient-to-r from-gray-50 to-white rounded-lg p-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">

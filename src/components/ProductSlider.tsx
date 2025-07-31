@@ -12,6 +12,7 @@ interface Product {
   description: string;
   features: string[];
   category: string;
+  link: number;
 }
 
 interface ProductSliderProps {
@@ -137,59 +138,67 @@ const ProductSlider = ({
               <div
                 key={product.id}
                 className={cn(
-                  "flex-shrink-0 px-3 select-none h-full",
+                  "flex-shrink-0 px-3 select-none",
                   isMobile ? "w-full" : isTablet ? "w-1/2" : "w-1/3"
                 )}
               >
-                <div className="group/card relative bg-white rounded-xl overflow-hidden hover-lift transition-all duration-500 depth-2 hover:depth-4 border border-gray-200 hover:border-brand-blue/30 shadow-lg hover:shadow-2xl">
+                {/* MAIN FIX: Added flex flex-col h-full to make cards equal height */}
+                <div className="group/card relative bg-white rounded-xl overflow-hidden hover-lift transition-all duration-500 depth-2 hover:depth-4 border border-gray-200 hover:border-brand-blue/30 shadow-lg hover:shadow-2xl flex flex-col justify-evenly h-full">
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4 z-20 bg-brand-blue text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                     {product.category}
                   </div>
 
                   {/* Image Container */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
                     <img 
                       src={product.image} 
                       alt={product.title}
                       className="w-full h-full object-cover transition-transform duration-700 group-hover/card:scale-110"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover/card:opacity-100 transition-opacity duration-500" />
-                    
-                    {/* Floating Elements */}
-                    <div className="absolute top-6 right-6 w-3 h-3 bg-brand-gold/60 rounded-full animate-float opacity-70" />
-                    <div className="absolute bottom-6 left-6 w-2 h-2 bg-white/50 rounded-full animate-float" style={{ animationDelay: '2s' }} />
                   </div>
 
-                  {/* Content */}
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold text-brand-blue mb-3 font-poppins group-hover/card:text-blue-600 transition-colors duration-300 line-clamp-2">
-                      {product.title}
-                    </h3>
-                    <p className="text-gray-600 mb-4 font-montserrat text-sm leading-relaxed group-hover/card:text-gray-700 transition-colors line-clamp-3">
-                      {product.description}
-                    </p>
-
-                    {/* Features */}
-                    <div className="space-y-2 mb-6">
-                      {product.features.slice(0, 3).map((feature, featureIndex) => (
-                        <div key={featureIndex} className="flex items-start text-sm">
-                          <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-gold flex-shrink-0 mr-2 mt-2"></span>
-                          <span className="text-gray-600 group-hover/card:text-gray-700 transition-colors">{feature}</span>
-                        </div>
-                      ))}
+                  {/* Content - MAIN FIX: Added flex-1 to make content area flexible */}
+                  <div className="p-4 flex flex-col flex-1">
+                    {/* Title - Fixed height container */}
+                    <div className="min-h-[2.5rem] flex items-start">
+                      <h3 className="text-xl font-bold text-brand-blue font-poppins group-hover/card:text-blue-600 transition-colors duration-300 line-clamp-2 leading-tight">
+                        {product.title}
+                      </h3>
                     </div>
 
-                    {/* CTA Button */}
-                    <Button 
-                      asChild 
-                      className="w-full bg-brand-blue hover:bg-blue-900 text-white transition-all duration-300 group-hover/card:shadow-lg"
-                    >
-                      <Link to={`/products`} className="flex items-center justify-center">
-                        Know More
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-1" />
-                      </Link>
-                    </Button>
+                    {/* Description - Fixed height container */}
+                    <div className="mb-4 min-h-[4.5rem] flex items-start">
+                      <p className="text-gray-600 font-montserrat text-sm leading-relaxed group-hover/card:text-gray-700 transition-colors line-clamp-3">
+                        {product.description}
+                      </p>
+                    </div>
+
+                    {/* Features - Fixed height container */}
+                    <div className="mb-6 min-h-[5rem] flex flex-col justify-start">
+                      <div className="space-y-2">
+                        {product.features.slice(0, 3).map((feature, featureIndex) => (
+                          <div key={featureIndex} className="flex items-start text-sm">
+                            <span className="inline-block h-1.5 w-1.5 rounded-full bg-brand-gold flex-shrink-0 mr-2 mt-2"></span>
+                            <span className="text-gray-600 group-hover/card:text-gray-700 transition-colors line-clamp-2">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* CTA Button - MAIN FIX: Added mt-auto to push button to bottom */}
+                    <div className="mt-auto">
+                      <Button 
+                        asChild 
+                        className="w-full bg-brand-blue hover:bg-blue-900 text-white transition-all duration-300 group-hover/card:shadow-lg"
+                      >
+                        <Link to={`/products/${product.link}`} className="flex items-center justify-center">
+                          Know More
+                          <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-1" />
+                        </Link>
+                      </Button>
+                    </div>
                   </div>
 
                   {/* Enhanced Hover Effect Overlay */}

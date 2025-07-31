@@ -632,3 +632,7 @@
 .dropdown-enhanced .dropdown-item:last-child {
   margin-bottom: 0 !important;
 }
+
+.shadow-detail-page{
+  box-shadow: 15px 15px 0px 2px #f1d747;
+}

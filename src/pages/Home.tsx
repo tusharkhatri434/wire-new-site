@@ -8,50 +8,76 @@ import IndustrySlider from "@/components/IndustrySlider";
 import AnimatedSection from "@/components/AnimatedSection";
 import { Award, Factory, ShieldCheck, Star, Users, ChevronRight, TrendingUp, Zap, Globe, Target, Quote } from "lucide-react";
 import HeroSlider from "@/components/HeroSlider";
+import { useIsMobile } from "@/hooks/use-mobile";
 const Home = () => {
+
+ const isMobile =  useIsMobile();
+
   const products = [{
     id: "edm-wire",
+    link:1,
     title: "EDM Wire",
-    image: "/lovable-uploads/033e88f3-a322-4187-b61b-6eb0bf8c8ea3.png",
-    description: "For precision-cutting needs with exceptional surface finish and enhanced cutting speed.",
-    features: ["Exceptional surface finish", "Enhanced cutting speed", "Low discharge wear", "High tensile strength"],
-    category: "Precision Wires"
+    image: '/lovable-uploads/product/EDMWIREFINAL.webp',
+    description: "EDM Wire is a specially engineered metallic wire used as an electrode in wire-cut EDM machines. It delivers exceptional conductivity, mechanical stability, and thermal performance for reliable and efficient machining.",
+    features: ["High Electrical Conductivity",
+      "Uniform Diameter and Surface Finish",
+      "Mechanical Strength & Tensile Control",
+      "Oxidation Resistance",
+      "Precision Winding"],
+    category: "Non-Ferrous wire"
   }, {
-    id: "brazing-welding",
-    title: "Brazing & Welding Wire",
-    image: "/lovable-uploads/76e9f5c2-bfdd-41fd-8447-48981ed09178.png",
-    description: "Superior bond strength and thermal control for critical joining applications.",
-    features: ["Excellent flow characteristics", "Superior joint strength", "Low temperature options", "Extended shelf life"],
-    category: "Joining Solutions"
+    id: "Filter",
+    title: "High-Performance EDM Filters",
+    image: '/lovable-uploads/product/Filterfinal.webp',
+    link:18,
+    description: "EDM Filters are high-performance consumables designed to maintain dielectric purity by removing particulate contaminants, metal debris, and sludge",
+    features: ["Micron Ratings from 1µm to 50µm",
+      "Low Pressure Drop and High Dirt Holding",
+      "Multi-layer Media for Clean Fluids",
+      "Magnetic Pre-Filters and Clogging Indicators"],
+    category: "Consumables"
   }, {
-    id: "copper-aluminium",
-    title: "Copper & Aluminium Wires",
-    image: "/lovable-uploads/e1e5c479-b03d-4b95-94b0-d5925c024345.png",
-    description: "Pure, alloyed, and customizable solutions for electrical and industrial applications.",
-    features: ["99.9% purity options", "Excellent conductivity", "Customizable dimensions", "Oxygen-free options"],
-    category: "Conductive Wires"
+    id: "Resin",
+    title: "Ion Exchange Resin for EDM",
+    link:10,
+    image: '/lovable-uploads/product/resinfinal.webp',
+    description: "EDM Resin is a high-performance ion-exchange material formulated to purify dielectric fluids by removing metallic ions and impurities generated during the EDM process.",
+    features: [ "Mixed Bed Strong Acid/Base Composition",
+      "Maintains Dielectric Conductivity",
+      "Used in EDM and Power Systems"],
+    category: "Consumables"
   }, {
     id: "coated-wires",
-    title: "Coated Wires",
-    image: "/lovable-uploads/2c299fa8-edd5-4d18-9333-f32ecdd5c9d9.png",
-    description: "Zinc, brass, and diffused layers for specialized applications requiring enhanced performance.",
-    features: ["Multiple coating types", "Enhanced durability", "Corrosion resistance", "Custom specifications"],
+    link:2,
+    title: "Diffused Coated EDM Wire",
+    image: '/lovable-uploads/product/Diffusedcoatedwirefinal.webp',
+    description: "Engineered using a multi-layer diffusion process that bonds a zinc-rich alloy into a brass core for high cutting speed and accuracy.",
+    features: ["Multi-layer zinc-rich diffusion coating",
+      "Uniform surface hardness",
+      "Excellent flushing in deep cuts",
+      "Up to 30% faster than plain brass wire",
+      "Better tolerance in taper cutting"],
     category: "Specialty Coatings"
   }, {
-    id: "zari-molly",
-    title: "Zari & Molly Wires",
-    image: "/lovable-uploads/4e574527-b0ae-47a4-b06f-2f0a522be5a2.png",
-    description: "Blending tradition with durability for decorative and functional applications.",
-    features: ["Tarnish resistant", "Consistent plating", "Flexible yet strong", "True-to-color finishing"],
-    category: "Decorative Wires"
+    id: "Molly Wire",
+    title: "Molly Wires",
+    link:8,
+    image: '/lovable-uploads/product/molly_wire.webp',
+    description: "Molly Wire is a molybdenum-based alloy wire specifically designed for extreme environments where high temperature, corrosion resistance, and tensile strength are critical.",
+    features: [  "Extremely High Melting Point (2620°C)",
+      "Excellent Dimensional Stability",
+      "Corrosion & Oxidation Resistant",
+      "Good Workability & Long Service Life"],
+    category: "Non-Ferrous Wire"
   },
   {
     id: "View_All_Products",
+    link:"",
     title: "Explore Our Full Range",
     image: "/lovable-uploads/product/image.png",
     description: "Discover our complete collection of premium wire solutions.",
     features: ["Complete product catalog", "Detailed specifications", "Pickup electrodes", "Compare & choose"],
-    category: "Decorative Wires"
+    category: "All Products"
   }
 ];
 
@@ -118,7 +144,7 @@ const Home = () => {
             <div className="max-w-5xl mx-auto text-center">
               <div className="glass p-6 md:p-8 rounded-2xl depth-2 hover-lift transition-all duration-500">
                 <h2 className="text-2xl md:text-4xl font-bold mb-4 text-brand-blue font-poppins">
-                  Solutions, Not Just Supplies
+                  Solutions,{isMobile ? <br></br> : null} Not Just Supplies
                 </h2>
                 <p className="text-base md:text-lg mb-6 text-gray-700 font-montserrat leading-relaxed max-w-4xl mx-auto">
                   From high-precision EDM wires to customized alloy solutions, Maheshwari Wires Pvt. Ltd. has been at the forefront of India's industrial evolution for decades. 

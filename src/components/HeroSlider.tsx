@@ -1,4 +1,6 @@
 import { useState, useRef } from "react"
+import { Button } from "./ui/button"
+import { Link } from "react-router-dom"
 
 type Slide = {
   image: string
@@ -10,17 +12,17 @@ const slides: Slide[] = [
   {
     image: "/lovable-uploads/slider-1.png",
     title: "Leading the Wirevolution",
-    subtitle: "Where innovation meets metallurgy and define reliability.",
+    subtitle: "Continuing a 75-year legacy of excellence from Maheshwari Industrial Corporation, we transform non-ferrous metals into premium industrial wires that power defense, aerospace, and engineering sectors across India",
   },
   {
     image: "/lovable-uploads/slider-2.png",
     title: "Leading the Wirevolution",
-    subtitle: "Where innovation meets metallurgy and define reliability.",
+    subtitle: "Continuing a 75-year legacy of excellence from Maheshwari Industrial Corporation, we transform non-ferrous metals into premium industrial wires that power defense, aerospace, and engineering sectors across India",
   },
   {
     image: "/lovable-uploads/slider-3.jpg",
   title: "Leading the Wirevolution",
-    subtitle: "Where innovation meets metallurgy and define reliability.",
+    subtitle: "Continuing a 75-year legacy of excellence from Maheshwari Industrial Corporation, we transform non-ferrous metals into premium industrial wires that power defense, aerospace, and engineering sectors across India",
   },
 ]
 
@@ -55,7 +57,7 @@ export default function HeroSlider() {
 
   return (
     <div
-      className="relative w-full sm:h-[80vh] h-[50vh] overflow-hidden"
+      className="relative w-full sm:h-[80vh] h-[70vh] overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
@@ -66,13 +68,37 @@ export default function HeroSlider() {
       />
 
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black/50 flex flex-col justify-center pl-24">
-        <h1 className="text-4xl sm:text-5xl text-yellow-500 font-bold drop-shadow-lg md:mb-4">
+      <div className="absolute inset-0 bg-black/50 flex flex-col justify-center pl-10 sm:pl-24">
+        {/* <h1 className="text-4xl sm:text-5xl text-yellow-500 font-bold drop-shadow-lg md:mb-4">
           {title}
         </h1>
-        <p className="text-lg sm:text-xl text-white drop-shadow-md">
+        <p className="text-lg max-w-3xl sm:text-xl text-white drop-shadow-md">
           {subtitle}
-        </p>
+        </p> */}
+        <div className="max-w-4xl">
+          <div className="animate-slide-in-up">
+            <h1 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-6 font-poppins leading-tight">
+              <span className="bg-gradient-to-r from-white via-gray-100 to-brand-gold bg-clip-text text-transparent">
+                {title}
+              </span>
+            </h1>
+          </div>
+            <div className="animate-slide-in-up" style={{ animationDelay: '0.2s' }}>
+              <p className="text-lg md:text-xl text-white/90 mb-8 max-w-3xl font-montserrat leading-relaxed">
+                {subtitle}
+              </p>
+            </div>
+          
+            <div className="animate-slide-in-up hidden sm:flex" style={{ animationDelay: '0.4s' }}>
+              <Button 
+                asChild 
+                className="bg-gradient-to-r from-brand-gold to-yellow-500 hover:from-yellow-500 hover:to-brand-gold text-brand-blue px-8 py-6 text-base font-semibold font-montserrat hover-lift hover-glow transition-all duration-300 depth-2"
+              >
+                <Link to="/products">Explore Our Product Range</Link>
+              </Button>
+            </div>
+        </div>
+
       </div>
 
       {/* Dots */}

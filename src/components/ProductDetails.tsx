@@ -81,14 +81,14 @@ const ProductDetails = ({ productData }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-8 bg-gray-50 min-h-screen">
       {/* Back Button */}
-      <button onClick={()=>navigate(-1)} className="mb-6 bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition-colors">
+      <button onClick={()=>navigate(-1)} className="mb-6 ml-4 bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition-colors">
         ← Back
       </button>
 
       {/* Header Section with Image and Product Info */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-2xl p-8 mb-8 text-white">
+      <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-[3rem] p-8 mb-8 text-white shadow-detail-page">
         <div className="flex flex-col lg:flex-row items-center gap-8">
-          <div className="lg:w-1/3">
+          <div className="lg:w-fit">
             <div className="bg-white p-2 rounded-xl shadow-lg">
               <img 
                 src={image} 
@@ -241,21 +241,18 @@ const ProductDetails = ({ productData }) => {
         {note && renderSection("Important Note", note, 'text')}
 
         {/* Get Quote Button */}
-        <div className="mt-10 text-center">
-          <button className="bg-blue-900 text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-blue-800 transition-colors shadow-lg">
+        <div className="flex justify-between items-center">
+          <button className="bg-blue-900 text-white rounded-lg px-2 py-2 text-sm sm:text-base font-semibold hover:bg-blue-800 transition-colors shadow-lg">
             Get Your Quote
           </button>
+
+           {/* Company Branding */}
+        <div className="h-6 sm:h-10">
+            <img className='h-full' src='/lovable-uploads/4b08319e-d6ea-4de7-b408-d2e3836e50e1.png' />
+        </div>
         </div>
 
-        {/* Company Branding */}
-        <div className="mt-8 text-center">
-          <div className="inline-flex items-center gap-2 text-gray-600">
-            {/* <div className="w-8 h-8 bg-blue-900 rounded"></div>
-            <span className="font-bold text-lg">MAHESHWARI WIRES</span>
-            <span className="text-sm">PRIVATE LIMITED</span> */}
-            <img className='h-14' src='/lovable-uploads/4b08319e-d6ea-4de7-b408-d2e3836e50e1.png' />
-          </div>
-        </div>
+       
       </div>
     </div>
   );
