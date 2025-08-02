@@ -179,6 +179,9 @@ const CustomerShowcase = () => {
         subtitle="Serving India's most critical defense, aerospace, and research institutions with precision wire solutions"
         backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png"
         className="min-h-[60vh]"
+        buttonLink="/"
+         buttonText="Get in touch"
+
       />
 
       {/* Make in India Highlight */}
@@ -255,7 +258,7 @@ const CustomerShowcase = () => {
             
             <div className="max-w-4xl mx-auto">
               <div className="bg-white/10 backdrop-blur-sm p-8 rounded-2xl border border-white/20">
-                <blockquote className="text-lg md:text-xl text-white/95 italic text-center mb-6 leading-relaxed">
+                <blockquote className="text-lg md:text-xl text-white/95 text-center mb-6 leading-relaxed">
                   "Maheshwari Wires has consistently delivered high-quality products that meet our 
                   exacting standards for aerospace applications. Their technical expertise and 
                   commitment to quality make them a valuable partner in our critical projects."

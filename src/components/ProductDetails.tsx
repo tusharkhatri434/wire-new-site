@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import SpoolTable from './SpoolTable';
 
 const ProductDetails = ({ productData }) => {
   // Debug: Log what we're receiving
@@ -27,7 +28,8 @@ const ProductDetails = ({ productData }) => {
     certifications, 
     availableAddOns, 
     note, 
-    variants 
+    variants,
+    spoolTable 
   } = data;
 
   const renderSection = (title, content, type = 'list') => {
@@ -142,6 +144,8 @@ const ProductDetails = ({ productData }) => {
             </div>
           </section>
         )}
+
+        {spoolTable && <SpoolTable />} 
 
         {/* Advantages */}
         {advantages && renderSection("Advantages", advantages)}

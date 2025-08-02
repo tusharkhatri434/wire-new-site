@@ -376,7 +376,7 @@ const Header = ({
     if (name.includes('Non-Ferrous')) return <Layers className="w-3 h-3 text-blue-500" />;
     if (name.includes('Brazing')) return <Zap className="w-3 h-3 text-orange-500" />;
     if (name.includes('Consumables')) return <ShoppingCart className="w-3 h-3 text-green-500" />;
-    return <Package className="w-3 h-3 text-gray-400" />;
+    return <Package className="w-3 h-3 text-blue-800" />;
   };
 
   // Toggle product category expansion
@@ -497,32 +497,32 @@ const Header = ({
     },
     {
       id: 2,
-      label: "Foundation",
+      label: "Our Foundation",
       path: "/foundation",
       icon: <Folder className="h-3 w-3 mr-1" />,
       children: [
-        { id: 21, label: "Legacy", path: "/foundation#legacy" },
-        { id: 22, label: "Capabilities", path: "/infrastructure" },
-        { id: 23, label: "Certifications", path: "/foundation#certifications" },
+        { id: 21, label: "Our Legacy", path: "/foundation#legacy" },
+        { id: 22, label: "Our Capabilities", path: "/infrastructure" },
+        { id: 23, label: "Our Certifications", path: "/foundation#certifications" },
         { id: 24, label: "Make in India Movement", path: "/foundation#make-in-india" }
       ]
     },
     {
       id: 3,
-      label: "Products",
+      label: "Our Products",
       path: "/products",
       icon: <Box className="h-3 w-3 mr-1" />,
       children: [] // Will be populated dynamically from productsData
     },
     {
       id: 4,
-      label: "Infrastructure",
+      label: "Our Infrastructure",
       path: "/infrastructure",
       icon: <Building className="h-3 w-3 mr-1" />
     },
     {
       id: 5,
-      label: "Customers",
+      label: "Our Customers",
       path: "/customers",
       icon: <Users className="h-3 w-3 mr-1" />
     },
@@ -546,29 +546,12 @@ const Header = ({
         className={cn(
           "flex items-center gap-2 p-2 rounded-md transition-colors text-xs",
           level === 0 ? 'font-semibold text-brand-blue border-b border-gray-100 mb-1' : 
-          level === 1 ? 'font-medium text-gray-700' : 
-          'text-gray-600'
+          level === 1 ? 'font-medium text-brand-blue' : 
+          'text-brand-blue'
         )}
         style={{ paddingLeft: `${8 + paddingLeft}px` }}
       >
-        {/* Chevron Button - Only show if has children */}
-        {hasChildren && (
-          <button
-            className="flex-shrink-0 p-1 hover:bg-gray-100 rounded transition-colors touch-manipulation"
-            onClick={(e) => {
-              e.preventDefault();
-              e.stopPropagation();
-              toggleProductCategory(item.id, e);
-            }}
-            type="button"
-          >
-            {isExpanded ? (
-              <ChevronDown className="w-3 h-3 text-gray-500" />
-            ) : (
-              <ChevronDown className="w-3 h-3 text-gray-500 -rotate-90" />
-            )}
-          </button>
-        )}
+       
         
         <div className="flex-shrink-0">
           {getProductCategoryIcon(item.name)}
@@ -610,6 +593,25 @@ const Header = ({
             {item.children!.length}
           </span>
         )} */}
+
+         {/* Chevron Button - Only show if has children */}
+        {hasChildren && (
+          <button
+            className="flex-shrink-0 p-1 hover:bg-gray-100 rounded transition-colors touch-manipulation"
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleProductCategory(item.id, e);
+            }}
+            type="button"
+          >
+            {isExpanded ? (
+              <ChevronDown className="w-4 h-4 text-gray-500" />
+            ) : (
+              <ChevronDown className="w-4 h-4 text-gray-500 -rotate-90" />
+            )}
+          </button>
+        )}
       </div>
     );
 

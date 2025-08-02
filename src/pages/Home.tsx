@@ -273,7 +273,7 @@ const Home = () => {
             <AnimatedSection animation="scale-in" delay={1000}>
               <div className="mt-8 text-center">
                 <Button asChild className="bg-brand-gold hover:bg-yellow-500 text-brand-blue px-6 py-2.5 text-base font-semibold hover-lift depth-2">
-                  <Link to="/products">Discover Our Products</Link>
+                  <Link to="/customers">Discover Our Clients</Link>
                 </Button>
               </div>
             </AnimatedSection>
