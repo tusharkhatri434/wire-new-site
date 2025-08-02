@@ -179,7 +179,7 @@ const CustomerShowcase = () => {
         subtitle="Serving India's most critical defense, aerospace, and research institutions with precision wire solutions"
         backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png"
         className="min-h-[60vh]"
-        buttonLink="/"
+        buttonLink="/connect"
          buttonText="Get in touch"
 
       />

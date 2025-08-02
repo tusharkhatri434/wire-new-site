@@ -727,21 +727,22 @@ export const allProducts = [
     category: "Brazing and Welding",
     subcategory: "Brazing Wire"
   },
-  // {
-  //   title: "Welding Wire", //NOT DOne
-  //   heading: "Precision Welding Wires",
-  //   description: "High-precision wires for MIG/TIG welding producing defect-free welds.",
-  //   keyFeatures: [
-  //     "Clean Surface Finish and Tight Diameter Control",
-  //     "Stable Arc & Low Spatter",
-  //     "Corrosion-Resistant Joints",
-  //     "Custom Spooling & Alloy Options"
-  //   ],
-  //   tags: ["Welding", "MIG", "TIG"],
-  //   imgUrl: "welding-wire.png",
-  //   category: "Brazing and Welding",
-  //   subcategory: "Welding Consumables"
-  // },
+  {
+    title: "Welding Wire",
+    heading: "Precision Welding Wires",
+    description: "High-precision wires for MIG/TIG welding producing defect-free welds.",
+    keyFeatures: [
+      "Clean Surface Finish and Tight Diameter Control",
+      "Stable Arc & Low Spatter",
+      "Corrosion-Resistant Joints",
+      "Custom Spooling & Alloy Options"
+    ],
+    tags: ["Welding", "MIG", "TIG"],
+    link:201,
+    image: "/lovable-uploads/product/Welding_wire_pic.webp",
+    category: "Brazing and Welding",
+    subcategory: "Welding Consumables"
+  },
   {
     title: "Er Cu Sia",
     heading: "Copper-Silicon Alloy Wire",

@@ -190,7 +190,8 @@ const EnhancedContactForm = ({ className }: { className?: string }) => {
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Phone</p>
-                <p className="text-gray-600">+91 98765 43210</p>
+                <p className="text-gray-600">+91 9837002076</p>
+                <p className="text-gray-600">+91 9457815966</p>
               </div>
             </div>
             <div className="flex items-center">
@@ -200,6 +201,7 @@ const EnhancedContactForm = ({ className }: { className?: string }) => {
               <div>
                 <p className="font-medium text-brand-blue">Email</p>
                 <p className="text-gray-600">info@maheshwariwires.com</p>
+                <p className="text-gray-600">Maheshwariwires@gmail.com</p>
               </div>
             </div>
             <div className="flex items-center">
@@ -208,7 +210,7 @@ const EnhancedContactForm = ({ className }: { className?: string }) => {
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Address</p>
-                <p className="text-gray-600">Industrial Area, Mumbai, Maharashtra</p>
+                <p className="text-gray-600">19 A & B, Mohkampur Industrial Area <br></br> Phase-II, Rithani, Meerut, U.P, India, 250103</p>
               </div>
             </div>
           </div>

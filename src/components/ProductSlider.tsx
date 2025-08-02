@@ -150,7 +150,7 @@ const ProductSlider = ({
                   </div>
 
                   {/* Image Container */}
-                  <div className="relative aspect-[4/3] overflow-hidden bg-gray-100 flex-shrink-0">
+                  <div className="relative h-72 sm:h-[32rem] overflow-hidden bg-gray-100 flex-shrink-0">
                     <img 
                       src={product.image} 
                       alt={product.title}

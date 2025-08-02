@@ -423,7 +423,7 @@ const Infrastructure = () => {
 
       {/* Quality Assurance */}
       <AnimatedSection>
-        <section className="section bg-brand-blue">
+        <section className="section bg-brand-blue border-b border-white/60">
           <div className="container">
             <div className="max-w-4xl mx-auto text-center">
               <div className="glass-dark bg-black p-6 rounded-2xl border border-white/20">

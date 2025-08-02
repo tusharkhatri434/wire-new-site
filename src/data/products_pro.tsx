@@ -1501,7 +1501,50 @@ const ProductDetails = [
       "Fuel and water tanks",
       "Thin aluminum weldments"
     ]
-  }
+  },
+  {
+  "id": 201,
+  "product": "Welding Wire",
+  "image": "/lovable-uploads/product/Welding_wire_pic.webp",
+  "description": "High-Precision Welding Wires for Structural & Electrical Integrity. At Maheshwari Wires Pvt. Ltd., our welding wires are designed to produce strong, clean, and defect-free welds across copper, aluminum, brass, bronze, and steel alloys. Ideal for MIG and TIG welding, these wires offer stable arc performance, excellent feedability, and low spatter—suiting a range of fabrication and industrial applications.",
+  "keyFeatures": [
+    "Oxide-free bright finish for excellent conductivity and weld cleanliness",
+    "High alloy purity for reduced porosity and consistent weld quality",
+    "Stable arc with minimal spatter for improved weld aesthetics"
+  ],
+  "technicalSpecifications": {
+    "Wire Diameters Available": "0.8 mm, 1.0 mm, 1.2 mm, 1.6 mm, 2.4 mm, custom",
+    "Wire Tolerance": "±0.01 mm",
+    "Wire Form": "Spools (5 kg, 15 kg, 20 kg), Coils, TIG Cut Lengths",
+    "Shielding Gas Compatibility": "Argon, Helium, CO₂, Mixed gases",
+    "Welding Processes": "MIG (GMAW), TIG (GTAW), SAW (on request)",
+    "Packing Formats": "Vacuum-sealed, anti-rust coated, bulk cartons",
+    "Standard Packing": "Anti-rust coated spools or coils in cartons",
+    "Spool Sizes": "5 KG, 15 KG, 20 KG",
+    "Delivery Time": "3–5 days (standard), 7–10 days (custom)",
+    "Minimum Order Quantity": "20 kg",
+    "Compliance Standards": "AWS A5.7 / A5.10 / A5.8, EN ISO 24373, DIN Standards",
+    "Quality Checks Performed": "Tensile strength, Elongation, Surface and arc stability",
+    "Certifications": "ISO 9001:2015 certified, Third-party lab reports available",
+    "Alloy Modification Options": "Cu-Sn, Cu-Al, Al-Si blends",
+    "Available Cut Lengths": "36\", 1m, 1.2m TIG rods",
+    "Optional Coatings": "Special coatings for extended shelf-life",
+    "Branding Options": "Private labeling for OEM supply"
+  },
+  "advantages": [
+    "Strong, corrosion-resistant welds",
+    "Smooth bead formation and fusion",
+    "Reliable mechanical performance",
+    "Minimal cleanup post-welding"
+  ],
+  "applications": [
+    "Electrical: Bus bars, motor windings, switchgear welding",
+    "Automotive: Radiators, body panels, chassis welding",
+    "Aerospace: Lightweight, high-precision components",
+    "Marine: Corrosion-resistant aluminum and bronze joints",
+    "General Fabrication: Tanks, HVAC systems, structures"
+  ]
+}
 ]
 
 // const arr = ProductDetails.map((item)=>{

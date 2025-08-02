@@ -18,7 +18,8 @@ import {
   Package,
   Layers,
   Zap,
-  ShoppingCart
+  ShoppingCart,
+  MessageCircle
 } from "lucide-react";
 
 // Company logo
@@ -367,8 +368,6 @@ const Header = ({
         }
        ]
     }
-
-    
   ]
 
   // Get product category icons
@@ -376,7 +375,26 @@ const Header = ({
     if (name.includes('Non-Ferrous')) return <Layers className="w-3 h-3 text-blue-500" />;
     if (name.includes('Brazing')) return <Zap className="w-3 h-3 text-orange-500" />;
     if (name.includes('Consumables')) return <ShoppingCart className="w-3 h-3 text-green-500" />;
-    return <Package className="w-3 h-3 text-blue-800" />;
+    return <Package className="w-3 h-3 text-yellow-500" />;
+  };
+
+  // Enhanced function to check if a path is active (including product subcategories)
+  const isProductPathActive = (item: ProductItem): boolean => {
+    if (item.path && location.pathname === item.path) {
+      return true;
+    }
+    
+    if (item.children) {
+      return item.children.some(child => isProductPathActive(child));
+    }
+    
+    return false;
+  };
+
+  // Enhanced function to check if any product is active
+  const isProductsActive = (): boolean => {
+    if (location.pathname === '/products') return true;
+    return productsData.some(category => isProductPathActive(category));
   };
 
   // Toggle product category expansion
@@ -437,8 +455,11 @@ const Header = ({
 
   const totalProducts = getTotalProducts(productsData);
   
+  // Enhanced isActive function to handle all paths correctly including product paths
   const isActive = (path: string) => {
-    if (path === "/customers") return false;
+    if (path === '/products') {
+      return isProductsActive();
+    }
     return location.pathname === path;
   };
 
@@ -528,31 +549,34 @@ const Header = ({
     },
     {
       id: 6,
-      label: "Connect",
+      label: "Connect us",
       path: "/connect",
       icon: <MapPin className="h-3 w-3 mr-1" />
     }
   ];
 
-  // Render product item recursively with enhanced click handling
+  // Render product item recursively with enhanced click handling and active states
   const renderProductItem = (item: ProductItem, level: number = 0) => {
     const hasChildren = item.children && item.children.length > 0;
     const isExpanded = expandedProductCategories.has(item.id);
     const paddingLeft = level * 12;
     const isClickable = item.link && item.path;
+    const isItemActive = isProductPathActive(item);
 
     const ItemContent = () => (
       <div 
         className={cn(
-          "flex items-center gap-2 p-2 rounded-md transition-colors text-xs",
-          level === 0 ? 'font-semibold text-brand-blue border-b border-gray-100 mb-1' : 
-          level === 1 ? 'font-medium text-brand-blue' : 
-          'text-brand-blue'
+          "flex items-center gap-2 p-2 rounded-md transition-all duration-300 text-xs",
+          level === 0 ? 'font-semibold border-b border-gray-100 mb-1' : 
+          level === 1 ? 'font-medium' : 
+          'font-normal',
+          // Enhanced active and hover states with dark backgrounds
+          isItemActive 
+            ? 'bg-brand-blue text-white shadow-lg' 
+            : 'text-brand-blue hover:bg-brand-blue hover:text-white'
         )}
         style={{ paddingLeft: `${8 + paddingLeft}px` }}
       >
-       
-        
         <div className="flex-shrink-0">
           {getProductCategoryIcon(item.name)}
         </div>
@@ -561,7 +585,12 @@ const Header = ({
         {isClickable ? (
           <Link
             to={item.path!}
-            className="flex-1 capitalize truncate hover:text-brand-blue transition-colors font-medium underline-offset-2 hover:underline" 
+            className={cn(
+              "flex-1 capitalize truncate transition-all duration-300 font-medium underline-offset-2",
+              isItemActive 
+                ? "text-white" 
+                : "text-inherit hover:text-white hover:underline"
+            )} 
             title={item.name}
             onClick={(e) => {
               e.stopPropagation();
@@ -575,7 +604,7 @@ const Header = ({
           <span 
             className={cn(
               "flex-1 capitalize truncate",
-              hasChildren ? "cursor-pointer hover:text-brand-blue transition-colors" : "cursor-default"
+              hasChildren ? "cursor-pointer transition-colors" : "cursor-default"
             )} 
             title={item.name}
             onClick={hasChildren ? (e) => {
@@ -587,17 +616,16 @@ const Header = ({
             {item.name}
           </span>
         )}
-        
-        {/* {hasChildren && (
-          <span className="text-xs bg-gray-200 text-gray-600 px-1.5 py-0.5 rounded-full">
-            {item.children!.length}
-          </span>
-        )} */}
 
          {/* Chevron Button - Only show if has children */}
         {hasChildren && (
           <button
-            className="flex-shrink-0 p-1 hover:bg-gray-100 rounded transition-colors touch-manipulation"
+            className={cn(
+              "flex-shrink-0 p-1 rounded transition-all duration-300 touch-manipulation",
+              isItemActive 
+                ? "hover:bg-slate-600 text-white" 
+                : "hover:bg-gray-100 text-gray-500"
+            )}
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
@@ -606,9 +634,9 @@ const Header = ({
             type="button"
           >
             {isExpanded ? (
-              <ChevronDown className="w-4 h-4 text-gray-500" />
+              <ChevronDown className="w-4 h-4" />
             ) : (
-              <ChevronDown className="w-4 h-4 text-gray-500 -rotate-90" />
+              <ChevronDown className="w-4 h-4 -rotate-90" />
             )}
           </button>
         )}
@@ -628,24 +656,27 @@ const Header = ({
     );
   };
 
-  // Render a dropdown item (recursive)
+  // Enhanced renderDropdownItem with dark active states
   const renderDropdownItem = (item: MenuItem, index: number, level: number = 0, parentKey: string = '') => {
     const hasChildren = item.children && item.children.length > 0;
     const itemKey = parentKey ? `${parentKey}-${index}` : `menu-${index}`;
     
     // Special handling for Products menu
-    if (item.label === "Products") {
+    if (item.label === "Our Products") {
+      const isProductsMenuActive = isProductsActive();
+      
       return (
         <div key={itemKey} className={isMobile ? "border-t border-gray-100 first:border-t-0" : ""}>
-                      <button 
+          <button 
             data-dropdown={itemKey}
             className={cn(
               isMobile ? 
-                "w-full flex justify-between items-center px-3 py-2 rounded-lg font-semibold text-xs transition-all duration-300 hover:bg-white hover:text-brand-blue border border-transparent hover:border-brand-blue/20 hover:shadow-lg" : 
-                "px-3 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center hover:bg-white hover:text-brand-blue text-xs border border-transparent hover:border-brand-blue/20 hover:shadow-lg",
-              isActive(item.path) || openDropdowns[itemKey] ? 
-                "bg-white text-brand-blue shadow-lg border-brand-blue/20" : 
-                "text-brand-blue"
+                "w-full flex justify-between items-center px-3 py-2 rounded-lg font-semibold text-xs transition-all duration-300 border" : 
+                "px-3 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center text-xs border",
+              // Enhanced active state with dark background
+              isProductsMenuActive || openDropdowns[itemKey] ? 
+                "bg-brand-blue text-white shadow-lg border-slate-600" : 
+                "text-brand-blue hover:bg-brand-blue hover:text-white border-transparent hover:border-slate-600 hover:shadow-lg"
             )} 
             onClick={(e) => toggleDropdown(e, itemKey)}
             onMouseEnter={() => {
@@ -665,7 +696,7 @@ const Header = ({
           >
             <span className="flex items-center">
               {item.icon}
-              <Link to={item.path}>
+              <Link to={item.path} className="text-inherit">
                 {item.label}
               </Link>
             </span>
@@ -692,7 +723,12 @@ const Header = ({
               <div className="border-t border-gray-200 px-3 pt-2 mt-2">
                 <Link
                   to="/products"
-                  className="block w-full text-center bg-brand-blue text-white px-3 py-1.5 rounded-md text-xs font-medium hover:bg-brand-blue/90 transition-colors"
+                  className={cn(
+                    "block w-full text-center px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-300",
+                    isProductsActive()
+                      ? "bg-brand-blue text-white"
+                      : "bg-brand-blue text-white hover:bg-brand-blue"
+                  )}
                   onClick={() => {
                     handleNavigation();
                     setOpenDropdowns({});
@@ -707,14 +743,19 @@ const Header = ({
       );
     }
 
-    // Regular menu item handling
+    // Regular menu item handling with enhanced dark active states
     if (!isMobile && !isTablet && hasChildren && level > 0) {
       return (
         <div key={itemKey} className="relative group/submenu">
           <button 
-            className="flex w-full items-center justify-between px-3 py-2 text-brand-blue hover:bg-white hover:text-brand-blue transition-all duration-300 rounded-lg text-xs font-medium border border-transparent hover:border-brand-blue/20 hover:shadow-lg"
+            className={cn(
+              "flex w-full items-center justify-between px-3 py-2 transition-all duration-300 rounded-lg text-xs font-medium border",
+              isActive(item.path)
+                ? "bg-brand-blue text-white border-slate-600 shadow-lg"
+                : "text-brand-blue hover:bg-brand-blue hover:text-white border-transparent hover:border-slate-600 hover:shadow-lg"
+            )}
             onClick={(e) => e.preventDefault()}
-            aria-haspopus="true"
+            aria-haspopup="true"
           >
             <span className="font-semibold">{item.label}</span>
             <ChevronDown className="h-3 w-3 ml-2 transform -rotate-90 transition-transform group-hover/submenu:scale-110" />
@@ -735,11 +776,11 @@ const Header = ({
             data-dropdown={itemKey}
             className={cn(
               isMobile ? 
-                "w-full flex justify-between items-center px-3 py-2 rounded-lg font-semibold text-xs transition-all duration-300 hover:bg-white hover:text-brand-blue border border-transparent hover:border-brand-blue/20 hover:shadow-lg" : 
-                "px-3 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center hover:bg-white hover:text-brand-blue text-xs border border-transparent hover:border-brand-blue/20 hover:shadow-lg",
+                "w-full flex justify-between items-center px-3 py-2 rounded-lg font-semibold text-xs transition-all duration-300 border" : 
+                "px-3 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center text-xs border",
               isActive(item.path) || openDropdowns[itemKey] ? 
-                "bg-white text-brand-blue shadow-lg border-brand-blue/20" : 
-                "text-brand-blue"
+                "bg-brand-blue text-white shadow-lg border-slate-600" : 
+                "text-brand-blue hover:bg-brand-blue hover:text-white border-transparent hover:border-slate-600 hover:shadow-lg"
             )} 
             onClick={(e) => toggleDropdown(e, itemKey)}
             aria-expanded={openDropdowns[itemKey]}
@@ -747,7 +788,7 @@ const Header = ({
           >
             <span className="flex items-center">
               {item.icon}
-              <Link to={item.path}>
+              <Link to={item.path} className="text-inherit">
                 {item.label}
               </Link>
             </span>
@@ -780,14 +821,18 @@ const Header = ({
       );
     }
     
+    // Enhanced simple menu item with dark active states
     return (
       <Link 
         key={itemKey}
         to={item.path} 
         className={cn(
           isMobile ? 
-            "block px-3 py-2 text-xs text-brand-blue hover:bg-white hover:text-brand-blue rounded-lg transition-all duration-300 font-semibold border border-transparent hover:border-brand-blue/20 hover:shadow-lg" : 
-            "block w-full text-left px-3 py-2 text-brand-blue hover:bg-white hover:text-brand-blue transition-all duration-300 rounded-lg text-xs font-semibold border border-transparent hover:border-brand-blue/20 hover:shadow-lg"
+            "block px-3 py-2 text-xs rounded-lg transition-all duration-300 font-semibold border" : 
+            "block w-full text-left px-3 py-2 transition-all duration-300 rounded-lg text-xs font-semibold border",
+          isActive(item.path) ? 
+            "bg-brand-blue text-white border-slate-600 shadow-lg" : 
+            "text-brand-blue hover:bg-brand-blue hover:text-white border-transparent hover:border-slate-600 hover:shadow-lg"
         )} 
         style={!isMobile ? { breakInside: 'avoid' } : {}}
         onClick={() => {
@@ -817,12 +862,12 @@ const Header = ({
           </div>
           <div className="flex items-center space-x-4">
             <a href="tel:+911234567890" className="flex items-center hover:text-brand-gold transition-all duration-300 hover-scale group">
-              <Phone className="h-3 w-3 mr-1 group-hover:animate-glow" />
-              <span className="font-medium text-xs">+91 1234 567 890</span>
+              <MessageCircle className="h-3 w-3 mr-1 group-hover:animate-glow" />
+              <span className="font-medium text-xs">+91 9837053329</span>
             </a>
-            <a href="mailto:info@maheshwariwires.com" className="flex items-center hover:text-brand-gold transition-all duration-300 hover-scale group">
+            <a href="mailto:Maheshwariwires@gmail.com" className="flex items-center hover:text-brand-gold transition-all duration-300 hover-scale group">
               <Mail className="h-3 w-3 mr-1 group-hover:animate-glow" />
-              <span className="font-medium text-xs">Email</span>
+              <span className="font-medium text-xs">Email-Maheshwariwires@gmail.com</span>
             </a>
           </div>
         </div>
@@ -842,12 +887,12 @@ const Header = ({
             </div>
           </Link>
 
-          {/* Enhanced Desktop Navigation - Smaller and more compact */}
+          {/* Enhanced Desktop Navigation - Fixed with consistent styling */}
           <nav className="hidden md:flex items-center space-x-1">
             {menuItems.map((item, index) => {
               const itemKey = `menu-${index}`;
               
-              if (item.children || item.label === "Products") {
+              if (item.children || item.label === "Our Products") {
                 return (
                   <div key={itemKey} className="relative group" ref={(ref) => addDropdownRef(itemKey, ref)}>
                     <button 
@@ -855,8 +900,8 @@ const Header = ({
                       className={cn(
                         "px-2 py-1.5 rounded-lg font-semibold transition-all duration-300 flex items-center group relative overflow-hidden text-xs", 
                         isActive(item.path) || openDropdowns[itemKey] ? 
-                          "bg-gradient-to-r from-brand-blue to-brand-blue/90 text-white shadow-lg" : 
-                          "text-brand-blue hover:bg-white hover:text-brand-blue hover:shadow-lg border border-transparent hover:border-brand-blue/20"
+                          "bg-brand-blue text-white shadow-lg border border-slate-600" : 
+                          "text-brand-blue hover:bg-brand-blue hover:text-white hover:shadow-lg border border-transparent hover:border-slate-600"
                       )} 
                       onClick={(e) => toggleDropdown(e, itemKey)}
                       onMouseEnter={() => {
@@ -876,20 +921,25 @@ const Header = ({
                       <span className="flex items-center relative z-10">
                         <span className="hidden xl:inline">{item.icon}</span>
                         <span className={cn("whitespace-nowrap", item.icon ? "xl:ml-1" : "")}>
-                          <Link to={item.path}>
+                          <Link to={item.path} className="text-inherit">
                             {item.label}
                           </Link>
                         </span>
                       </span>
                       <ChevronDown className={cn("ml-1 h-3 w-3 transition-transform duration-300", openDropdowns[itemKey] && "transform rotate-180")} />
                       
-                      <div className="absolute inset-0 bg-gradient-to-r from-brand-gold/20 to-brand-blue/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                      <div className={cn(
+                        "absolute inset-0 transition-transform duration-300 origin-left",
+                        isActive(item.path) || openDropdowns[itemKey]
+                          ? "bg-brand-blue scale-x-100"
+                          : "bg-gradient-to-r from-slate-700/20 to-slate-800/20 scale-x-0 group-hover:scale-x-100"
+                      )}></div>
                     </button>
 
                     {openDropdowns[itemKey] && (
                       <div 
                         className="absolute top-full left-0 mt-1 bg-white rounded-xl shadow-2xl py-3 z-[9999] border border-brand-blue/10 animate-scale-in overflow-y-auto"
-                        style={item.label === 'Products' ? { 
+                        style={item.label === 'Our Products' ? { 
                           width: '420px', 
                           maxHeight: '70vh',
                         } : { width: '280px', maxHeight: '70vh' }}
@@ -899,7 +949,7 @@ const Header = ({
                           }
                         }}
                       >
-                        {item.label === "Products" ? (
+                        {item.label === "Our Products" ? (
                           <>
                             {/* Product Categories */}
                             <div className="px-2">
@@ -910,7 +960,12 @@ const Header = ({
                             <div className="border-t border-gray-200 px-3 pt-2 mt-2">
                               <Link
                                 to="/products"
-                                className="block w-full text-center bg-brand-blue text-white px-3 py-1.5 rounded-md text-xs font-medium hover:bg-brand-blue/90 transition-colors"
+                                className={cn(
+                                  "block w-full text-center px-3 py-1.5 rounded-md text-xs font-medium transition-all duration-300",
+                                  isProductsActive()
+                                    ? "bg-brand-blue text-white"
+                                    : "bg-brand-blue text-white hover:bg-brand-blue"
+                                )}
                                 onClick={() => {
                                   handleNavigation();
                                   setOpenDropdowns({});
@@ -935,6 +990,7 @@ const Header = ({
                 );
               }
               
+              // Enhanced simple navigation items with dark active states
               return (
                 <Link 
                   key={itemKey}
@@ -942,8 +998,8 @@ const Header = ({
                   className={cn(
                     "px-2 py-1.5 rounded-lg font-semibold transition-all duration-300 flex items-center group relative overflow-hidden text-xs whitespace-nowrap", 
                     isActive(item.path) ? 
-                      "bg-gradient-to-r from-brand-blue to-brand-blue/90 text-white shadow-lg" : 
-                      "text-brand-blue hover:bg-white hover:text-brand-blue hover:shadow-lg border border-transparent hover:border-brand-blue/20"
+                      "bg-brand-blue text-white shadow-lg border border-slate-600" : 
+                      "text-brand-blue hover:bg-brand-blue hover:text-white hover:shadow-lg border border-transparent hover:border-slate-600"
                   )} 
                   onClick={handleNavigation}
                 >
@@ -952,7 +1008,12 @@ const Header = ({
                     <span className={cn(item.icon ? "xl:ml-1" : "")}>{item.label}</span>
                   </span>
                   
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-gold/20 to-brand-blue/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <div className={cn(
+                    "absolute inset-0 transition-transform duration-300 origin-left",
+                    isActive(item.path)
+                      ? "bg-brand-blue scale-x-100"
+                      : "bg-gradient-to-r from-slate-700/20 to-slate-800/20 scale-x-0 group-hover:scale-x-100"
+                  )}></div>
                 </Link>
               );
             })}
@@ -964,7 +1025,7 @@ const Header = ({
             size="icon" 
             className={cn(
               "md:hidden relative overflow-hidden transition-all duration-300 hover:scale-110 w-8 h-8",
-              isMenuOpen ? "bg-brand-blue text-white shadow-lg" : "text-brand-blue hover:bg-brand-blue/10 border border-brand-blue/20"
+              isMenuOpen ? "bg-brand-blue text-white shadow-lg" : "text-brand-blue hover:bg-brand-blue hover:text-white border border-brand-blue/20"
             )} 
             onClick={() => setIsMenuOpen(!isMenuOpen)} 
             aria-label="Toggle menu"
@@ -979,24 +1040,24 @@ const Header = ({
             </div>
             
             <div className={cn(
-              "absolute inset-0 bg-gradient-to-r from-brand-blue to-brand-blue/90 transform transition-all duration-300",
+              "absolute inset-0 bg-gradient-to-r from-slate-800 to-slate-700 transform transition-all duration-300",
               isMenuOpen ? "scale-100 opacity-100" : "scale-0 opacity-0"
             )}></div>
           </Button>
         </div>
       </div>
 
-      {/* Enhanced Mobile Navigation - More compact */}
+      {/* Enhanced Mobile Navigation - Fixed with dark active states */}
       {isMenuOpen && (
         <div className="md:hidden fixed top-[60px] sm:top-[70px] left-0 right-0 bg-white shadow-2xl border-b border-brand-blue/20 animate-slide-in-up z-[9997] max-h-[calc(100vh-80px)] overflow-y-auto">
           <div className="container mx-auto flex flex-col space-y-1 p-3">
             <div className="border-b border-brand-blue/20 pb-3 mb-3 bg-gradient-to-r from-gray-50 to-white rounded-lg p-3">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
-                <a href="tel:+911234567890" className="flex items-center px-2 py-1.5 text-xs text-brand-blue hover:bg-brand-blue/10 rounded-lg transition-all duration-300 hover-scale group border border-brand-blue/20">
+                <a href="tel:+919837053329" className="flex items-center px-2 py-1.5 text-xs text-brand-blue hover:bg-brand-blue hover:text-white rounded-lg transition-all duration-300 hover-scale group border border-brand-blue/20">
                   <Phone className="h-3 w-3 mr-2 text-brand-gold group-hover:animate-glow" />
-                  <span className="font-semibold">+91 1234 567 890</span>
+                  <span className="font-semibold">+91 9837053329</span>
                 </a>
-                <a href="mailto:info@maheshwariwires.com" className="flex items-center px-2 py-1.5 text-xs text-brand-blue hover:bg-brand-blue/10 rounded-lg transition-all duration-300 hover-scale group border border-brand-blue/20">
+                <a href="mailto:Maheshwariwires@gmail.com" className="flex items-center px-2 py-1.5 text-xs text-brand-blue hover:bg-brand-blue hover:text-white rounded-lg transition-all duration-300 hover-scale group border border-brand-blue/20">
                   <Mail className="h-3 w-3 mr-2 text-brand-gold group-hover:animate-glow" />
                   <span className="font-semibold">Email Us</span>
                 </a>
@@ -1006,19 +1067,20 @@ const Header = ({
             {menuItems.map((item, index) => {
               const itemKey = `mobile-menu-${index}`;
                 
-              if (item.children || item.label === "Products") {
+              if (item.children || item.label === "Our Products") {
                 return renderDropdownItem(item, index, 0, 'mobile');
               }
               
+              // Enhanced mobile navigation items with dark active states
               return (
                 <Link 
                   key={itemKey}
                   to={item.path} 
                   className={cn(
-                    "px-2 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center group relative overflow-hidden text-xs border border-transparent hover:border-brand-blue/20 hover:shadow-lg", 
+                    "px-2 py-2 rounded-lg font-semibold transition-all duration-300 flex items-center group relative overflow-hidden text-xs border", 
                     isActive(item.path) ? 
-                      "bg-gradient-to-r from-brand-blue to-brand-blue/90 text-white shadow-lg" : 
-                      "text-brand-blue hover:bg-white hover:text-brand-blue"
+                      "bg-brand-blue text-white shadow-lg border-slate-600" : 
+                      "text-brand-blue hover:bg-brand-blue hover:text-white border-transparent hover:border-slate-600 hover:shadow-lg"
                   )} 
                   onClick={() => {
                     setIsMenuOpen(false);
@@ -1030,7 +1092,12 @@ const Header = ({
                     <span className="ml-1">{item.label}</span>
                   </span>
                   
-                  <div className="absolute inset-0 bg-gradient-to-r from-brand-gold/20 to-brand-blue/20 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></div>
+                  <div className={cn(
+                    "absolute inset-0 transition-transform duration-300 origin-left",
+                    isActive(item.path)
+                      ? "bg-brand-blue scale-x-100"
+                      : "bg-gradient-to-r from-slate-700/20 to-slate-800/20 scale-x-0 group-hover:scale-x-100"
+                  )}></div>
                 </Link>
               );
             })}
