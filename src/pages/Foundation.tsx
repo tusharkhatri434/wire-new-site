@@ -204,16 +204,31 @@ const Foundation = () => {
                 What binds our clients to us is not just what we deliver — but how we deliver it: with consistency, clarity, and care.
               </p>
               
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {clientOrganizations.map((org, index) => <AnimatedSection key={index} animation="slide-left" delay={index * 100}>
-                    <div className="w-full h-full bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30">
-                      <div className="flex items-center">
-                        <div className="w-3 h-3 bg-brand-gold rounded-full mr-4"></div>
-                        <p className="text-gray-700 font-medium">{org}</p>
-                      </div>
-                    </div>
-                  </AnimatedSection>)}
-              </div>
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {clientOrganizations.map((org, index) => (
+    <AnimatedSection 
+      key={index} 
+      animation="slide-left" 
+      delay={index * 100}
+      className={
+        index === clientOrganizations.length - 1 && clientOrganizations.length % 2 === 1
+          ? 'md:col-span-2 md:flex md:justify-center'
+          : ''
+      }
+    >
+      <div className={`w-full h-full bg-white p-3 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 ${
+        index === clientOrganizations.length - 1 && clientOrganizations.length % 2 === 1
+          ? 'md:max-w-96'
+          : ''
+      }`}>
+        <div className="flex items-center">
+          <div className="w-3 h-3 bg-brand-gold rounded-full mr-[6px]"></div>
+          <p className="text-gray-700 font-medium">{org}</p>
+        </div>
+      </div>
+    </AnimatedSection>
+  ))}
+</div>
             </div>
           </div>
         </section>

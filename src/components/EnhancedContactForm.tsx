@@ -6,7 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { toast } from 'sonner';
-import { Send, Phone, Mail, MapPin, Clock } from 'lucide-react';
+import { Send, Phone, Mail, MapPin, Clock, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface ContactFormData {
@@ -33,24 +33,42 @@ const EnhancedContactForm = ({ className }: { className?: string }) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+ const handleSubmit = async (e: React.FormEvent) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    // Simulate API call
-    setTimeout(() => {
-      toast.success('Thank you for your inquiry! We will get back to you within 24 hours.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        company: '',
-        inquiryType: '',
-        message: ''
-      });
-      setIsSubmitting(false);
-    }, 1500);
-  };
+  const { name, email, phone, company, inquiryType, message } = formData;
+
+  const whatsappMessage = `Hi, I have an inquiry.
+Name: ${name}
+Email: ${email}
+Phone: ${phone}
+Company: ${company}
+Type of Inquiry: ${inquiryType}
+Message: ${message}`;
+
+  const encodedMessage = encodeURIComponent(whatsappMessage);
+  const whatsappNumber = '9837053329';
+
+  // WhatsApp redirect URL
+  const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedMessage}`;
+
+  // Simulate delay like an API call
+  setTimeout(() => {
+    window.open(whatsappUrl, '_blank'); // Open WhatsApp in new tab
+    toast.success('Redirecting to WhatsApp...');
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      company: '',
+      inquiryType: '',
+      message: ''
+    });
+    setIsSubmitting(false);
+  }, 1000);
+};
+
 
   return (
     <div className={cn("grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12", className)}>
@@ -196,11 +214,19 @@ const EnhancedContactForm = ({ className }: { className?: string }) => {
             </div>
             <div className="flex items-center">
               <div className="w-10 h-10 bg-brand-gold/20 rounded-full flex items-center justify-center mr-4">
+                <MessageCircle className="h-5 w-5 text-brand-gold" />
+              </div>
+              <div>
+                <p className="font-medium text-brand-blue">Whatsapp</p>
+                <p className="text-gray-600">+91 9837053329</p>
+              </div>
+            </div>
+            <div className="flex items-center">
+              <div className="w-10 h-10 bg-brand-gold/20 rounded-full flex items-center justify-center mr-4">
                 <Mail className="h-5 w-5 text-brand-gold" />
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Email</p>
-                <p className="text-gray-600">info@maheshwariwires.com</p>
                 <p className="text-gray-600">Maheshwariwires@gmail.com</p>
               </div>
             </div>

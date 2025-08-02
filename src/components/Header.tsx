@@ -24,6 +24,7 @@ import {
 
 // Company logo
 import CompanyLogo from "./CompanyLogo";
+import WhatsappIcon from "./WhatsappIcon";
 
 interface HeaderProps {
   scrolled?: boolean;
@@ -525,7 +526,7 @@ const Header = ({
         { id: 21, label: "Our Legacy", path: "/foundation#legacy" },
         { id: 22, label: "Our Capabilities", path: "/infrastructure" },
         { id: 23, label: "Our Certifications", path: "/foundation#certifications" },
-        { id: 24, label: "Make in India Movement", path: "/foundation#make-in-india" }
+        // { id: 24, label: "Make in India Movement", path: "/foundation#make-in-india" }
       ]
     },
     {
@@ -549,7 +550,7 @@ const Header = ({
     },
     {
       id: 6,
-      label: "Connect us",
+      label: "Contact Us",
       path: "/connect",
       icon: <MapPin className="h-3 w-3 mr-1" />
     }
@@ -861,8 +862,9 @@ const Header = ({
             <p className="font-medium animate-slide-in-left">Precision Engineered Wire Solutions Since 1982</p>
           </div>
           <div className="flex items-center space-x-4">
-            <a href="tel:+911234567890" className="flex items-center hover:text-brand-gold transition-all duration-300 hover-scale group">
-              <MessageCircle className="h-3 w-3 mr-1 group-hover:animate-glow" />
+            <a href="http://wa.me/9837053329" className="flex items-center hover:text-brand-gold transition-all duration-300 hover-scale group">
+              {/* <MessageCircle className="h-3 w-3 mr-1 group-hover:animate-glow" /> */}
+              <WhatsappIcon />
               <span className="font-medium text-xs">+91 9837053329</span>
             </a>
             <a href="mailto:Maheshwariwires@gmail.com" className="flex items-center hover:text-brand-gold transition-all duration-300 hover-scale group">
@@ -882,7 +884,7 @@ const Header = ({
         <div className="container mx-auto flex items-center justify-between px-4 sm:px-6 lg:px-8">
           {/* Enhanced Logo - Smaller */}
           <Link to="/" className="flex items-center hover-scale transition-all duration-300 group" onClick={handleNavigation}>
-            <div className="relative transform scale-75">
+            <div className="transform hover:scale-105">
               <CompanyLogo />
             </div>
           </Link>

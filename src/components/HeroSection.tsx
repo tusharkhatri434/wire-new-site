@@ -47,11 +47,11 @@ const HeroSection = ({
       />
 
       {/* Floating Elements */}
-      <div className="absolute inset-0 pointer-events-none">
+      {/* <div className="absolute inset-0 pointer-events-none">
         <div className="animate-float absolute top-1/4 right-1/4 w-2 h-2 bg-brand-gold rounded-full opacity-60" />
         <div className="animate-float absolute top-1/3 left-1/5 w-1 h-1 bg-white rounded-full opacity-40" style={{ animationDelay: '2s' }} />
         <div className="animate-float absolute bottom-1/3 right-1/5 w-3 h-3 bg-brand-gold rounded-full opacity-30" style={{ animationDelay: '4s' }} />
-      </div>
+      </div> */}
 
       {/* Content */}
       <div className="container mx-auto px-4 py-0 relative z-10">

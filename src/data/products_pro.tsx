@@ -1039,7 +1039,7 @@ const ProductDetails = [
   {
     id: 20,
   name: "Induction Brazing Wire & Rings",
-  image: "/lovable-uploads/product/copperwireforinductionbrazing.webp",
+  image: "/lovable-uploads/product/Brazing_ring_final.webp",
   description: "Induction Brazing Wire & Rings are precision-engineered pre-formed filler alloys designed for high-speed, clean, and repeatable brazing using induction heating. These rings, made from silver, copper, brass, or nickel-based alloys, fit exact joint geometries and eliminate filler waste, making them ideal for automated and high-volume production lines.",
   keyFeatures: [
     "Pre-formed to precise ID/OD for slip-fit joints",
@@ -1267,7 +1267,7 @@ const ProductDetails = [
   {
     id: 26,
     name: "ER Cu Sn-A (Tin Bronze Welding Wire – A Type)",
-    image: "/lovable-uploads/product/ERCUSnA.webp",
+    image: "/lovable-uploads/product/ERCUSNAFINAL.webp",
     description: "ER Cu Sn-A is a phosphor bronze welding wire formulated for exceptional strength, ductility, and crack resistance. Designed for TIG and MIG welding, it is ideal for joining or overlaying bronze, copper alloys, and certain ferrous materials. This filler wire offers excellent corrosion resistance, particularly in seawater and acidic environments, making it suitable for marine applications. It ensures smooth arc performance, minimal spatter, and clean bead appearance. Commonly used in manufacturing bearings, gears, bushings, and valve components, it’s also well-suited for applications requiring vibration and stress endurance.",
     keyFeatures: [
       "High fatigue and corrosion resistance in marine and industrial environments",

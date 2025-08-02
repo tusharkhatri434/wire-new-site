@@ -194,7 +194,7 @@ const ProductSlider = ({
                         className="w-full bg-brand-blue hover:bg-blue-900 text-white transition-all duration-300 group-hover/card:shadow-lg"
                       >
                         <Link to={`/products/${product.link}`} className="flex items-center justify-center">
-                          Know More
+                          View Details
                           <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover/card:translate-x-1" />
                         </Link>
                       </Button>

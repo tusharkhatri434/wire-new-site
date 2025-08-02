@@ -400,7 +400,7 @@ const Infrastructure = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               {voicesOfTrust.map((testimonial, index) => (
                 <AnimatedSection key={index} animation="scale-in" delay={index * 200}>
-                  <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:border-brand-blue/30 hover-lift transition-all duration-300">
+                  <div className="h-full flex flex-col justify-between bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:border-brand-blue/30 hover-lift transition-all duration-300">
                     <div className="mb-4">
                       <div className="flex text-brand-gold mb-3">
                         {[...Array(5)].map((_, i) => (

@@ -287,7 +287,7 @@ const CustomerShowcase = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {defenseBranches.map((org, index) => (
                 <AnimatedSection key={index} animation="scale-in" delay={index * 100}>
-                  <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 hover-lift">
+                  <div className="h-full  bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 hover-lift">
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                         {org.icon}
@@ -327,7 +327,7 @@ const CustomerShowcase = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {researchOrgs.map((org, index) => (
                 <AnimatedSection key={index} animation="fade-in" delay={index * 100}>
-                  <div className="h-fullbg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-gold/30 hover-lift">
+                  <div className="h-full bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-gold/30 hover-lift">
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-gold to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
                         {org.icon}
