@@ -118,7 +118,7 @@ const Header = ({
       "id": 1,
       "name": "Non-Ferrous wire",
       "link": false,
-      "path": "/products",
+      "path": "",
       "children": [
         { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/6" },
         { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/7" },
@@ -151,7 +151,7 @@ const Header = ({
       "id": 11,
       "name": "Brazing And Welding",
       "link": false,
-      "path": "/products",
+      "path": "",
       "children":[
       {
         "id": 12,
@@ -195,7 +195,7 @@ const Header = ({
         "id": 17,
        "name": "Copper Alloy",
        "link": false,
-       "path": "/products",
+       "path": "",
        "children":[
       {
         "id": 18,
@@ -332,7 +332,7 @@ const Header = ({
           "id": 42,
           "name": " Tube Electrode",
           "link": false,
-          "path": "/products/15",
+          "path": "",
           "children":[
           {
           "id": 38,
@@ -352,7 +352,7 @@ const Header = ({
           "id": 43,
           "name": "Drill Guide",
           "link": false,
-          "path": "/products/171",
+          "path": "",
           "children":[
           {
           "id": 40,
@@ -567,14 +567,14 @@ const Header = ({
     const ItemContent = () => (
       <div 
         className={cn(
-          "flex items-center gap-2 p-2 rounded-md transition-all duration-300 text-xs",
+          "flex my-1 items-center gap-2 p-2 rounded-md transition-all duration-300 text-xs",
           level === 0 ? 'font-semibold border-b border-gray-100 mb-1' : 
           level === 1 ? 'font-medium' : 
           'font-normal',
           // Enhanced active and hover states with dark backgrounds
           isItemActive 
             ? 'bg-brand-blue text-white shadow-lg' 
-            : 'text-brand-blue hover:bg-brand-blue hover:text-white'
+            : 'text-brand-blue hover:bg-brand-blue/80 hover:text-white'
         )}
         style={{ paddingLeft: `${8 + paddingLeft}px` }}
       >

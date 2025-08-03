@@ -338,7 +338,7 @@ const Footer = () => {
   const productColumns = getProductColumns();
 
   return (
-    <footer className="bg-gradient-to-br from-brand-blue via-blue-900 to-blue-950 text-white relative overflow-hidden">
+    <footer className="bg-brand-blue text-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
@@ -365,7 +365,7 @@ const Footer = () => {
               </div>
             </div>
             
-            <p className="text-blue-100 mb-6 leading-relaxed text-sm lg:text-base max-w-md">
+            <p className="text-white mb-6 leading-relaxed text-sm lg:text-base max-w-md">
               For over four decades, Maheshwari Industrial Corporation has pioneered the evolution of the wire manufacturing industry in India, delivering world-class solutions with integrity and excellence.
             </p>
             
@@ -410,7 +410,7 @@ const Footer = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-base lg:text-lg font-bold mb-4 lg:mb-6 relative">
+            <h3 className="text-brand-gold text-base lg:text-lg font-bold mb-4 lg:mb-6 relative">
               Quick Links
               <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold"></div>
             </h3>
@@ -440,7 +440,7 @@ const Footer = () => {
           {/* Dynamic Product Columns */}
           {productColumns.slice(0, 3).map((column, columnIndex) => (
             <div key={column.id} className="lg:block">
-              <h3 className="text-white text-base lg:text-lg font-bold mb-4 lg:mb-6 relative">
+              <h3 className="text-brand-gold text-base lg:text-lg font-bold mb-4 lg:mb-6 relative">
                 {column.title}
                 <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold"></div>
               </h3>
@@ -460,13 +460,13 @@ const Footer = () => {
                 </button>
                 
                 {expandedCategories[column.id] && (
-                  <ul className="space-y-2 pl-4 border-l border-blue-800">
+                  <ul className="space-y-2">
                     {column.products.map((product, index) => (
                       <li key={index}>
                         <Link
                           to={product.path}
                           className="text-blue-200 hover:text-brand-gold transition-colors duration-300 text-xs block py-1"
-                          style={{ paddingLeft: `${product.depth * 8}px` }}
+                          // style={{ paddingLeft: `${product.depth * 8}px` }}
                         >
                           {product.name}
                         </Link>
