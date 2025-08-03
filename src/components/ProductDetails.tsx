@@ -1,5 +1,5 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import SpoolTable from './SpoolTable';
 
 const ProductDetails = ({ productData }) => {
@@ -81,7 +81,7 @@ const ProductDetails = ({ productData }) => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-8 bg-gray-50 min-h-screen">
+    <div className="max-w-7xl mx-auto px-4 py-2 md:py-8 bg-gray-50 min-h-screen">
       {/* Back Button */}
       <button onClick={()=>navigate(-1)} className="mb-6 ml-4 bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition-colors">
         ← Back
@@ -100,10 +100,11 @@ const ProductDetails = ({ productData }) => {
             </div>
           </div>
           <div className="lg:w-2/3">
-            <h1 className="text-4xl font-bold mb-4">{product || name}</h1>
-            <p className="text-blue-100 leading-relaxed text-lg">
-              {description}
-            </p>
+            <h1 className="text-xl md:text-4xl font-bold mb-4">{product || name}</h1>
+            <div className="text-blue-100 leading-relaxed text-base md:text-base">
+              {/* <p className='text-lg bg-white inline-block text-black rounded-md px-2'>Description : </p> */}
+                <div className='flex flex-col gap-2' dangerouslySetInnerHTML={{ __html: description }} />
+            </div>
           </div>
         </div>
       </div>
@@ -246,9 +247,11 @@ const ProductDetails = ({ productData }) => {
 
         {/* Get Quote Button */}
         <div className="flex justify-between items-center">
+          <Link to="/connect  ">
           <button className="bg-blue-900 text-white rounded-lg px-2 py-2 text-sm sm:text-base font-semibold hover:bg-blue-800 transition-colors shadow-lg">
             Get Your Quote
           </button>
+          </Link>
 
            {/* Company Branding */}
         <div className="h-6 sm:h-10">

@@ -21,25 +21,25 @@ const Infrastructure = () => {
     {
       title: "Japanese Technology Integration",
       description: "Advanced integrated technology from Japan for unmatched accuracy and finish to our wire products",
-      icon: <Factory className="h-8 w-8 text-brand-gold" />,
+      icon: <Factory className="h-4 sm:h-8 w-4 sm:w-8 text-brand-gold" />,
       features: ["Superior dimensional tolerance", "Uniform surface finish", "Enhanced conductivity", "Reduced variability batch-to-batch"]
     },
     {
       title: "Continuous Wire Drawing Systems", 
       description: "Multi-stage annealing and micro-plating processes reflecting finest practices of modern metallurgy",
-      icon: <Settings className="h-8 w-8 text-brand-gold" />,
+      icon: <Settings className="h-4 sm:h-8 w-4 sm:w-8 text-brand-gold" />,
       features: ["Continuous wire drawing", "Multi-stage annealing", "Micro-plating processes", "Enhanced mechanical strength"]
     },
     {
       title: "Quality Control Laboratory",
       description: "Chemical and mechanical testing ensuring consistency, traceability, and international compliance",
-      icon: <CheckCircle className="h-8 w-8 text-brand-gold" />,
+      icon: <CheckCircle className="h-4 sm:h-8 w-4 sm:w-8 text-brand-gold" />,
       features: ["Chemical composition analysis", "Mechanical testing", "Traceability systems", "International standards"]
     },
     {
       title: "Raw Material Excellence",
       description: "High-purity, certified raw materials from globally trusted suppliers with comprehensive testing",
-      icon: <Beaker className="h-8 w-8 text-brand-gold" />,
+      icon: <Beaker className="h-4 sm:h-8 w-4 sm:w-8 text-brand-gold" />,
       features: ["OFHC copper", "High-purity aluminium alloys", "Specialty metals", "Technical-grade materials"]
     }
   ];
@@ -170,7 +170,7 @@ const Infrastructure = () => {
             
             <Tabs defaultValue="technology" className="w-full mt-8">
               <TabsList className="grid w-full grid-cols-4 mb-8">
-                <TabsTrigger value="technology">Technology</TabsTrigger>
+                <TabsTrigger className="text-xs px-1" value="technology">Technology</TabsTrigger>
                 <TabsTrigger value="systems">Systems</TabsTrigger>
                 <TabsTrigger value="quality">Quality</TabsTrigger>
                 <TabsTrigger value="materials">Materials</TabsTrigger>
@@ -182,12 +182,12 @@ const Infrastructure = () => {
                     <AnimatedSection key={index} animation="scale-in" delay={index * 200}>
                       <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 hover-lift">
                         <div className="flex items-start space-x-4">
-                          <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                          <div className="w-8 sm:w-12 h-8 sm:h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                             {facility.icon}
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-lg font-bold text-brand-blue mb-2">{facility.title}</h3>
-                            <p className="text-gray-600 mb-3 text-sm leading-relaxed">{facility.description}</p>
+                            <h3 className="text-sm sm:text-lg font-bold text-brand-blue mb-2">{facility.title}</h3>
+                            <p className="text-gray-600 mb-3 text-xs sm:text-sm leading-relaxed">{facility.description}</p>
                             
                             <div className="space-y-1">
                               {facility.features.map((feature, idx) => (
@@ -210,7 +210,7 @@ const Infrastructure = () => {
                   {facilities.slice(1, 3).map((facility, index) => (
                     <div key={index} className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
                       <div className="flex items-start space-x-4">
-                        <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                        <div className="w-8 sm:w-12 h-8 sm:h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                           {facility.icon}
                         </div>
                         <div className="flex-1">
@@ -226,7 +226,7 @@ const Infrastructure = () => {
               <TabsContent value="quality">
                 <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 sm:w-12 h-8 sm:h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                       {facilities[2].icon}
                     </div>
                     <div className="flex-1">
@@ -248,7 +248,7 @@ const Infrastructure = () => {
               <TabsContent value="materials">
                 <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
                   <div className="flex items-start space-x-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <div className="w-8 sm:w-12 h-8 sm:h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
                       {facilities[3].icon}
                     </div>
                     <div className="flex-1">

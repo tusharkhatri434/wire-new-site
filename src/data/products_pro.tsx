@@ -2,8 +2,8 @@ const ProductDetails = [
  {
   id: 1,
   product: "Plain Brass Wire",
-  image: "/lovable-uploads/product/edmplainbrasswirefinal.webp",
-  description: "Plain Brass Wire is a high-precision wire primarily composed of copper and zinc, offering exceptional mechanical strength, corrosion resistance, and electrical conductivity. It is widely used in various industrial applications due to its excellent machinability and smooth surface finish. The uniform diameter and ductility of the wire make it ideal for electrical discharge machining (EDM) and other technical applications requiring accuracy. Manufactured with tight tolerances and a bright finish, it ensures minimal deviation, clean cuts, and extended life during high-speed operations.",
+  image: "/lovable-uploads/product/plain_brass_emd_wire_final.jpg",
+  description: "<p>Plain Brass Wire is a high-precision wire primarily composed of copper and zinc, offering exceptional mechanical strength, corrosion resistance, and electrical conductivity. It is widely used in various industrial applications due to its excellent machinability and smooth surface finish.</p><p>The uniform diameter and ductility of the wire make it ideal for electrical discharge machining (EDM) and other technical applications requiring accuracy. Its reliable performance under high-speed and high-temperature conditions ensures clean and consistent results.</p><p>Manufactured with tight tolerances and a bright finish, Plain Brass Wire ensures minimal deviation, clean cuts, and extended life during continuous operations. Its durability and precision contribute to improved productivity and reduced downtime in critical machining processes.</p>",
   keyFeatures: [
     "Smooth, polished surface with uniform diameter",
     "Excellent tensile strength and fatigue resistance",
@@ -40,7 +40,7 @@ const ProductDetails = [
     id: 2,
     product: "Diffused Coated Wire",
     image: "/lovable-uploads/product/Diffusedcoatedwirefinal.webp",
-    description: "Diffused Coated Wire is a high-performance EDM wire with a zinc coating that is thermally diffused into a brass substrate. This bonding enhances mechanical properties, enables higher cutting speeds, and ensures superior arc stability. It is ideal for precision cutting in high-load and extended EDM operations where accuracy, durability, and surface finish are critical.",
+    description: "<p>Diffused Coated Wire is a high-performance EDM wire with a zinc coating that is thermally diffused into a brass substrate. This bonding enhances mechanical properties, enables higher cutting speeds, and ensures superior arc stability.</p><p>It is ideal for precision cutting in high-load and extended EDM operations where accuracy, durability, and surface finish are critical.</p>",
     keyFeatures: [
       "Thermally diffused zinc layer for high-speed performance",
       "Superior arc stability during cutting",
@@ -77,7 +77,7 @@ const ProductDetails = [
     id: 3,
     product: "Zinc Diffused Coated Wire",
     image: "/lovable-uploads/product/zincdiffusedcoatedwire.webp",
-    description: "Zinc Diffused Coated Wire is an enhanced EDM wire engineered with a chemically bonded zinc layer diffused into a brass core. It offers high-speed cutting performance, reduced wire wear, and lower operating costs. This makes it ideal for long, uninterrupted EDM operations with complex geometries and demanding finish requirements.",
+    description: "<p>Zinc Diffused Coated Wire is an enhanced EDM wire engineered with a chemically bonded zinc layer diffused into a brass core.</p><p>It offers high-speed cutting performance, reduced wire wear, and lower operating costs. This makes it ideal for long, uninterrupted EDM operations with complex geometries and demanding finish requirements.</p>",
     keyFeatures: [
       "Chemically diffused zinc layer for stable cutting",
       "High-speed spark generation",
@@ -114,7 +114,7 @@ const ProductDetails = [
     id: 4,
     product: "Zinc Coated Wire",
     image: "/lovable-uploads/product/zinccoatedwirefinal.webp",
-    description: "Zinc Coated Wire is a cost-efficient EDM wire consisting of a brass core electroplated with a zinc layer. It ensures high conductivity, fast cutting speed, and strong performance in general-purpose EDM applications. Ideal for manufacturers looking to optimize cycle time while reducing material costs.",
+    description: "<p>Zinc Coated Wire is a cost-efficient EDM wire consisting of a brass core electroplated with a zinc layer.</p><p>It ensures high conductivity, fast cutting speed, and strong performance in general-purpose EDM applications. Ideal for manufacturers looking to optimize cycle time while reducing material costs.</p>",
     keyFeatures: [
       "Zinc electroplated coating for fast spark generation",
       "High cutting speed with low energy loss",
@@ -151,7 +151,7 @@ const ProductDetails = [
     id: 5,
     product: "EDM Wire",
     image: "/lovable-uploads/product/EDMWIREFINAL.webp",
-    description: "EDM Wire (Electrical Discharge Machining Wire) is a specialized electrode wire used in wire-cut EDM processes for machining conductive materials. Designed to deliver consistent erosion, minimal wear, and high dimensional precision, this wire is compatible with a wide range of machines and applications. Available in plain brass and coated variants to suit diverse cutting requirements.",
+    description: "<p>EDM Wire (Electrical Discharge Machining Wire) is a specialized electrode wire used in wire-cut EDM processes for machining conductive materials.</p><p>Designed to deliver consistent erosion, minimal wear, and high dimensional precision, this wire is compatible with a wide range of machines and applications. Available in plain brass and coated variants to suit diverse cutting requirements.</p>",
     keyFeatures: [
        "Exceptional spark resistance and surface roundness",
     "Uniform diameter control ensures accurate cutting paths",
@@ -252,7 +252,7 @@ const ProductDetails = [
     id: 6,
   product: "Zari Wire",
   image: "/lovable-uploads/product/zariwirefinal.webp",
-  description: "Premium Quality Zari Wire Solutions for Textile, Embroidery & Decorative Craftsmanship. At Maheshwari Wires Pvt. Ltd., we offer a refined range of Zari wires—blending heritage craftsmanship with modern metallurgy. Produced using high-quality copper, silver, and metallic coatings, our Zari wires are ideal for intricate hand embroidery, weaving, and embellishments in ethnic and contemporary textiles.",
+  description: "<p>Premium Quality Zari Wire Solutions for Textile, Embroidery & Decorative Craftsmanship.</p><p>At Maheshwari Wires Pvt. Ltd., we offer a refined range of Zari wires—blending heritage craftsmanship with modern metallurgy. Produced using high-quality copper, silver, and metallic coatings, our Zari wires are ideal for intricate hand embroidery, weaving, and embellishments in ethnic and contemporary textiles.</p>",
   keyFeatures: [
       "Flexible and lightweight construction for easy weaving",
     "Glossy, non-tarnishing surface with premium coatings",
@@ -308,7 +308,7 @@ const ProductDetails = [
     id: 7,
     product: "Copper Extrusions",
     image: "/lovable-uploads/product/copperextrusionfinal.webp",
-    description: "Copper Extrusions are precision-formed products created by extruding electrolytic copper into standard or customized profiles. These extrusions offer superior conductivity, structural integrity, and corrosion resistance, making them ideal for high-performance electrical and mechanical applications.",
+    description: "<p>Copper Extrusions are precision-formed products created by extruding electrolytic copper into standard or customized profiles.</p><p>These extrusions offer superior conductivity, structural integrity, and corrosion resistance, making them ideal for high-performance electrical and mechanical applications.</p>",
     keyFeatures: [
       "High purity copper with uniform grain structure",
     "Wide range of shapes: flats, rounds, angles, tubes",
@@ -365,7 +365,7 @@ const ProductDetails = [
     id: 8,
     product: "Molly Wire",
     image: "/lovable-uploads/product/molly_wire.webp",
-    description: "Premium Molly Wire solutions engineered for high-temperature and corrosive environments. Manufactured from 99.95% pure molybdenum, our wire delivers outstanding performance in aerospace, electronics, furnace systems, and EDM applications—offering unmatched thermal stability, corrosion resistance, and mechanical strength where traditional metals fail.",
+    description: "<p>Premium Molly Wire solutions engineered for high-temperature and corrosive environments.</p><p>Manufactured from 99.95% pure molybdenum, our wire delivers outstanding performance in aerospace, electronics, furnace systems, and EDM applications—offering unmatched thermal stability, corrosion resistance, and mechanical strength where traditional metals fail.</p>",
    keyFeatures: [
        "Withstands temperatures exceeding 2600°C",
     "Superior tensile and structural stability",
@@ -425,7 +425,7 @@ const ProductDetails = [
   id: 9,
   product: "Copper Wire",
   image: "/lovable-uploads/product/copperwirefinal.webp",
-  description: "Copper Wire from Maheshwari Wires Pvt. Ltd. is a high-purity, precision-drawn wire known for exceptional electrical conductivity, flexibility, and corrosion resistance. Designed for demanding applications in power transmission, electrical fabrication, and welding, our copper wires are engineered to deliver defect-free joints, stable arc performance, and consistent current flow. Suitable for MIG and TIG welding, as well as general electrical and mechanical use, this wire offers unmatched quality and adaptability across industries.",
+  description: "<p>Copper Wire from Maheshwari Wires Pvt. Ltd. is a high-purity, precision-drawn wire known for exceptional electrical conductivity, flexibility, and corrosion resistance.</p><p>Designed for demanding applications in power transmission, electrical fabrication, and welding, our copper wires are engineered to deliver defect-free joints, stable arc performance, and consistent current flow.</p><p>Suitable for MIG and TIG welding, as well as general electrical and mechanical use, this wire offers unmatched quality and adaptability across industries.</p>",
   keyFeatures: [
     "High electrical conductivity (≥ 99.5% IACS)",
     "Soft, ductile, and easy to wind or solder",
@@ -471,7 +471,7 @@ const ProductDetails = [
   id: 10,
   name: "EDM & High-Purity Ion Exchange Resin",
   image: "/lovable-uploads/product/resinfinal.webp",
-  description: "A high-performance mixed-bed ion exchange resin engineered for dielectric fluid purification in EDM systems, ultrapure water generation, and power systems. It removes dissolved salts, metallic ions, and impurities to stabilize conductivity, extend dielectric life, and improve machining precision. The resin features a thermally stable bead-type structure and is compatible with most filtration units across industrial and lab-grade applications.",
+  description: "<p>A high-performance mixed-bed ion exchange resin engineered for dielectric fluid purification in EDM systems, ultrapure water generation, and power systems.</p><p>It removes dissolved salts, metallic ions, and impurities to stabilize conductivity, extend dielectric life, and improve machining precision.</p><p>The resin features a thermally stable bead-type structure and is compatible with most filtration units across industrial and lab-grade applications.</p>",
   keyFeatures: [
     "Mixed-bed resin combining strong acid cation and strong base anion exchange",
     "Color-indicating and thermal-resistant variants available",
@@ -524,7 +524,7 @@ const ProductDetails = [
   id: 11,
   name: "Ointment Oil",
   image: "/lovable-uploads/product/Ointmentgelfinal.webp",
-  description: "EDM Ointment Oil is a premium-grade additive formulated for use in EDM dielectric systems. Designed to enhance machining performance, it offers superior lubrication, efficient cooling, and excellent surface finish during high-precision operations. Its non-conductive nature ensures clean spark discharges while protecting electrodes and workpieces. Ideal for mold-making, tool and die applications, and ultra-fine surface finishing.",
+  description: "<p>EDM Ointment Oil is a premium-grade additive formulated for use in EDM dielectric systems. Designed to enhance machining performance, it offers superior lubrication, efficient cooling, and excellent surface finish during high-precision operations.</p><p>Its non-conductive nature ensures clean spark discharges while protecting electrodes and workpieces. Ideal for mold-making, tool and die applications, and ultra-fine surface finishing.</p>",
   keyFeatures: [
     "High thermal stability for consistent performance under heat",
     "Anti-corrosive properties that protect machine parts and electrodes",
@@ -569,7 +569,7 @@ const ProductDetails = [
     id: 12,
     name: "Filter",
     image: "/lovable-uploads/product/Filterfinal.webp",
-    description: "EDM Filters are high-performance consumables designed to maintain dielectric purity by removing particulate contaminants, metal debris, and sludge. These filters play a critical role in improving the overall machining performance and ensuring consistent results over prolonged operations.",
+    description: "<p>EDM Filters are high-performance consumables designed to maintain dielectric purity by removing particulate contaminants, metal debris, and sludge.</p><p>These filters play a critical role in improving the overall machining performance and ensuring consistent results over prolonged operations.</p>",
     keyFeatures: [
       "High dust and particle retention capacity",
       "Micron-level filtration (up to 5 µm) for precision results",
@@ -612,7 +612,7 @@ const ProductDetails = [
     id: 13,
     name: "Current Pickup Assembly",
     image: "/lovable-uploads/product/CurrentPickupFinal.webp",
-    description: "The EDM Current Pickup Assembly is a precision-engineered component that facilitates effective electrical contact between the power source and the EDM wire, ensuring seamless current flow and stable spark generation. It's a critical component for achieving high cutting efficiency and precision in wire EDM systems.",
+    description: "<p>The EDM Current Pickup Assembly is a precision-engineered component that facilitates effective electrical contact between the power source and the EDM wire, ensuring seamless current flow and stable spark generation.</p><p>It's a critical component for achieving high cutting efficiency and precision in wire EDM systems.</p>",
     keyFeatures: [
       "High-conductivity copper/brass alloy construction",
     "Quick and secure mounting system for ease of use",
@@ -653,7 +653,7 @@ const ProductDetails = [
     id: 131,
     name: "Diamond EDM Pickup",
     image: "/lovable-uploads/product/DiamondEdmwireGuideFinal.webp",
-    description: "Diamond EDM Pickup is a premium-grade electrical contact component featuring synthetic diamond tips for exceptional wear resistance and ultra-low resistance. Designed for high-speed and micro-precision EDM operations, it provides unmatched consistency and reliability in the most demanding machining tasks.",
+    description: "<p>Diamond EDM Pickup is a premium-grade electrical contact component featuring synthetic diamond tips for exceptional wear resistance and ultra-low resistance.</p><p>Designed for high-speed and micro-precision EDM operations, it provides unmatched consistency and reliability in the most demanding machining tasks.</p>",
     keyFeatures: [
       "Diamond-tipped contact points for superior durability",
     "Ultra-low electrical resistance for accurate spark discharge",
@@ -694,7 +694,7 @@ const ProductDetails = [
     id: 132,
     name: "Current Pickup (Standard)",
     image: "/lovable-uploads/product/CurrentPickupFinal.webp",
-    description: "Standard EDM Current Pickup offers reliable and economical current transfer for daily EDM operations. Made with precision-machined brass, this pickup is suitable for general-purpose machining where cost-efficiency and moderate performance are required.",
+    description: "<p>Standard EDM Current Pickup offers reliable and economical current transfer for daily EDM operations.</p><p>Made with precision-machined brass, this pickup is suitable for general-purpose machining where cost-efficiency and moderate performance are required.</p>",
     keyFeatures: [
       "High-quality brass body ensures balanced current flow and conductivity",
     "Economical solution designed for standard daily EDM tasks",
@@ -729,7 +729,7 @@ const ProductDetails = [
     id: 14,
   name: "Mineral (EDM Stone)",
   image: "/lovable-uploads/product/Mineralfinal.webp",
-  description: "High-efficiency polishing and desiccant minerals used for fine surface finishing in EDM applications and moisture protection in transformer and compressed air systems.",
+  description: "<p>High-efficiency polishing and desiccant minerals used for fine surface finishing in EDM applications and moisture protection in transformer and compressed air systems.</p>",
   keyFeatures: [
     "Uniform abrasive structure for precision polishing",
     "Wide grit availability for varied metal surfaces",
@@ -768,7 +768,7 @@ const ProductDetails = [
     id: 15,
   name: "Rust Remover",
   image: "/lovable-uploads/product/rustremoverfinal.webp",
-  description: "Rust Remover is a high-performance, industrial-grade chemical solution designed to eliminate rust, oxidation, and corrosion from precision components used in EDM and other metalworking applications. Engineered with a fast-reacting formula and safe chemical balance, it effectively restores metal surfaces without damaging tolerances or coatings. Ideal for use on machine parts, dies, fixtures, and tools, this rust remover ensures optimal equipment longevity and performance reliability.",
+  description: "<p>Rust Remover is a high-performance, industrial-grade chemical solution designed to eliminate rust, oxidation, and corrosion from precision components used in EDM and other metalworking applications.</p><p>Engineered with a fast-reacting formula and safe chemical balance, it effectively restores metal surfaces without damaging tolerances or coatings.</p><p>Ideal for use on machine parts, dies, fixtures, and tools, this rust remover ensures optimal equipment longevity and performance reliability.</p>",
   keyFeatures: [
     "Fast-action acidic formula that breaks down rust in minutes",
     "Non-corrosive to base metals; does not damage precision components",
@@ -811,7 +811,7 @@ const ProductDetails = [
     id: 161,
     name: "Copper Tube Electrode",
     image: "/lovable-uploads/product/Coppertubeelectrodefinal.webp",
-    description: "Copper Tube Electrodes are precision-engineered consumables widely used in EDM hole-drilling applications, especially for creating deep, small-diameter holes in hard and conductive materials. Made from high-purity copper, these electrodes offer superior electrical conductivity and thermal performance, enabling faster machining speeds, minimal electrode wear, and high dimensional accuracy. Their internal hollow structure facilitates efficient flushing of dielectric fluid, ensuring cleaner machining zones and extended tool life. Ideal for industries requiring micro-drilling in high-tensile steels, carbides, and exotic alloys.",
+    description: "<p>Copper Tube Electrodes are precision-engineered consumables widely used in EDM hole-drilling applications, especially for creating deep, small-diameter holes in hard and conductive materials.</p><p>Made from high-purity copper, these electrodes offer superior electrical conductivity and thermal performance, enabling faster machining speeds, minimal electrode wear, and high dimensional accuracy.</p><p>Their internal hollow structure facilitates efficient flushing of dielectric fluid, ensuring cleaner machining zones and extended tool life. Ideal for industries requiring micro-drilling in high-tensile steels, carbides, and exotic alloys.</p>",
     keyFeatures: [
       "Excellent electrical conductivity",
     "Low electrode wear during drilling",
@@ -846,7 +846,7 @@ const ProductDetails = [
     id: 162,
     name: "Brass Tube Electrode",
     image: "/lovable-uploads/product/BrassTubeElectrode.webp",
-    description: "Brass Tube Electrodes are widely used consumables in EDM hole drilling, offering an optimal balance between performance and cost. Composed of a copper-zinc alloy, these electrodes provide moderate electrical conductivity and good wear resistance, making them ideal for general-purpose applications across various conductive materials. Their tubular structure enables effective flushing of dielectric fluid, ensuring stable and efficient machining performance. Suitable for operations involving mild steels, aluminum, graphite, and other medium-hardness alloys, brass tube electrodes are preferred for their ease of use, reliable results, and affordability in both manual and CNC EDM drilling machines.",
+    description: "<p>Brass Tube Electrodes are widely used consumables in EDM hole drilling, offering an optimal balance between performance and cost. Composed of a copper-zinc alloy, these electrodes provide moderate electrical conductivity and good wear resistance, making them ideal for general-purpose applications across various conductive materials.</p><p>Their tubular structure enables effective flushing of dielectric fluid, ensuring stable and efficient machining performance.</p><p>Suitable for operations involving mild steels, aluminum, graphite, and other medium-hardness alloys, brass tube electrodes are preferred for their ease of use, reliable results, and affordability in both manual and CNC EDM drilling machines.</p>",
     keyFeatures: [
       "Balanced performance",
       "Economical alternative",
@@ -887,7 +887,7 @@ const ProductDetails = [
     id: 171,
     name: "Japanese Drill Guide",
     image: "/lovable-uploads/product/japenesedrillguidefinal.webp",
-    description: "The Japanese Drill Guide is a high-precision EDM accessory engineered for superior accuracy in micro and deep hole drilling operations. Crafted with advanced Japanese technology and precision-ground surfaces, it ensures minimal electrode deflection, optimal alignment, and extended tooling life. Ideal for fine EDM drilling where consistency and repeatability are critical, this guide delivers unmatched stability even at high spindle speeds. It is widely used in mold manufacturing, aerospace, and medical industries for its tight tolerances and robust construction. Its compatibility with various electrode diameters makes it versatile for different EDM setups, ensuring precision at every stage of drilling.",
+    description: "<p>The Japanese Drill Guide is a high-precision EDM accessory engineered for superior accuracy in micro and deep hole drilling operations. Crafted with advanced Japanese technology and precision-ground surfaces, it ensures minimal electrode deflection, optimal alignment, and extended tooling life.</p><p>Ideal for fine EDM drilling where consistency and repeatability are critical, this guide delivers unmatched stability even at high spindle speeds. It is widely used in mold manufacturing, aerospace, and medical industries for its tight tolerances and robust construction.</p><p>Its compatibility with various electrode diameters makes it versatile for different EDM setups, ensuring precision at every stage of drilling.</p>",
     keyFeatures: [
        "Premium-grade carbide or steel construction",
     "Exceptional guiding accuracy for fine electrodes",
@@ -926,7 +926,7 @@ const ProductDetails = [
     id: 172,
     name: "EDM Drill Guide (Standard)",
     image: "/lovable-uploads/product/EDMDreillguidefina.webp",
-    description: "The Standard EDM Drill Guide is a precision-machined component designed to guide tube electrodes accurately during EDM drilling operations. Engineered to reduce electrode wobble and ensure precise bore alignment, it plays a critical role in minimizing wear and achieving consistent hole positioning. Suitable for standard-speed and deep hole drilling, this guide enhances drilling efficiency by maintaining electrode stability and improving the lifespan of both the tool and the guide. Manufactured using wear-resistant materials, it offers high durability even in demanding machining environments. Ideal for use in general-purpose EDM drilling across automotive, tool and die, and industrial manufacturing applications.",
+    description: "<p>The Standard EDM Drill Guide is a precision-machined component designed to guide tube electrodes accurately during EDM drilling operations. Engineered to reduce electrode wobble and ensure precise bore alignment, it plays a critical role in minimizing wear and achieving consistent hole positioning.</p><p>Suitable for standard-speed and deep hole drilling, this guide enhances drilling efficiency by maintaining electrode stability and improving the lifespan of both the tool and the guide. Manufactured using wear-resistant materials, it offers high durability even in demanding machining environments.</p><p>Ideal for use in general-purpose EDM drilling across automotive, tool and die, and industrial manufacturing applications.</p>",
     keyFeatures: [
       "Precision bored for tight tolerances",
     "Made from robust carbide or tool steel",
@@ -962,7 +962,7 @@ const ProductDetails = [
     id: 18,
     name: "Copper Wire for Induction Brazing",
     image: "/lovable-uploads/product/copperwireforinductionbrazing.webp",
-    description: "Copper Wire for Induction Brazing is a high-conductivity, precision-engineered wire designed for efficient and clean brazing of ferrous and non-ferrous components. It performs exceptionally well in induction heating setups, ensuring minimal oxidation and high joint integrity.",
+    description: "<p>Copper Wire for Induction Brazing is a high-conductivity, precision-engineered wire designed for efficient and clean brazing of ferrous and non-ferrous components.</p><p>It performs exceptionally well in induction heating setups, ensuring minimal oxidation and high joint integrity.</p>",
     keyFeatures: [
       "High electrical and thermal conductivity for fast heat transfer",
     "Uniform melting for clean, void-free joints",
@@ -1001,7 +1001,7 @@ const ProductDetails = [
     id: 19,
     name: "Brazing Wire",
     image: "/lovable-uploads/product/Brazingringfinal.webp",
-    description: "Brazing Wire is a versatile, alloy-based joining material engineered for high-strength metal bonding. It offers excellent capillary action and low-temperature fluidity, making it ideal for applications requiring leak-proof joints.",
+    description: "<p>Brazing Wire is a versatile, alloy-based joining material engineered for high-strength metal bonding.</p><p>It offers excellent capillary action and low-temperature fluidity, making it ideal for applications requiring leak-proof joints.</p>",
     keyFeatures: [
       "Offered in various alloy compositions including copper, silver, brass, and phosphorus",
     "Superior capillary flow for complete joint penetration",
@@ -1040,7 +1040,7 @@ const ProductDetails = [
     id: 20,
   name: "Induction Brazing Wire & Rings",
   image: "/lovable-uploads/product/Brazing_ring_final.webp",
-  description: "Induction Brazing Wire & Rings are precision-engineered pre-formed filler alloys designed for high-speed, clean, and repeatable brazing using induction heating. These rings, made from silver, copper, brass, or nickel-based alloys, fit exact joint geometries and eliminate filler waste, making them ideal for automated and high-volume production lines.",
+  description: "<p>Induction Brazing Wire & Rings are precision-engineered pre-formed filler alloys designed for high-speed, clean, and repeatable brazing using induction heating.</p><p>These rings, made from silver, copper, brass, or nickel-based alloys, fit exact joint geometries and eliminate filler waste, making them ideal for automated and high-volume production lines.</p>",
   keyFeatures: [
     "Pre-formed to precise ID/OD for slip-fit joints",
     "Available in silver, copper, brass, or nickel-based alloys",
@@ -1086,7 +1086,7 @@ const ProductDetails = [
     id: 21,
     name: "Brass Brazing Wire (RBCuZn-C)",
     image: "/lovable-uploads/product/brassbrazingwirefinal.webp",
-    description: "RBCuZn-C is a general-purpose brass brazing alloy with excellent flow characteristics. It offers medium strength and is especially effective in brazing copper, steel, and cast iron under neutral atmospheres.",
+    description: "<p><strong>RBCuZn-C</strong> is a general-purpose brass brazing alloy with excellent flow characteristics. It offers medium strength and is especially effective in brazing copper, steel, and cast iron under neutral atmospheres.</p>",
     keyFeatures: [
       "Smooth flow and strong capillary action",
       "High joint strength and corrosion resistance",
@@ -1120,7 +1120,7 @@ const ProductDetails = [
      id: 22,
   name: "Copper Phosphor Brazing Wire",
   image: "/lovable-uploads/product/CopperPhosphorusBrazingwire.webp",
-  description: "Copper Phosphor Brazing Wire is a high-performance, self-fluxing filler metal specifically engineered for joining copper-to-copper components. Its phosphorus content eliminates the need for external flux, making it ideal for clean, efficient brazing. It provides excellent capillary action, strong mechanical joints, and superior corrosion resistance. Suitable for both manual and automated brazing operations, this wire ensures high production efficiency, minimal post-braze cleaning, and reliable long-term performance.",
+  description: "<p>Copper Phosphor Brazing Wire is a high-performance, self-fluxing filler metal specifically engineered for joining copper-to-copper components.</p><p>Its phosphorus content eliminates the need for external flux, making it ideal for clean, efficient brazing. It provides excellent capillary action, strong mechanical joints, and superior corrosion resistance.</p><p>Suitable for both manual and automated brazing operations, this wire ensures high production efficiency, minimal post-braze cleaning, and reliable long-term performance.</p>",
   keyFeatures: [
     "Self-fluxing on copper, eliminating need for external flux",
     "Excellent fluidity and capillary action for tight joint penetration",
@@ -1160,7 +1160,7 @@ const ProductDetails = [
     id: 23,
     name: "ER Cu Si-A (Silicon Bronze Welding Wire)",
     image: "/lovable-uploads/product/ErCuSiafinal.webp",
-    description: "ER Cu Si-A is a premium-grade copper-silicon alloy filler wire widely used for MIG and TIG welding processes. It is specifically engineered for joining copper, brass, and dissimilar metals such as steel, offering outstanding corrosion resistance and aesthetic weld finishes. The wire provides a smooth arc transfer with minimal spatter and excellent puddle control, making it suitable for precision fabrication, galvanized steel applications, and artistic metalwork. Its good mechanical strength and ductility ensure durable, long-lasting welds, especially in marine, automotive, HVAC, and architectural sectors.",
+    description: "<p>ER Cu Si-A is a premium-grade copper-silicon alloy filler wire widely used for MIG and TIG welding processes. It is specifically engineered for joining copper, brass, and dissimilar metals such as steel, offering outstanding corrosion resistance and aesthetic weld finishes.</p><p>The wire provides a smooth arc transfer with minimal spatter and excellent puddle control, making it suitable for precision fabrication, galvanized steel applications, and artistic metalwork.</p><p>Its good mechanical strength and ductility ensure durable, long-lasting welds, especially in marine, automotive, HVAC, and architectural sectors.</p>",
     keyFeatures: [
        "Excellent corrosion resistance in marine and industrial environments",
     "Low spatter and clean, smooth bead appearance",
@@ -1199,7 +1199,7 @@ const ProductDetails = [
     id: 24,
     name: "ER Cu (Pure Copper Welding Wire)",
     image: "/lovable-uploads/product/ERCUfinal.webp",
-    description: "ER Cu is a high-purity copper welding wire known for its excellent electrical and thermal conductivity. It is ideally suited for TIG and oxy-acetylene welding of copper, deoxidized copper, and copper alloys. This wire ensures clean, strong welds with minimal porosity due to its low oxygen content. It is commonly used in electrical, refrigeration, plumbing, and heat exchanger applications where conductivity and corrosion resistance are critical. The smooth feeding characteristics and consistent arc stability make it suitable for manual and automated welding processes.",
+    description: "<p>ER Cu is a high-purity copper welding wire known for its excellent electrical and thermal conductivity. It is ideally suited for TIG and oxy-acetylene welding of copper, deoxidized copper, and copper alloys.</p><p>This wire ensures clean, strong welds with minimal porosity due to its low oxygen content. It is commonly used in electrical, refrigeration, plumbing, and heat exchanger applications where conductivity and corrosion resistance are critical.</p><p>The smooth feeding characteristics and consistent arc stability make it suitable for manual and automated welding processes.</p>",
     keyFeatures: [
       "Superior electrical and thermal conductivity",
     "Produces porosity-free, clean welds",
@@ -1234,7 +1234,7 @@ const ProductDetails = [
     id: 25,
     name: "ER Cu Sn-C (Tin Bronze Welding Wire – C Type)",
     image: "/lovable-uploads/product/ER_CUS_C_Final.webp",
-    description: "ER Cu Sn-C is a high-performance tin-bronze alloy welding wire designed for the repair, surfacing, and joining of cast bronze, brass, and copper alloys. It delivers excellent strength, hardness, and wear resistance, making it ideal for applications involving friction, impact, or heavy loads. The wire exhibits good corrosion resistance, especially in marine and industrial environments, and provides smooth arc stability with minimal spatter during welding. Suitable for MIG and TIG welding processes, it is widely used in pump parts, bearing shells, valves, and shipbuilding components.",
+    description: "<p>ER Cu Sn-C is a high-performance tin-bronze alloy welding wire designed for the repair, surfacing, and joining of cast bronze, brass, and copper alloys. It delivers excellent strength, hardness, and wear resistance, making it ideal for applications involving friction, impact, or heavy loads.</p><p>The wire exhibits good corrosion resistance, especially in marine and industrial environments, and provides smooth arc stability with minimal spatter during welding.</p><p>Suitable for MIG and TIG welding processes, it is widely used in pump parts, bearing shells, valves, and shipbuilding components.</p>",
     keyFeatures: [
       "High tensile strength and superior toughness",
     "Ideal for buildup and overlay on bronze surfaces",
@@ -1268,7 +1268,7 @@ const ProductDetails = [
     id: 26,
     name: "ER Cu Sn-A (Tin Bronze Welding Wire – A Type)",
     image: "/lovable-uploads/product/ERCUSNAFINAL.webp",
-    description: "ER Cu Sn-A is a phosphor bronze welding wire formulated for exceptional strength, ductility, and crack resistance. Designed for TIG and MIG welding, it is ideal for joining or overlaying bronze, copper alloys, and certain ferrous materials. This filler wire offers excellent corrosion resistance, particularly in seawater and acidic environments, making it suitable for marine applications. It ensures smooth arc performance, minimal spatter, and clean bead appearance. Commonly used in manufacturing bearings, gears, bushings, and valve components, it’s also well-suited for applications requiring vibration and stress endurance.",
+    description: "<p>ER Cu Sn-A is a phosphor bronze welding wire formulated for exceptional strength, ductility, and crack resistance. Designed for TIG and MIG welding, it is ideal for joining or overlaying bronze, copper alloys, and certain ferrous materials.</p><p>This filler wire offers excellent corrosion resistance, particularly in seawater and acidic environments, making it suitable for marine applications. It ensures smooth arc performance, minimal spatter, and clean bead appearance.</p><p>Commonly used in manufacturing bearings, gears, bushings, and valve components, it’s also well-suited for applications requiring vibration and stress endurance.</p>",
     keyFeatures: [
       "High fatigue and corrosion resistance in marine and industrial environments",
     "Smooth arc and excellent puddle control for precision welding",
@@ -1302,7 +1302,7 @@ const ProductDetails = [
     id: 27,
     name: "CuAl A1 (Aluminum Bronze Welding Wire – A1 Grade)",
     image: "/lovable-uploads/product/CuAlA1final.webp",
-    description: "CuAl A1 is a premium aluminum bronze welding wire composed mainly of copper and aluminum, designed for high-strength, corrosion-resistant welds in demanding environments. It is especially effective in marine, offshore, and chemical processing industries due to its excellent resistance to saltwater, cavitation, and oxidation. The wire delivers outstanding performance in MIG and TIG welding processes, offering smooth arc stability, minimal spatter, and excellent weld bead aesthetics. Ideal for joining and overlaying on similar alloys, ship propellers, pumps, valves, and components subject to friction, impact, or corrosive media. CuAl A1 also provides good resistance to stress corrosion and erosion, making it a reliable choice for structural and repair applications.",
+    description: "<p>CuAl A1 is a premium aluminum bronze welding wire composed mainly of copper and aluminum, designed for high-strength, corrosion-resistant welds in demanding environments. It is especially effective in marine, offshore, and chemical processing industries due to its excellent resistance to saltwater, cavitation, and oxidation.</p><p>The wire delivers outstanding performance in MIG and TIG welding processes, offering smooth arc stability, minimal spatter, and excellent weld bead aesthetics. It is ideal for joining and overlaying on similar alloys, ship propellers, pumps, valves, and components subject to friction, impact, or corrosive media.</p><p>CuAl A1 also provides good resistance to stress corrosion and erosion, making it a reliable choice for structural and repair applications.</p>",
     keyFeatures: [
       "High impact resistance and excellent mechanical strength",
     "Superior resistance to saltwater corrosion and cavitation damage",
@@ -1336,7 +1336,7 @@ const ProductDetails = [
     id: 28,
     name: "CuAl A2 (Aluminum Bronze Welding Wire – A2 Grade)",
     image: "/lovable-uploads/product/CuAlA2final.webp",
-    description: "CuAl A2 is a high-performance aluminum bronze welding wire formulated with additional nickel and iron for superior mechanical strength, toughness, and resistance to corrosion and erosion. It is ideal for applications involving high-impact or high-stress environments such as hydraulic components, bearing surfaces, valve seats, and marine hardware. This wire is particularly suited for welding dissimilar metals, especially joining steel to bronze or overlaying on steel for wear and corrosion protection. Offering excellent arc stability and smooth weldability in MIG and TIG operations, CuAl A2 ensures low porosity, strong metallurgical bonds, and extended component service life in marine, offshore, and industrial repair applications.",
+    description: "<p>CuAl A2 is a high-performance aluminum bronze welding wire formulated with additional nickel and iron for superior mechanical strength, toughness, and resistance to corrosion and erosion. It is ideal for applications involving high-impact or high-stress environments such as hydraulic components, bearing surfaces, valve seats, and marine hardware.</p><p>This wire is particularly suited for welding dissimilar metals, especially joining steel to bronze or overlaying on steel for wear and corrosion protection. Offering excellent arc stability and smooth weldability in MIG and TIG operations, CuAl A2 ensures low porosity, strong metallurgical bonds, and extended component service life in marine, offshore, and industrial repair applications.</p>",
     keyFeatures: [
        "High surface hardness and superior wear resistance",
     "Enhanced strength from iron and nickel alloying elements",
@@ -1370,7 +1370,7 @@ const ProductDetails = [
     id: 29,
     name: "Sudronic (Special Copper-Based Welding Alloy)",
     image: "/lovable-uploads/product/sudronic_wire.webp",
-    description: "Sudronic is a proprietary, high-performance copper-based welding alloy developed for demanding industrial applications requiring exceptional strength, wear resistance, and thermal conductivity. Specially formulated for hard surfacing and buildup operations, it is ideal for components exposed to severe mechanical stress, impact, and high temperatures, such as in mining, construction, power plants, and foundry environments. Sudronic ensures strong metallurgical bonding with low dilution, crack resistance, and a smooth bead finish. It performs well in MIG and TIG welding processes and can be used on various ferrous and non-ferrous metals, offering long-lasting protection in high-wear zones and significantly extending the service life of equipment.",
+    description: "<p>Sudronic is a proprietary, high-performance copper-based welding alloy designed for industrial applications requiring excellent strength, wear resistance, and thermal conductivity.</p><p>It is ideal for hard surfacing and buildup on components exposed to mechanical stress and high temperatures in mining, construction, and power plants. Sudronic ensures strong metallurgical bonds, crack resistance, and smooth bead finishes, extending the service life of equipment.</p>",
     keyFeatures: [
       "Formulated for high-stress, high-temperature environments",
     "Provides strong, ductile joints with minimal porosity",
@@ -1404,7 +1404,7 @@ const ProductDetails = [
     id: 30,
     name: "4043 (Aluminum-Silicon Welding Wire)",
     image: "/lovable-uploads/product/aluminium4043final.webp",
-    description: "4043 is a widely used aluminum-silicon welding wire containing approximately 5% silicon, offering excellent weldability and corrosion resistance. It is primarily used for welding 6XXX series aluminum alloys and cast aluminum parts, providing smooth bead appearance, minimal cracking, and stable arc performance in both MIG and TIG welding applications. The wire delivers moderate strength, good fluidity, and reduced shrinkage, making it ideal for automotive components, frames, aerospace structures, marine fabrication, and general aluminum repair work. Its bright, clean weld finish and resistance to hot cracking make it a top choice for consistent, quality aluminum welds.",
+    description: "<p>4043 is a widely used aluminum-silicon welding wire containing approximately 5% silicon, offering excellent weldability and corrosion resistance. It is primarily used for welding 6XXX series aluminum alloys and cast aluminum parts, providing smooth bead appearance, minimal cracking, and stable arc performance in both MIG and TIG welding applications.</p><p>The wire delivers moderate strength, good fluidity, and reduced shrinkage, making it ideal for automotive components, frames, aerospace structures, marine fabrication, and general aluminum repair work. Its bright, clean weld finish and resistance to hot cracking make it a top choice for consistent, quality aluminum welds.</p>",
     keyFeatures: [
       "Smooth arc flow and excellent wetting action",
     "Low risk of hot cracking and distortion",
@@ -1438,7 +1438,7 @@ const ProductDetails = [
     id: 31,
     name: "5357 (Aluminum-Magnesium Welding Wire)",
     image: "/lovable-uploads/product/Aluminium5357final.webp",
-    description: "5357 is a high-strength aluminum-magnesium welding wire containing approximately 5% magnesium, making it ideal for structural applications requiring toughness and corrosion resistance. Designed for both MIG and TIG welding, it offers superior ductility, excellent weld bead appearance, and exceptional resistance to saltwater corrosion, making it particularly suitable for marine, automotive, and structural fabrication. The wire performs well on 5XXX and 6XXX series aluminum alloys and provides high tensile strength with minimal cracking or porosity. It is commonly used in shipbuilding, offshore structures, pressure vessels, and transportation equipment where weld integrity and durability are critical.",
+    description: "<p>4043 is a widely used aluminum-silicon welding wire containing approximately 5% silicon, offering excellent weldability and corrosion resistance. It is primarily used for welding 6XXX series aluminum alloys and cast aluminum parts, providing smooth bead appearance, minimal cracking, and stable arc performance in both MIG and TIG welding applications.</p><p>The wire delivers moderate strength, good fluidity, and reduced shrinkage, making it ideal for automotive components, frames, aerospace structures, marine fabrication, and general aluminum repair work. Its bright, clean weld finish and resistance to hot cracking make it a top choice for consistent, quality aluminum welds.</p>",
     keyFeatures: [
       "Produces tough, high-strength welds",
     "Exceptional resistance to corrosion and saltwater exposure",
@@ -1472,7 +1472,7 @@ const ProductDetails = [
     id: 32,
     name: "4047 (Aluminum High-Silicon Welding Wire)",
     image: "/lovable-uploads/product/Aluminium4047final.webp",
-    description: "4047 is a high-silicon aluminum welding wire containing approximately 12% silicon, offering exceptional fluidity, low shrinkage, and a bright, clean weld finish. It is primarily used in applications requiring excellent leak resistance and aesthetic appeal, such as automotive radiators, air conditioning components, and pressure vessels. Compared to 4043, 4047 offers higher strength, lower crack sensitivity, and improved corrosion resistance in chemically aggressive environments. It is suitable for MIG and TIG welding processes on 6XXX series aluminum alloys and is widely chosen for precision welding in aerospace, electronics, and HVAC industries.",
+    description: "<p>4047 is a high-silicon aluminum welding wire containing approximately 12% silicon, offering exceptional fluidity, low shrinkage, and a bright, clean weld finish. It is primarily used in applications requiring excellent leak resistance and aesthetic appeal, such as automotive radiators, air conditioning components, and pressure vessels.</p><p>Compared to 4043, 4047 offers higher strength, lower crack sensitivity, and improved corrosion resistance in chemically aggressive environments. It is suitable for MIG and TIG welding processes on 6XXX series aluminum alloys and is widely chosen for precision welding in aerospace, electronics, and HVAC industries.</p>",
     keyFeatures: [
        "Smooth, leak-free welds with minimal porosity",
     "High fluidity enables excellent gap bridging and joint penetration",
@@ -1506,7 +1506,7 @@ const ProductDetails = [
   "id": 201,
   "product": "Welding Wire",
   "image": "/lovable-uploads/product/Welding_wire_pic.webp",
-  "description": "High-Precision Welding Wires for Structural & Electrical Integrity. At Maheshwari Wires Pvt. Ltd., our welding wires are designed to produce strong, clean, and defect-free welds across copper, aluminum, brass, bronze, and steel alloys. Ideal for MIG and TIG welding, these wires offer stable arc performance, excellent feedability, and low spatter—suiting a range of fabrication and industrial applications.",
+  "description": "<p>High-Precision Welding Wires for Structural & Electrical Integrity. At Maheshwari Wires Pvt. Ltd., our welding wires are designed to produce strong, clean, and defect-free welds across copper, aluminum, brass, bronze, and steel alloys.</p><p>Ideal for MIG and TIG welding, these wires offer stable arc performance, excellent feedability, and low spatter—suiting a range of fabrication and industrial applications.</p>",
   "keyFeatures": [
     "Oxide-free bright finish for excellent conductivity and weld cleanliness",
     "High alloy purity for reduced porosity and consistent weld quality",

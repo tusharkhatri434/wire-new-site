@@ -237,20 +237,20 @@ const Home = () => {
             <div className="max-w-4xl mx-auto">
               <div className="glass p-8 rounded-2xl depth-2 hover-lift transition-all duration-300 bg-white border border-gray-200">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
-                    <Quote className="h-6 w-6 text-white" />
+                  <div className="w-8 md:w-12 h-8 md:h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
+                    <Quote className="h-4 sm:h-6 w-4 sm:w-6 text-white" />
                   </div>
                   <div className="flex-1">
-                    <blockquote className="text-lg md:text-xl text-gray-700 not-italic mb-6 italic">
+                    <blockquote className="text-sm sm:text-lg md:text-xl text-gray-700 mb-6">
                       "Maheshwari Wires has consistently delivered high-quality products that meet our exacting standards for aerospace applications. Their technical expertise and commitment to quality make them a valuable partner in our critical projects."
                     </blockquote>
                     <div className="flex items-center">
-                      <div className="w-10 h-10 bg-gradient-to-br from-brand-gold to-yellow-500 rounded-full flex items-center justify-center mr-4">
-                        <Award className="h-5 w-5 text-white" />
+                      <div className="w-7 md:w-10 h-7 md:h-10 bg-gradient-to-br from-brand-gold to-yellow-500 rounded-full flex items-center justify-center mr-4">
+                        <Award className="w-4 h-4 md:h-5 md:w-5 text-white" />
                       </div>
                       <div>
                         <p className="font-semibold text-brand-blue font-poppins">Technical Director</p>
-                        <p className="text-gray-600 font-montserrat text-sm">Leading Aerospace Company</p>
+                        <p className="text-gray-600 font-montserrat text-xs">Leading Aerospace Company</p>
                       </div>
                     </div>
                   </div>
