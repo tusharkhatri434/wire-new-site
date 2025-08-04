@@ -1,271 +1,299 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import CompanyLogo from "./CompanyLogo";
-import { ArrowUp, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, ChevronRight } from "lucide-react";
+import { ArrowUp, Phone, Mail, MapPin, Clock, Facebook, Twitter, Instagram, Linkedin, ChevronRight, ChevronDown } from "lucide-react";
 import { Button } from "./ui/button";
 import WhatsappIcon from "./WhatsappIcon";
 
-const productsData = [
-    {
-      "id": 1,
-      "name": "Non-Ferrous wire",
-      "link": false,
-      "path": "/products",
-      "children": [
-        { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/6" },
-        { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/7" },
-        { "id": 5, "name": "Molly Wire", "link": true, "path": "/products/8" },
-        { "id": 6, "name": "Copper wire", "link": true, "path": "/products/9" },
-        { "id": 2, "name": "EDM Wire", "link": true, "path": "/products/5", 
-          "children":[
+const productsFooter = {
+    "non_ferrous_wires": {
+      "category_name": "Non-Ferrous Wires",
+      "products": {
+        "edm_wire": {
+          "id": "nfw_001",
+          "name": "EDM Wire",
+          "link": "/products/5",
+          "hasLink": true,
+          "children": [
             {
-              "id": 7,
-              "name": "plain brass wire",
-              "link": true,
-              "path": "/products/1"
+              "id": "nfw_001_001",
+              "name": "Plain Brass wire",
+              "link": "/products/1",
+              "hasLink": true
             },
             {
-              "id": 8,
-              "name": "diffused coated wire",
-              "link": true,
-              "path": "/products/2",
+              "id": "nfw_001_002",
+              "name": "Diffused Coated wire",
+              "link": "/products/2",
+              "hasLink": true
             },
             {
-             "id": 9,
-             "name": "Zinc diffused coated wire",
-             "link": true,
-             "path": "/products/3",
+              "id": "nfw_001_003",
+              "name": "Zinc Diffused Coated wire",
+              "link": "/products/3",
+              "hasLink": true
             },
-            { "id": 10, "name": "Zinc coated wire", "link": true, "path": "/products/4" }
+            {
+              "id": "nfw_001_004",
+              "name": "Zinc Coated wire",
+              "link": "/products/4",
+              "hasLink": true
+            }
           ]
-        }]
-    },{
-      "id": 11,
-      "name": "Brazing And Welding",
-      "link": false,
-      "path": "/products",
-      "children":[
-      {
-        "id": 12,
-       "name": "Copper Wire for Induction Brazing",
-       "link": true,
-       "path": "/products/18",
         },
-        {
-        "id": 13,
-       "name": "Brazing wire",
-       "link": true,
-       "path": "/products/19",
-       "children":[
-        {
-        "id": 14,
-       "name": "Induction Brazing Wire & Rings",
-       "link": true,
-       "path": "/products/20"
+        "zari_wire": {
+          "id": "nfw_002",
+          "name": "Zari Wire",
+          "link": "/products/6",
+          "hasLink": true,
+          "children": []
         },
-        {
-        "id": 15  ,
-       "name": "Brass Brazing RBCuZn-c",
-       "link": true,
-       "path": "/products/21"
+        "copper_extrusions": {
+          "id": "nfw_003",
+          "name": "Copper Extrusions",
+          "link": "/products/7",
+          "hasLink": true,
+          "children": []
         },
-        {
-        "id": 16,
-       "name": "Copper Phosphor Brazing Wire",
-       "link": true,
-       "path": "/products/22"
+        "molly_wire": {
+          "id": "nfw_004",
+          "name": "Molly Wire",
+          "link": "/products/8",
+          "hasLink": true,
+          "children": []
+        },
+        "copper_wire": {
+          "id": "nfw_005",
+          "name": "Copper Wire",
+          "link": "/products/9",
+          "hasLink": true,
+          "children": []
         }
-       ]
-        },
-         {
-        "id": 16,
-       "name": " Welding Wire",
-       "link": false,
-       "path": "/products",
-       "children":[
-      {
-        "id": 17,
-       "name": "Copper Alloy",
-       "link": false,
-       "path": "/products",
-       "children":[
-      {
-        "id": 18,
-       "name": "Er Cu Sia",
-       "link": true,
-       "path": "/products/23",
-      },
-         {
-        "id": 19,
-       "name": "Er Cu",
-       "link": true,
-       "path": "/products/24",
-      },
-         {
-        "id": 20,
-       "name": "Er Cu SnC",
-       "link": true,
-       "path": "/products/25",
-      },
-         {
-        "id": 21,
-       "name": "Er Cu Sn A",
-       "link": true,
-       "path": "/products/26",
-      },
-         {
-        "id": 22,
-       "name": "CuAl A1",
-       "link": true,
-       "path": "/products/27",
-      },
-         {
-        "id": 23,
-       "name": "CuAl A2",
-       "link": true,
-       "path": "/products/28",
-      },
-         {
-        "id": 24,
-       "name": "Sudronic",
-       "link": true,
-       "path": "/products/29",
-      },
-       ]
-      },
-      {
-        "id": 25,
-       "name": "Aluminum",
-       "link": false,
-       "path": "/products",
-       "children":[
-        {
-        "id": 26,
-       "name": "4043",
-       "link": true,
-       "path": "/products/30",
-      },
-        {
-        "id": 27,
-       "name": "5357",
-       "link": true,
-       "path": "/products/31",
-      },
-        {
-        "id": 28,
-       "name": "4047",
-       "link": true,
-       "path": "/products/32",
       }
-       ]
-      }
-       ]
-        },
-      ]
     },
-      {
-      "id": 29,
-      "name": " Consumables",
-      "link": false,
-      "path": "/products",
-       "children":[
-        {
-          "id": 30,
-          "name": "Resin",
-          "link": true,
-          "path": "/products/10"
+    "welding_and_brazing": {
+      "category_name": "Welding and Brazing",
+      "products": {
+        "copper_wire_for_induction_brazing": {
+          "id": "wab_001",
+          "name": "Copper Wire for Induction Brazing",
+          "link": "/products/18",
+          "hasLink": true,
+          "children": []
         },
-        {
-          "id": 31,
-          "name": "Ointment Oil",
-          "link": true,
-          "path": "/products/11"
-        },
-        {
-          "id": 32,
-          "name": "Filter",
-          "link": true,
-          "path": "/products/12"
-        },
-        {
-          "id": 33,
-          "name": "Current Pickup Assembly",
-          "link": true,
-          "path": "/products/13",
-          "children":[
-          {
-          "id": 34,
-          "name": "Diamond EDM Pickup",
-          "link": true,
-          "path": "/products/131"
-        },
-        {
-          "id": 35,
-          "name": "Current Pickup (Standard)",
-          "link": true,
-          "path": "/products/132"
-        },
+        "brazing_wire": {
+          "id": "wab_002",
+          "name": "Brazing Wire",
+          "link": "/products/19",
+          "hasLink": true,
+          "children": [
+            {
+              "id": "wab_002_001",
+              "name": "Induction Brazing Wire & Rings",
+              "link": "/products/20",
+              "hasLink": true
+            },
+            {
+              "id": "wab_002_002",
+              "name": "Brass Brazing RBCuZn-c",
+              "link": "/products/21",
+              "hasLink": true
+            },
+            {
+              "id": "wab_002_003",
+              "name": "Copper Phosphor Brazing Wire",
+              "link": "/products/22",
+              "hasLink": true
+            }
           ]
         },
-   
-        {
-          "id": 36,
-          "name": "Mineral",
-          "link": true,
-          "path": "/products/14"
+        "welding_wire": {
+          "id": "wab_003",
+          "name": "Welding Wire",
+          "link": "/products/201",
+          "hasLink": true,
+          "children": []
         },
-        {
-          "id": 37,
-          "name": "Rust Remover",
-          "link": true,
-          "path": "/products/15"
-        },
-        {
-          "id": 42,
-          "name": " Tube Electrode",
-          "link": false,
-          "path": "/products/15",
-          "children":[
-          {
-          "id": 38,
-          "name": "Copper Tube Electrode",
-          "link": true,
-          "path": "/products/161"
-        },
-        {
-          "id": 39,
-          "name": "Brass Tube Electrode",
-          "link": true,
-          "path": "/products/162"
-        },
+        "copper_alloy": {
+          "id": "wab_004",
+          "name": "Copper Alloy",
+          "hasLink": false,
+          "children": [
+            {
+              "id": "wab_004_001",
+              "name": "Er Cu Sia",
+              "link": "/products/23",
+              "hasLink": true
+            },
+            {
+              "id": "wab_004_002",
+              "name": "Er Cu",
+              "link": "/products/24",
+              "hasLink": true
+            },
+            {
+              "id": "wab_004_003",
+              "name": "Er Cu SnC",
+              "link": "/products/25",
+              "hasLink": true
+            },
+            {
+              "id": "wab_004_004",
+              "name": "Er Cu Sn A",
+              "link": "/products/26",
+              "hasLink": true
+            },
+            {
+              "id": "wab_004_005",
+              "name": "CuAIA1",
+              "link": "/products/27",
+              "hasLink": true
+            },
+            {
+              "id": "wab_004_006",
+              "name": "CuAIA2",
+              "link": "/products/28",
+              "hasLink": true
+            },
+            {
+              "id": "wab_004_007",
+              "name": "Sufronic",
+              "link": "/products/29",
+              "hasLink": true
+            }
           ]
         },
-        {
-          "id": 43,
-          "name": "Drill Guide",
-          "link": false,
-          "path": "/products/171",
-          "children":[
-          {
-          "id": 40,
-          "name": "Japanese Drill Guide",
-          "link": true,
-          "path": "/products/171"
-        },
-        {
-          "id": 41,
-          "name": "EDM Drill Guide (Standard)",
-          "link": true,
-          "path": "/products/172"
-        }]
+        "aluminum": {
+          "id": "wab_005",
+          "name": "Aluminum",
+          "hasLink": false,
+          "children": [
+            {
+              "id": "wab_005_001",
+              "name": "4043",
+              "link": "/products/30",
+              "hasLink": true
+            },
+            {
+              "id": "wab_005_002",
+              "name": "5357",
+              "link": "/products/31",
+              "hasLink": true
+            },
+            {
+              "id": "wab_005_003",
+              "name": "4047",
+              "link": "/products/32",
+              "hasLink": true
+            }
+          ]
         }
-       ]
+      }
+    },
+    "consumables": {
+      "category_name": "Consumables",
+      "products": {
+        "resin": {
+          "id": "con_001",
+          "name": "Resin",
+          "link": "/products/10",
+          "hasLink": true,
+          "children": []
+        },
+        "ointment_oil": {
+          "id": "con_002",
+          "name": "Ointment Oil",
+          "link": "/products/11",
+          "hasLink": true,
+          "children": []
+        },
+        "filter": {
+          "id": "con_003",
+          "name": "Filter",
+          "link": "/products/12",
+          "hasLink": true,
+          "children": []
+        },
+        "current_pickup": {
+          "id": "con_004",
+          "name": "Current Pickup",
+          "link": "/products/13",
+          "hasLink": true,
+          "children": [
+            {
+              "id": "con_004_001",
+              "name": "Diamond EDM",
+              "link": "/products/131",
+              "hasLink": true
+            },
+            {
+              "id": "con_004_002",
+              "name": "Current Pickup",
+              "link": "/products/132",
+              "hasLink": true
+            }
+          ]
+        },
+        "mineral": {
+          "id": "con_005",
+          "name": "Mineral",
+          "link": "/products/14",
+          "hasLink": true,
+          "children": []
+        },
+        "rust_remover": {
+          "id": "con_006",
+          "name": "Rust Remover",
+          "link": "/products/15",
+          "hasLink": true,
+          "children": []
+        },
+        "tube_electrode": {
+          "id": "con_007",
+          "name": "Tube Electrode",
+          "hasLink": true,
+          "children": [
+            {
+              "id": "con_007_001",
+              "name": "Copper Tube",
+              "link": "/products/161",
+              "hasLink": true
+            },
+            {
+              "id": "con_007_002",
+              "name": "Brass Tube",
+              "link": "/products/162",
+              "hasLink": true
+            }
+          ]
+        },
+        "drill_guide": {
+          "id": "con_008",
+          "name": "DrillGuide",
+          "hasLink": true,
+          "children": [
+            {
+              "id": "con_008_001",
+              "name": "Japanese Drill Guide",
+              "link": "/products/171",
+              "hasLink": true
+            },
+            {
+              "id": "con_008_002",
+              "name": "EDM Drill Guide",
+              "link": "/products/172",
+              "hasLink": true
+            }
+          ]
+        }
+      }
     }
-  ];
+  };
 
 const Footer = () => {
   const [showScrollTop, setShowScrollTop] = React.useState(false);
   const [expandedCategories, setExpandedCategories] = React.useState({});
+  const [expandedProducts, setExpandedProducts] = React.useState({});
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -284,58 +312,19 @@ const Footer = () => {
     });
   };
 
-  const toggleCategory = (categoryId) => {
+  const toggleCategory = (categoryKey) => {
     setExpandedCategories(prev => ({
       ...prev,
-      [categoryId]: !prev[categoryId]
+      [categoryKey]: !prev[categoryKey]
     }));
   };
 
-  // Helper function to get all linkable products from a category
-  const getLinkableProducts = (category, maxItems = 6) => {
-    const products = [];
-    
-    const addProducts = (items, depth = 0) => {
-      if (products.length >= maxItems) return;
-      
-      items?.forEach(item => {
-        if (products.length >= maxItems) return;
-        
-        if (item.link) {
-          products.push({
-            name: item.name,
-            path: item.path,
-            depth
-          });
-        }
-        
-        if (item.children && products.length < maxItems) {
-          addProducts(item.children, depth + 1);
-        }
-      });
-    };
-
-    addProducts(category.children);
-    return products;
+  const toggleProduct = (productKey) => {
+    setExpandedProducts(prev => ({
+      ...prev,
+      [productKey]: !prev[productKey]
+    }));
   };
-
-  // Split products into columns for better layout
-  const getProductColumns = () => {
-    const columns = [];
-    productsData.forEach((category, index) => {
-      const products = getLinkableProducts(category, 8);
-      if (products.length > 0) {
-        columns.push({
-          title: category.name,
-          products: products,
-          id: category.id
-        });
-      }
-    });
-    return columns;
-  };
-
-  const productColumns = getProductColumns();
 
   return (
     <footer className="bg-brand-blue text-white relative overflow-hidden">
@@ -349,7 +338,7 @@ const Footer = () => {
 
       <div className="relative container mx-auto py-12 lg:py-16 px-4 sm:px-6 lg:px-8">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 lg:gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-8 lg:gap-3">
           
           {/* Company Info - Takes 2 columns on xl screens */}
           <div className="sm:col-span-2 xl:col-span-2">
@@ -438,73 +427,100 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Dynamic Product Columns */}
-          {productColumns.slice(0, 3).map((column, columnIndex) => (
-            <div key={column.id} className="lg:block">
-              <h3 className="text-brand-gold text-base lg:text-lg font-bold mb-4 lg:mb-6 relative">
-                {column.title}
-                <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold"></div>
-              </h3>
-              
-              {/* Mobile Expandable */}
-              <div className="lg:hidden">
+          {/* Products Display - Integrated directly into Footer */}
+          {Object.entries(productsFooter).map(([categoryKey, category]) => (
+            <div key={categoryKey} className="lg:col-span-1">
+              <div className="mb-4">
                 <button
-                  onClick={() => toggleCategory(column.id)}
-                  className="flex items-center justify-between w-full text-left text-blue-100 hover:text-brand-gold transition-colors text-sm mb-2"
+                  onClick={() => toggleCategory(categoryKey)}
+                  className="flex items-center justify-between w-full text-left group"
+                  aria-expanded={expandedCategories[categoryKey]}
                 >
-                  <span>View Products</span>
-                  <ChevronRight 
-                    className={`h-4 w-4 transform transition-transform ${
-                      expandedCategories[column.id] ? 'rotate-90' : ''
-                    }`} 
+                  <h3 className="text-brand-gold text-base lg:text-lg font-bold relative group-hover:text-yellow-400 transition-colors">
+                    {category.category_name}
+                    <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold group-hover:w-12 transition-all duration-300"></div>
+                  </h3>
+                  <ChevronDown 
+                    className={`h-4 w-4 text-brand-gold transition-transform duration-300 lg:hidden ${
+                      expandedCategories[categoryKey] ? 'rotate-180' : ''
+                    }`}
                   />
                 </button>
-                
-                {expandedCategories[column.id] && (
-                  <ul className="space-y-2">
-                    {column.products.map((product, index) => (
-                      <li key={index}>
-                        <Link
-                          to={product.path}
-                          className="text-blue-200 hover:text-brand-gold transition-colors duration-300 text-xs block py-1"
-                          // style={{ paddingLeft: `${product.depth * 8}px` }}
-                        >
-                          {product.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
               </div>
 
-              {/* Desktop Always Visible */}
-              <ul className="hidden lg:block space-y-2 lg:space-y-3">
-                {column.products.map((product, index) => (
-                  <li key={index}>
-                    <Link
-                      to={product.path}
-                      className="group text-blue-100 hover:text-brand-gold transition-all duration-300 text-sm flex items-start"
-                    >
-                      <ChevronRight className="h-3 w-3 mr-1 mt-0.5 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300 flex-shrink-0" />
-                      <span className="group-hover:translate-x-1 transform transition-transform duration-300 leading-tight">
-                        {product.name}
-                      </span>
-                    </Link>
-                  </li>
+              <div className={`space-y-2 lg:space-y-3 ${
+                expandedCategories[categoryKey] ? 'block' : 'hidden lg:block'
+              }`}>
+                {Object.entries(category.products).map(([productKey, product]) => (
+                  <div key={product.id}>
+                    {/* Main Product */}
+                    <div className="flex items-center justify-between">
+                      <Link
+                        to={product.hasLink ? product.link : "#"}
+                        className={`group text-sm flex items-center ${
+                          product.hasLink 
+                            ? "text-blue-100 hover:text-brand-gold transition-all duration-300" 
+                            : "text-blue-300 cursor-default"
+                        }`}
+                      >
+                        {product.hasLink && (
+                          <ChevronRight className="h-3 w-3 mr-1 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                        )}
+                        <span className={`${
+                          product.hasLink ? "group-hover:translate-x-1 transform transition-transform duration-300" : ""
+                        }`}>
+                          {product.name}
+                        </span>
+                      </Link>
+                      
+                      {product.children && product.children.length > 0 && (
+                        <button
+                          onClick={() => toggleProduct(product.id)}
+                          className="p-1 text-blue-300 hover:text-brand-gold transition-colors"
+                          aria-label={`Toggle ${product.name} submenu`}
+                        >
+                          <ChevronDown 
+                            className={`h-3 w-3 transition-transform duration-300 ${
+                              expandedProducts[product.id] ? 'rotate-180' : ''
+                            }`}
+                          />
+                        </button>
+                      )}
+                    </div>
+
+                    {/* Sub Products */}
+                    {product.children && product.children.length > 0 && (
+                      <div className={`ml-4 mt-2 space-y-1 border-l-2 border-blue-800/30 pl-3 ${
+                        expandedProducts[product.id] ? 'block' : 'hidden'
+                      }`}>
+                        {product.children.map((child) => (
+                          <Link
+                            key={child.id}
+                            to={child.hasLink ? child.link : "#"}
+                            className={`group text-xs flex items-center ${
+                              child.hasLink 
+                                ? "text-blue-200 hover:text-brand-gold transition-all duration-300" 
+                                : "text-blue-400 cursor-default"
+                            }`}
+                          >
+                            {child.hasLink && (
+                              <ChevronRight className="h-2 w-2 mr-1 opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 transition-all duration-300" />
+                            )}
+                            <span className={`${
+                              child.hasLink ? "group-hover:translate-x-1 transform transition-transform duration-300" : ""
+                            }`}>
+                              {child.name}
+                            </span>
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 ))}
-                {/* {column.products.length > 6 && (
-                  <li>
-                    <Link
-                      to="/products"
-                      className="text-brand-gold hover:text-yellow-300 transition-colors text-xs font-medium flex items-center"
-                    >
-                      View All <ChevronRight className="h-3 w-3 ml-1" />
-                    </Link>
-                  </li>
-                )} */}
-              </ul>
+              </div>
             </div>
           ))}
+       
         </div>
 
         {/* Additional Address Section */}
@@ -566,18 +582,6 @@ const Footer = () => {
                </a>
               </div>
             </div>
-          
-            {/* <div className="flex flex-wrap justify-center sm:justify-end gap-4 sm:gap-6 text-xs sm:text-sm">
-              <Link to="/privacy" className="text-blue-200 hover:text-brand-gold transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="text-blue-200 hover:text-brand-gold transition-colors">
-                Terms & Conditions
-              </Link>
-              <Link to="/sitemap" className="text-blue-200 hover:text-brand-gold transition-colors">
-                Sitemap
-              </Link>
-            </div> */}
           </div>
         </div>
       </div>
