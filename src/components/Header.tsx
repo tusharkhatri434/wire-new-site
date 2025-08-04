@@ -118,7 +118,6 @@ const Header = ({
       "id": 1,
       "name": "Non-Ferrous wire",
       "link": false,
-      "path": "",
       "children": [
         { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/6" },
         { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/7" },
@@ -151,7 +150,6 @@ const Header = ({
       "id": 11,
       "name": "Brazing And Welding",
       "link": false,
-      "path": "",
       "children":[
       {
         "id": 12,
@@ -189,7 +187,6 @@ const Header = ({
         "id": 16,
        "name": " Welding Wire",
        "link": false,
-       "path": "/products",
        "children":[
       {
         "id": 17,
@@ -245,7 +242,6 @@ const Header = ({
         "id": 25,
        "name": "Aluminum",
        "link": false,
-       "path": "/products",
        "children":[
         {
         "id": 26,
@@ -275,7 +271,6 @@ const Header = ({
       "id": 29,
       "name": " Consumables",
       "link": false,
-      "path": "/products",
        "children":[
         {
           "id": 30,
@@ -332,7 +327,6 @@ const Header = ({
           "id": 42,
           "name": " Tube Electrode",
           "link": false,
-          "path": "",
           "children":[
           {
           "id": 38,
@@ -352,7 +346,6 @@ const Header = ({
           "id": 43,
           "name": "Drill Guide",
           "link": false,
-          "path": "",
           "children":[
           {
           "id": 40,

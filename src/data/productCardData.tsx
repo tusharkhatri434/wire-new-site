@@ -722,7 +722,7 @@ export const allProducts = [
       "Corrosion Resistance and Leak-Proof Joints"
     ],
     tags: ["Copper", "Phosphor"],
-    image: '/lovable-uploads/product/CopperPhosphorusBrazingwire.webp',
+    image: '/lovable-uploads/product/newCopperPhosphorusBrazingwire.webp',
     link:22,
     category: "Brazing and Welding",
     subcategory: "Brazing Wire"
@@ -753,7 +753,7 @@ export const allProducts = [
       "Ideal for automotive and HVAC systems"
     ],
     tags: ["Copper", "Alloy"],
-      image: '/lovable-uploads/product/ErCuSiafinal.webp',
+      image: '/lovable-uploads/product/newErCuSiafinal.webp',
       link:23,
     category: "Brazing and Welding",
     subcategory: "Copper Alloy"
@@ -813,7 +813,7 @@ export const allProducts = [
       "Used in marine and chemical industries"
     ],
     tags: ["Copper", "Aluminum Bronze"],
-   image: '/lovable-uploads/product/CuAlA1final.webp',
+   image: '/lovable-uploads/product/newCuAlA1final.webp',
    link:27,
     category: "Brazing and Welding",
     subcategory: "Copper Alloy"
@@ -828,7 +828,7 @@ export const allProducts = [
       "Common in aerospace and heavy machinery"
     ],
     tags: ["Copper", "Aluminum Bronze"],
-     image: '/lovable-uploads/product/CuAlA2final.webp',
+     image: '/lovable-uploads/product/newCuAlA2final.webp',
      link:28,
     category: "Brazing and Welding",
     subcategory: "Copper Alloy"

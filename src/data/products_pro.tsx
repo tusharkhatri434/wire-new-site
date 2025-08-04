@@ -1119,7 +1119,7 @@ const ProductDetails = [
   {
      id: 22,
   name: "Copper Phosphor Brazing Wire",
-  image: "/lovable-uploads/product/CopperPhosphorusBrazingwire.webp",
+  image: "/lovable-uploads/product/newCopperPhosphorusBrazingwire.webp",
   description: "<p>Copper Phosphor Brazing Wire is a high-performance, self-fluxing filler metal specifically engineered for joining copper-to-copper components.</p><p>Its phosphorus content eliminates the need for external flux, making it ideal for clean, efficient brazing. It provides excellent capillary action, strong mechanical joints, and superior corrosion resistance.</p><p>Suitable for both manual and automated brazing operations, this wire ensures high production efficiency, minimal post-braze cleaning, and reliable long-term performance.</p>",
   keyFeatures: [
     "Self-fluxing on copper, eliminating need for external flux",
@@ -1159,7 +1159,7 @@ const ProductDetails = [
   {
     id: 23,
     name: "ER Cu Si-A (Silicon Bronze Welding Wire)",
-    image: "/lovable-uploads/product/ErCuSiafinal.webp",
+    image: "/lovable-uploads/product/newErCuSiafinal.webp",
     description: "<p>ER Cu Si-A is a premium-grade copper-silicon alloy filler wire widely used for MIG and TIG welding processes. It is specifically engineered for joining copper, brass, and dissimilar metals such as steel, offering outstanding corrosion resistance and aesthetic weld finishes.</p><p>The wire provides a smooth arc transfer with minimal spatter and excellent puddle control, making it suitable for precision fabrication, galvanized steel applications, and artistic metalwork.</p><p>Its good mechanical strength and ductility ensure durable, long-lasting welds, especially in marine, automotive, HVAC, and architectural sectors.</p>",
     keyFeatures: [
        "Excellent corrosion resistance in marine and industrial environments",
@@ -1301,7 +1301,7 @@ const ProductDetails = [
   {
     id: 27,
     name: "CuAl A1 (Aluminum Bronze Welding Wire – A1 Grade)",
-    image: "/lovable-uploads/product/CuAlA1final.webp",
+    image: "/lovable-uploads/product/newCuAlA1final.webp",
     description: "<p>CuAl A1 is a premium aluminum bronze welding wire composed mainly of copper and aluminum, designed for high-strength, corrosion-resistant welds in demanding environments. It is especially effective in marine, offshore, and chemical processing industries due to its excellent resistance to saltwater, cavitation, and oxidation.</p><p>The wire delivers outstanding performance in MIG and TIG welding processes, offering smooth arc stability, minimal spatter, and excellent weld bead aesthetics. It is ideal for joining and overlaying on similar alloys, ship propellers, pumps, valves, and components subject to friction, impact, or corrosive media.</p><p>CuAl A1 also provides good resistance to stress corrosion and erosion, making it a reliable choice for structural and repair applications.</p>",
     keyFeatures: [
       "High impact resistance and excellent mechanical strength",
@@ -1335,7 +1335,7 @@ const ProductDetails = [
   {
     id: 28,
     name: "CuAl A2 (Aluminum Bronze Welding Wire – A2 Grade)",
-    image: "/lovable-uploads/product/CuAlA2final.webp",
+    image: "/lovable-uploads/product/newCuAlA2final.webp",
     description: "<p>CuAl A2 is a high-performance aluminum bronze welding wire formulated with additional nickel and iron for superior mechanical strength, toughness, and resistance to corrosion and erosion. It is ideal for applications involving high-impact or high-stress environments such as hydraulic components, bearing surfaces, valve seats, and marine hardware.</p><p>This wire is particularly suited for welding dissimilar metals, especially joining steel to bronze or overlaying on steel for wear and corrosion protection. Offering excellent arc stability and smooth weldability in MIG and TIG operations, CuAl A2 ensures low porosity, strong metallurgical bonds, and extended component service life in marine, offshore, and industrial repair applications.</p>",
     keyFeatures: [
        "High surface hardness and superior wear resistance",
@@ -1369,7 +1369,7 @@ const ProductDetails = [
   {
     id: 29,
     name: "Sudronic (Special Copper-Based Welding Alloy)",
-    image: "/lovable-uploads/product/sudronic_wire.webp",
+    image: "/lovable-uploads/product/newsudronic_wire.webp",
     description: "<p>Sudronic is a proprietary, high-performance copper-based welding alloy designed for industrial applications requiring excellent strength, wear resistance, and thermal conductivity.</p><p>It is ideal for hard surfacing and buildup on components exposed to mechanical stress and high temperatures in mining, construction, and power plants. Sudronic ensures strong metallurgical bonds, crack resistance, and smooth bead finishes, extending the service life of equipment.</p>",
     keyFeatures: [
       "Formulated for high-stress, high-temperature environments",
