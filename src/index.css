@@ -636,3 +636,11 @@
 .shadow-detail-page{
   box-shadow: 15px 15px 0px 2px #f1d747;
 }
+/* .shadow-detail-page-mobile{
+  box-shadow: 7px 7px 0px 2px #f1d747;
+} */
+@media  screen and (max-width : 500px) {
+  .shadow-detail-page{
+      box-shadow: 7px 7px 0px 2px #f1d747;
+  }
+}

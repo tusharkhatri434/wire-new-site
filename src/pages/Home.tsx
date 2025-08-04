@@ -58,18 +58,19 @@ const Home = () => {
       "Up to 30% faster than plain brass wire",
       "Better tolerance in taper cutting"],
     category: "Specialty Coatings"
-  }, {
-    id: "Molly Wire",
-    title: "Molly Wires",
-    link:8,
-    image: '/lovable-uploads/product/molly_wire.webp',
-    description: "Molly Wire is a molybdenum-based alloy wire specifically designed for extreme environments where high temperature, corrosion resistance, and tensile strength are critical.",
-    features: [  "Extremely High Melting Point (2620°C)",
-      "Excellent Dimensional Stability",
-      "Corrosion & Oxidation Resistant",
-      "Good Workability & Long Service Life"],
-    category: "Non-Ferrous Wire"
   },
+  //  {
+  //   id: "Molly Wire",
+  //   title: "Molly Wires",
+  //   link:8,
+  //   image: '/lovable-uploads/product/molly_wire.webp',
+  //   description: "Molly Wire is a molybdenum-based alloy wire specifically designed for extreme environments where high temperature, corrosion resistance, and tensile strength are critical.",
+  //   features: [  "Extremely High Melting Point (2620°C)",
+  //     "Excellent Dimensional Stability",
+  //     "Corrosion & Oxidation Resistant",
+  //     "Good Workability & Long Service Life"],
+  //   category: "Non-Ferrous Wire"
+  // },
   {
     id: "View_All_Products",
     link:"",

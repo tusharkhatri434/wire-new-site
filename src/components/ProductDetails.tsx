@@ -37,7 +37,7 @@ const ProductDetails = ({ productData }) => {
     
     return (
       <section className="mb-8">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-600 pb-2">{title}</h2>
+        <h2 className="text-2xl font-semibold mb-4 text-gray-800 border-b-2 border-blue-800 pb-2">{title}</h2>
         {type === 'list' && Array.isArray(content) && (
           <ul className="list-disc list-inside space-y-2 text-gray-600 pl-4">
             {content.map((item, i) => (
@@ -83,12 +83,12 @@ const ProductDetails = ({ productData }) => {
   return (
     <div className="max-w-7xl mx-auto px-4 py-2 md:py-8 bg-gray-50 min-h-screen">
       {/* Back Button */}
-      <button onClick={()=>navigate(-1)} className="mb-6 ml-4 bg-blue-900 text-white px-6 py-2 rounded-full hover:bg-blue-800 transition-colors">
+      <button onClick={()=>navigate(-1)} className="mb-6 ml-4 bg-brand-blue text-white px-6 py-2 rounded-full hover:bg-brand-blue/90 transition-colors">
         ← Back
       </button>
 
       {/* Header Section with Image and Product Info */}
-      <div className="bg-gradient-to-r from-blue-900 to-blue-800 rounded-[3rem] p-8 mb-8 text-white shadow-detail-page">
+      <div className="bg-brand-blue rounded-[3rem] py-8 px-3 md:px-8 mb-8 text-white shadow-detail-page">
         <div className="flex flex-col lg:flex-row items-center gap-8">
           <div className="lg:w-fit">
             <div className="bg-white p-2 rounded-xl shadow-lg">
@@ -101,7 +101,7 @@ const ProductDetails = ({ productData }) => {
           </div>
           <div className="lg:w-2/3">
             <h1 className="text-xl md:text-4xl font-bold mb-4">{product || name}</h1>
-            <div className="text-blue-100 leading-relaxed text-base md:text-base">
+            <div className="text-blue-100 leading-relaxed text-sm md:text-base">
               {/* <p className='text-lg bg-white inline-block text-black rounded-md px-2'>Description : </p> */}
                 <div className='flex flex-col gap-2' dangerouslySetInnerHTML={{ __html: description }} />
             </div>
@@ -248,7 +248,7 @@ const ProductDetails = ({ productData }) => {
         {/* Get Quote Button */}
         <div className="flex justify-between items-center">
           <Link to="/connect  ">
-          <button className="bg-blue-900 text-white rounded-lg px-2 py-2 text-sm sm:text-base font-semibold hover:bg-blue-800 transition-colors shadow-lg">
+          <button className="bg-brand-blue text-white rounded-lg px-2 py-2 text-sm sm:text-base font-semibold hover:bg-brand-blue/90 transition-colors shadow-lg">
             Get Your Quote
           </button>
           </Link>
