@@ -401,7 +401,7 @@ const Footer = () => {
           <div>
             <h3 className="text-brand-gold text-base lg:text-lg font-bold mb-4 lg:mb-6 relative">
               Quick Links
-              <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold"></div>
+              {/* <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold"></div> */}
             </h3>
             <ul className="space-y-2 lg:space-y-3">
               {[
@@ -433,12 +433,12 @@ const Footer = () => {
               <div className="mb-4">
                 <button
                   onClick={() => toggleCategory(categoryKey)}
-                  className="flex items-center justify-between w-full text-left group"
+                  className="flex items-center gap-1 w-full text-left group"
                   aria-expanded={expandedCategories[categoryKey]}
                 >
                   <h3 className="text-brand-gold text-base lg:text-lg font-bold relative group-hover:text-yellow-400 transition-colors">
                     {category.category_name}
-                    <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold group-hover:w-12 transition-all duration-300"></div>
+                    {/* <div className="absolute bottom-0 left-0 w-8 h-0.5 bg-brand-gold group-hover:w-12 transition-all duration-300"></div> */}
                   </h3>
                   <ChevronDown 
                     className={`h-4 w-4 text-brand-gold transition-transform duration-300 lg:hidden ${
@@ -454,7 +454,7 @@ const Footer = () => {
                 {Object.entries(category.products).map(([productKey, product]) => (
                   <div key={product.id}>
                     {/* Main Product */}
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-1">
                       {product.hasLink ? (
                         <Link
                           to={product.link}
