@@ -117,7 +117,7 @@ const productsFooter = {
         "copper_alloy": {
           "id": "wab_004",
           "name": "Copper Alloy",
-          "hasLink": false,
+          "hasLink": true,
           "children": [
             {
               "id": "wab_004_001",
@@ -166,7 +166,7 @@ const productsFooter = {
         "aluminum": {
           "id": "wab_005",
           "name": "Aluminum",
-          "hasLink": false,
+          "hasLink": true,
           "children": [
             {
               "id": "wab_005_001",
