@@ -117,7 +117,7 @@ const productsFooter = {
         "copper_alloy": {
           "id": "wab_004",
           "name": "Copper Alloy",
-          "hasLink": true,
+          "hasLink": false,
           "children": [
             {
               "id": "wab_004_001",
@@ -166,7 +166,7 @@ const productsFooter = {
         "aluminum": {
           "id": "wab_005",
           "name": "Aluminum",
-          "hasLink": true,
+          "hasLink": false,
           "children": [
             {
               "id": "wab_005_001",
@@ -251,7 +251,7 @@ const productsFooter = {
         "tube_electrode": {
           "id": "con_007",
           "name": "Tube Electrode",
-          "hasLink": true,
+          "hasLink": false,
           "children": [
             {
               "id": "con_007_001",
@@ -270,7 +270,7 @@ const productsFooter = {
         "drill_guide": {
           "id": "con_008",
           "name": "DrillGuide",
-          "hasLink": true,
+          "hasLink": false,
           "children": [
             {
               "id": "con_008_001",
@@ -455,23 +455,26 @@ const Footer = () => {
                   <div key={product.id}>
                     {/* Main Product */}
                     <div className="flex items-center justify-between">
-                      <Link
-                        to={product.hasLink ? product.link : "#"}
-                        className={`group text-sm flex items-center ${
-                          product.hasLink 
-                            ? "text-blue-100 hover:text-brand-gold transition-all duration-300" 
-                            : "text-blue-300 cursor-default"
-                        }`}
-                      >
-                        {product.hasLink && (
+                      {product.hasLink ? (
+                        <Link
+                          to={product.link}
+                          className="group text-sm flex items-center text-blue-100 hover:text-brand-gold transition-all duration-300"
+                        >
                           <ChevronRight className="h-3 w-3 mr-1 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
-                        )}
-                        <span className={`${
-                          product.hasLink ? "group-hover:translate-x-1 transform transition-transform duration-300" : ""
-                        }`}>
-                          {product.name}
-                        </span>
-                      </Link>
+                          <span className="group-hover:translate-x-1 transform transition-transform duration-300">
+                            {product.name}
+                          </span>
+                        </Link>
+                      ) : (
+                        <div
+                          className="group text-sm flex items-center text-blue-100 hover:text-brand-gold transition-all duration-300"
+                        >
+                          <ChevronRight className="h-3 w-3 mr-1 opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                          <span className="group-hover:translate-x-1 transform transition-transform duration-300">
+                            {product.name}
+                          </span>
+                        </div>
+                      )}
                       
                       {product.children && product.children.length > 0 && (
                         <button
@@ -494,24 +497,28 @@ const Footer = () => {
                         expandedProducts[product.id] ? 'block' : 'hidden'
                       }`}>
                         {product.children.map((child) => (
-                          <Link
-                            key={child.id}
-                            to={child.hasLink ? child.link : "#"}
-                            className={`group text-xs flex items-center ${
-                              child.hasLink 
-                                ? "text-blue-200 hover:text-brand-gold transition-all duration-300" 
-                                : "text-blue-400 cursor-default"
-                            }`}
-                          >
-                            {child.hasLink && (
+                          child.hasLink ? (
+                            <Link
+                              key={child.id}
+                              to={child.link}
+                              className="group text-xs flex items-center text-blue-200 hover:text-brand-gold transition-all duration-300"
+                            >
                               <ChevronRight className="h-2 w-2 mr-1 opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 transition-all duration-300" />
-                            )}
-                            <span className={`${
-                              child.hasLink ? "group-hover:translate-x-1 transform transition-transform duration-300" : ""
-                            }`}>
-                              {child.name}
-                            </span>
-                          </Link>
+                              <span className="group-hover:translate-x-1 transform transition-transform duration-300">
+                                {child.name}
+                              </span>
+                            </Link>
+                          ) : (
+                              <div
+                              key={child.id}
+                              className="group text-xs flex items-center text-blue-200 hover:text-brand-gold transition-all duration-300"
+                            >
+                              <ChevronRight className="h-2 w-2 mr-1 opacity-0 group-hover:opacity-100 transform -translate-x-1 group-hover:translate-x-0 transition-all duration-300" />
+                              <span className="group-hover:translate-x-1 transform transition-transform duration-300">
+                                {child.name}
+                              </span>
+                            </div>
+                          )
                         ))}
                       </div>
                     )}
