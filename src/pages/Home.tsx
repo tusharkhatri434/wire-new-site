@@ -134,7 +134,7 @@ const Home = () => {
 ];
   return <div className="flex flex-col">
       {/* Enhanced Hero Section */}
-      <HeroSection title="Leading the Wirevolution" subtitle="Where innovation meets metallurgy — crafting wires that empower industries, elevate performance, and define reliability." backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png" buttonText="Explore Our Product Range" buttonLink="/products" />
+      <HeroSection title="Leading the Wirevolution" subtitle="Where innovation meets metallurgy — crafting wires that empower industries, elevate performance, and define reliability." backgroundImage="/lovable-uploads/slide/Homepage.png" buttonText="Explore Our Product Range" buttonLink="/products" />
       {/* <HeroSlider /> */}
 
 

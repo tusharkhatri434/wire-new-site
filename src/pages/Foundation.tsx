@@ -75,7 +75,7 @@ const Foundation = () => {
         <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-brand-blue via-blue-900 to-brand-blue overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
           <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: "url('/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png')",
+          backgroundImage: "url('/lovable-uploads/slide/Our_Foundation.png')",
           opacity: 0.3
         }}></div>
           

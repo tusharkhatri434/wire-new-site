@@ -24,7 +24,7 @@ const HeroSection = ({
   const offsetY = useParallax();
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center">
+    <section className="relative overflow-hidden min-h-screen flex items-center mt-10">
       {/* Parallax Background Layers */}
       <div 
         className="absolute inset-0 parallax-back"
@@ -39,7 +39,7 @@ const HeroSection = ({
       
       {/* Gradient Overlay with 3D depth */}
       <div 
-        className="absolute inset-0 parallax-base"
+        className="absolute inset-0 parallax-base opacity-35"
         style={{
           background: `linear-gradient(135deg, rgba(10,29,80,0.9) 0%, rgba(10,29,80,0.7) 50%, rgba(10,29,80,0.85) 100%)`,
           transform: `translateY(${offsetY * 0.2}px)`

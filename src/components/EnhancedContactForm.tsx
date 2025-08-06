@@ -208,6 +208,7 @@ Message: ${message}`;
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Phone</p>
+                <p className="text-gray-600">+91 9837053329</p>
                 <p className="text-gray-600">+91 9837002076</p>
                 <p className="text-gray-600">+91 9457815966</p>
               </div>

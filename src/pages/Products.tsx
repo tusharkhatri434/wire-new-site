@@ -72,7 +72,7 @@ const Products = () => {
       <HeroSection
         title="Our Product Range"
         subtitle="Engineered for performance, crafted with precision"
-        backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png"
+        backgroundImage="/lovable-uploads/slide/Our_Products.png"
         className="min-h-[50vh]"
       />
 

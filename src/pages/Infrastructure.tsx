@@ -155,7 +155,7 @@ const Infrastructure = () => {
       <HeroSection 
         title="State-of-the-Art Wire Manufacturing" 
         subtitle="Built to Global Standards. At Maheshwari Wires Pvt. Ltd., infrastructure is more than machines — it's a complete ecosystem of precision, process control, and people."
-        backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png"
+        backgroundImage="/lovable-uploads/slide/Our_Infrastructure.png"
         className="min-h-[60vh]"
       />
 
