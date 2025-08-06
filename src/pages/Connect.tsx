@@ -15,6 +15,7 @@ const Connect = () => {
         buttonText="Contact Us Now"
         buttonLink="#contact-form"
         className="min-h-[60vh]"
+        opacity="opacity-100"
       />
 
       {/* Contact Form Section */}

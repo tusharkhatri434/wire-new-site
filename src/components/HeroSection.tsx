@@ -11,6 +11,7 @@ interface HeroSectionProps {
   buttonText?: string;
   buttonLink?: string;
   className?: string;
+  opacity?:string
 }
 
 const HeroSection = ({
@@ -19,12 +20,13 @@ const HeroSection = ({
   backgroundImage,
   buttonText = "Explore More",
   buttonLink = "/products",
+  opacity="opacity-35",
   className
 }: HeroSectionProps) => {
   const offsetY = useParallax();
 
   return (
-    <section className="relative overflow-hidden min-h-screen flex items-center mt-10">
+    <section className="relative overflow-hidden min-h-screen flex items-center">
       {/* Parallax Background Layers */}
       <div 
         className="absolute inset-0 parallax-back"
@@ -32,14 +34,14 @@ const HeroSection = ({
           backgroundImage: `url(${backgroundImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          transform: `translateY(${offsetY * 0.5}px)`,
+          // transform: `translateY(${offsetY * 0.5}px)`,
           filter: 'brightness(0.4)'
         }}
       />
       
       {/* Gradient Overlay with 3D depth */}
       <div 
-        className="absolute inset-0 parallax-base opacity-35"
+        className={`absolute inset-0 parallax-base ${opacity}`}
         style={{
           background: `linear-gradient(135deg, rgba(10,29,80,0.9) 0%, rgba(10,29,80,0.7) 50%, rgba(10,29,80,0.85) 100%)`,
           transform: `translateY(${offsetY * 0.2}px)`
