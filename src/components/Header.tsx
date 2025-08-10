@@ -119,10 +119,6 @@ const Header = ({
       "name": "Non-Ferrous wire",
       "link": false,
       "children": [
-        { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/6" },
-        { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/7" },
-        { "id": 5, "name": "Molly Wire", "link": true, "path": "/products/8" },
-        { "id": 6, "name": "Copper wire", "link": true, "path": "/products/9" },
         { "id": 2, "name": "EDM Wire", "link": true, "path": "/products/5", 
           "children":[
             {
@@ -133,7 +129,7 @@ const Header = ({
             },
             {
               "id": 8,
-              "name": "diffused coated wire",
+              "name": "Diffused wire",
               "link": true,
               "path": "/products/2",
             },
@@ -145,8 +141,13 @@ const Header = ({
             },
             { "id": 10, "name": "Zinc coated wire", "link": true, "path": "/products/4" }
           ]
-        }]
-    },{
+        },
+        { "id": 3, "name": "Zari Wire", "link": true, "path": "/products/6" },
+        { "id": 4, "name": "Copper extrusions", "link": true, "path": "/products/7" },
+        { "id": 5, "name": "Molly Wire", "link": true, "path": "/products/8" },
+        { "id": 6, "name": "Copper wire", "link": true, "path": "/products/9" },
+      ]
+      },{
       "id": 11,
       "name": "Brazing And Welding",
       "link": false,
@@ -159,13 +160,13 @@ const Header = ({
         },
         {
         "id": 13,
-       "name": "Brazing wire",
+       "name": "Brass Brazing Wire",
        "link": true,
        "path": "/products/19",
        "children":[
         {
         "id": 14,
-       "name": "Induction Brazing Wire & Rings",
+       "name": " Induction Brazing Rings",
        "link": true,
        "path": "/products/20"
         },
@@ -232,7 +233,7 @@ const Header = ({
       },
          {
         "id": 24,
-       "name": "Sudronic",
+       "name": "Soudronic",
        "link": true,
        "path": "/products/29",
       },

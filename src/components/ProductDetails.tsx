@@ -16,6 +16,7 @@ const ProductDetails = ({ productData }) => {
     product, 
     name, 
     description, 
+    tags,
     keyFeatures, 
     technicalSpecifications, 
     advantages, 
@@ -104,6 +105,13 @@ const ProductDetails = ({ productData }) => {
             <div className="text-blue-100 leading-relaxed text-sm md:text-base">
               {/* <p className='text-lg bg-white inline-block text-black rounded-md px-2'>Description : </p> */}
                 <div className='flex flex-col gap-2' dangerouslySetInnerHTML={{ __html: description }} />
+                <div className='flex gap-5 flex-wrap justify-center md:justify-start items-center mt-5'>
+                  {tags?.map((item)=>
+                  <a href={`/products/${item.link}`}>
+                  <p className='bg-brand-gold text-[0.5rem] md:text-base font-semibold px-4 py-2 rounded-lg text-brand-blue'>{item.text}</p>
+                  </a>
+                  )}
+                </div>
             </div>
           </div>
         </div>

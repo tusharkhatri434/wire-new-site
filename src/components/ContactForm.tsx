@@ -115,7 +115,7 @@ const ContactForm = () => {
                 >
                   <option value="">Select a product</option>
                   <option value="EDM Wire">EDM Wire</option>
-                  <option value="Brazing Wire">Brazing Wire</option>
+                  <option value="Brass Brazing Wire">Brass Brazing Wire</option>
                   <option value="Welding Wire">Welding Wire</option>
                   <option value="Copper Products">Copper Products</option>
                   <option value="Speciality Wires">Speciality Wires</option>

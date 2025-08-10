@@ -23,7 +23,7 @@ const productsFooter = {
             },
             {
               "id": "nfw_001_002",
-              "name": "Diffused Coated wire",
+              "name": "Diffused wire",
               "link": "/products/2",
               "hasLink": true
             },
@@ -83,13 +83,13 @@ const productsFooter = {
         },
         "brazing_wire": {
           "id": "wab_002",
-          "name": "Brazing Wire",
+          "name": "Brass Brazing Wire",
           "link": "/products/19",
           "hasLink": true,
           "children": [
             {
               "id": "wab_002_001",
-              "name": "Induction Brazing Wire & Rings",
+              "name": " Induction Brazing Rings",
               "link": "/products/20",
               "hasLink": true
             },
@@ -368,7 +368,7 @@ const Footer = () => {
                   <WhatsappIcon/>
                 </a>
                 <a
-                  href={""}
+                  href={"https://in.linkedin.com/company/maheshwari-wires"}
                   className="group w-10 h-10 bg-blue-800/50 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-brand-gold hover:text-brand-blue transition-all duration-300 transform hover:scale-110 border border-blue-700 hover:border-brand-gold"
                   aria-label={`Follow us on linkedin`}
                 >
@@ -396,7 +396,9 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="h-4 w-4 text-brand-gold flex-shrink-0" />
+                <a href="mailto:Maheshwariwires@gmail.com" className="underline underline-offset-4">
                 <span className="text-blue-100">Maheshwariwires@gmail.com</span>
+                </a>
               </div>
             </div>
           </div>
@@ -588,8 +590,9 @@ const Footer = () => {
                <a className="underline" href="https://www.pixel8ai.com/" target="_blank" rel="noopener noreferrer">
                Team Pixel8ai{" "} 
                </a>
-               <a className="underline" href="https://www.sharadupadhyay.com/" target="_blank" rel="noopener noreferrer">
-                 & Promoted by : Team Exabyte{" "} 
+                 & Promoted by : 
+                <a className="underline" href="https://www.sharadupadhyay.com/" target="_blank" rel="noopener noreferrer">
+                 Team Exabyte{" "} 
                </a>
               </div>
             </div>

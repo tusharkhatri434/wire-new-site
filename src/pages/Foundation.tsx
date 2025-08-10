@@ -74,9 +74,8 @@ const Foundation = () => {
       <AnimatedSection animation="fade-in">
         <section className="relative min-h-[80vh] flex items-center justify-center bg-gradient-to-br from-brand-blue via-blue-900 to-brand-blue overflow-hidden">
           <div className="absolute inset-0 bg-black/20"></div>
-          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+          <div className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20" style={{
           backgroundImage: "url('/lovable-uploads/slide/Our_Foundation.png')",
-          opacity: 0.3
         }}></div>
           
           <div className="relative z-10 container text-center text-white">
@@ -166,7 +165,7 @@ const Foundation = () => {
             <SectionHeading title="Crafting Performance at Scale" subtitle="At Maheshwari Wires, capability isn't just about machines — it's about mindset." />
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {capabilities.map((capability, index) => <AnimatedSection key={index} animation="scale-in" delay={index * 100}>
+              {capabilities.map((capability, index) => <AnimatedSection key={index} animation="scale-in" delay={index * 10}>
                   <div className="bg-gradient-to-br from-gray-50 to-white p-6 rounded-2xl border border-gray-200 hover:border-yellow-400/50 hover:shadow-lg transition-all duration-300 h-full group">
                     <div className="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-yellow-400/20 transition-colors duration-300">
                       <div className="text-brand-blue group-hover:text-yellow-600 transition-colors duration-300">
@@ -270,7 +269,7 @@ const Foundation = () => {
             <p className="text-xl text-brand-blue mb-8 max-w-3xl mx-auto leading-relaxed">
               We are active contributors to India's self-reliance journey — committed to indigenous production, skill-building, and innovation. Our products carry the strength of Indian manufacturing with global vision, and proudly align with the Make in India initiative.
             </p>
-            <p className="text-lg text-brand-blue mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-brand-blue mb-8 mx-auto">
               For us, it's not just about business — it's about nation-building, one wire at a time.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">

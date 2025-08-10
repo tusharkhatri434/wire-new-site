@@ -8,15 +8,15 @@ const products = {
     "Molly Wire": null,
     "Copper wire": {
       "plain brass wire": null,
-      "diffused coated wire": null,
+      "Diffused wire": null,
       "zinc diffused coated wire": null,
       "Zinc coated wire": null,
     },
   },
   "Brazing And Welding": {
     "Copper Wire for Induction Brazing": null,
-    "Brazing wire": {
-      "Induction Brazing Wire & Rings": null,
+    "Brass Brazing Wire": {
+      " Induction Brazing Rings": null,
       "Brass Brazing RBCuZn-c": null,
       "Copper Phosphor Brazing Wire": null,
     },
@@ -28,7 +28,7 @@ const products = {
         "Er Cu Sn A": null,
         "CuAlA1": null,
         "Cu AlA2": null,
-        "Sudronic": null,
+        "Soudronic": null,
       },
       "Aluminum": {
         "4043": null,

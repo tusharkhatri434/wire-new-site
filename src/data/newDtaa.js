@@ -640,7 +640,7 @@
 //   },
 //   {
 //     id: 19,
-//     name: "Brazing Wire",
+//     name: "Brass Brazing Wire",
 //     image: "/lovable-uploads/product/Brazingringfinal.webp",
 //     description: "Brazing Wire is a versatile, alloy-based joining material engineered for high-strength metal bonding. It offers excellent capillary action and low-temperature fluidity, making it ideal for applications requiring leak-proof joints.",
 //     keyFeatures: [
@@ -668,7 +668,7 @@
 //   },
 //   {
 //     id: 20,
-//     name: "Induction Brazing Wire & Rings",
+//     name: " Induction Brazing Rings",
 //     image: "/lovable-uploads/product/copperwireforinductionbrazing.webp",
 //     description: "These pre-formed wires and rings are designed specifically for induction brazing, allowing faster cycle times and consistent joint quality. The closed-loop design simplifies production and eliminates excess filler usage.",
 //     keyFeatures: [
@@ -1044,7 +1044,7 @@
   },
   {
     id: 2,
-    name: 'Diffused Coated Wire',
+    name: 'Diffused wire',
     image: '/lovable-uploads/product/Diffusedcoatedwirefinal.webp'
   },
   {
@@ -1156,7 +1156,7 @@
   },
   {
     id: 20,
-    name: 'Induction Brazing Wire & Rings',
+    name: ' Induction Brazing Rings',
     image: '/lovable-uploads/product/copperwireforinductionbrazing.webp'
   },
   {
@@ -1201,7 +1201,7 @@
   },
   {
     id: 29,
-    name: 'Sudronic (Special Copper-Based Welding Alloy)',
+    name: 'Soudronic (Special Copper-Based Welding Alloy)',
     image: '/lovable-uploads/product/sudronic_wire.webp'
   },
   {

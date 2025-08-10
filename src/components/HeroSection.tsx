@@ -20,7 +20,7 @@ const HeroSection = ({
   backgroundImage,
   buttonText = "Explore More",
   buttonLink = "/products",
-  opacity="opacity-35",
+  opacity="opacity-40",
   className
 }: HeroSectionProps) => {
   const offsetY = useParallax();
@@ -88,11 +88,11 @@ const HeroSection = ({
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      {/* <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
         <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
           <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse" />
         </div>
-      </div>
+      </div> */}
     </section>
   );
 };

@@ -214,7 +214,7 @@ const Home = () => {
                 </AnimatedSection>)}
             </div>
 
-            <AnimatedSection animation="fade-in" delay={1000}>
+            <AnimatedSection animation="fade-in" delay={100}>
               <div className="mt-12 text-center">
                 <div className="bg-white p-6 rounded-2xl shadow-lg max-w-2xl mx-auto">
                   <blockquote className="text-lg md:text-xl not-italic text-brand-blue font-montserrat leading-relaxed">

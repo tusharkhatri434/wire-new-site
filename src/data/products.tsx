@@ -32,7 +32,7 @@ const ProductDetails = [
   },
   {
     id: 2,
-    product: "Diffused Coated Wire",
+    product: "Diffused wire",
     image: "/lovable-uploads/product/Diffusedcoatedwirefinal.webp",
     description: "Diffused Coated Wire is a premium EDM wire featuring a coating that is thermally diffused into the brass substrate. This advanced coating enhances wire cutting performance, providing improved speed, accuracy, and wear resistance during high-load EDM operations. It is designed to meet the needs of demanding machining tasks with consistent performance over long durations.",
     keyFeatures: [
@@ -152,7 +152,7 @@ const ProductDetails = [
   {
     id: 6,
     product: "Zari Wire",
-    image: "/lovable-uploads/product/zariwirefinal.webp",
+    image: "/lovable-uploads/product/Zari_wiress.png",
     description: "Zari Wire is a decorative metallic wire made from fine-quality copper or brass, often used in textiles and fashion accessories. It is known for its glossy finish and flexible nature, making it suitable for weaving, embroidery, and decorative applications.",
     keyFeatures: [
       "High flexibility and luster",
@@ -633,7 +633,7 @@ const ProductDetails = [
   },
   {
     id: 19,
-    name: "Brazing Wire",
+    name: "Brass Brazing Wire",
     image: "/lovable-uploads/product/Brazingringfinal.webp",
     description: "Brazing Wire is a versatile, alloy-based joining material engineered for high-strength metal bonding. It offers excellent capillary action and low-temperature fluidity, making it ideal for applications requiring leak-proof joints.",
     keyFeatures: [
@@ -661,7 +661,7 @@ const ProductDetails = [
   },
   {
     id: 20,
-    name: "Induction Brazing Wire & Rings",
+    name: " Induction Brazing Rings",
     image: "/lovable-uploads/product/copperwireforinductionbrazing.webp",
     description: "These pre-formed wires and rings are designed specifically for induction brazing, allowing faster cycle times and consistent joint quality. The closed-loop design simplifies production and eliminates excess filler usage.",
     keyFeatures: [
@@ -691,7 +691,7 @@ const ProductDetails = [
   {
     id: 21,
     name: "Brass Brazing Wire (RBCuZn-C)",
-    image: "/lovable-uploads/product/brassbrazingwirefinal.webp",
+    image: "/lovable-uploads/product/brass_brazing_wire.png",
     description: "RBCuZn-C is a general-purpose brass brazing alloy with excellent flow characteristics. It offers medium strength and is especially effective in brazing copper, steel, and cast iron under neutral atmospheres.",
     keyFeatures: [
       "Smooth flow and strong capillary action",
@@ -915,7 +915,7 @@ const ProductDetails = [
   },
   {
     id: 29,
-    name: "Sudronic (Special Copper-Based Welding Alloy)",
+    name: "Soudronic (Special Copper-Based Welding Alloy)",
     image: "/lovable-uploads/product/sudronic_wire.webp",
     description: "A proprietary, high-performance copper alloy wire for industrial repair and heavy wear zones.",
     keyFeatures: [

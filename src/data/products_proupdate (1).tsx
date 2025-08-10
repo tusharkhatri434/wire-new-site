@@ -1,5 +1,5 @@
 const ProductDetails = [
-  {
+ {
   id: 1,
   product: "Plain Brass Wire",
   image: "/lovable-uploads/product/plain_brass_emd_wire_final.jpg",
@@ -36,8 +36,7 @@ const ProductDetails = [
     "Springs, pins, and precision industrial parts",
     "Decorative and electroplating components"
   ]
-  },
-  {
+},{
     id: 2,
     product: "Diffused Wire",
     image: "/lovable-uploads/product/Diffusedcoatedwirefinal.webp",
@@ -151,7 +150,6 @@ const ProductDetails = [
   {
     id: 5,
     product: "EDM Wire",
-    tags : [{text:"Plain Brass Wire",link:"1"},{text:"Diffused Wire",link:"2"},{text:"Zinc Diffused Coated Wire",link:"3"},{text:"Zinc Coated Wire",link:"4"}],
     image: "/lovable-uploads/product/EDMWIREFINAL.webp",
     description: "<p>EDM Wire (Electrical Discharge Machining Wire) is a specialized electrode wire used in wire-cut EDM processes for machining conductive materials.</p><p>Designed to deliver consistent erosion, minimal wear, and high dimensional precision, this wire is compatible with a wide range of machines and applications. Available in plain brass and coated variants to suit diverse cutting requirements.</p>",
     keyFeatures: [
@@ -253,7 +251,7 @@ const ProductDetails = [
   {
     id: 6,
   product: "Zari Wire",
-  image: "/lovable-uploads/product/Zari_wiress.png",
+  image: "/lovable-uploads/product/zariwirefinal.webp",
   description: "<p>Premium Quality Zari Wire Solutions for Textile, Embroidery & Decorative Craftsmanship.</p><p>At Maheshwari Wires Pvt. Ltd., we offer a refined range of Zari wires—blending heritage craftsmanship with modern metallurgy. Produced using high-quality copper, silver, and metallic coatings, our Zari wires are ideal for intricate hand embroidery, weaving, and embellishments in ethnic and contemporary textiles.</p>",
   keyFeatures: [
       "Flexible and lightweight construction for easy weaving",
@@ -1002,7 +1000,7 @@ const ProductDetails = [
   {
     id: 19,
     name: "Brass Brazing Wire",
-    image: "/lovable-uploads/product/brass_brazing_wire.png",
+    image: "/lovable-uploads/product/Brazingringfinal.webp",
     description: "<p>Brass Brazing Wire is a versatile, alloy-based joining material engineered for high-strength metal bonding.</p><p>It offers excellent capillary action and low-temperature fluidity, making it ideal for applications requiring leak-proof joints.</p>",
     keyFeatures: [
       "Offered in various alloy compositions including copper, silver, brass, and phosphorus",

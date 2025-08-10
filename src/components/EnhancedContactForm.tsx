@@ -208,9 +208,9 @@ Message: ${message}`;
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Phone</p>
-                <p className="text-gray-600">+91 9837053329</p>
-                <p className="text-gray-600">+91 9837002076</p>
-                <p className="text-gray-600">+91 9457815966</p>
+                <a href='tel:+919837053329' className='underline underline-offset-2'><p className="text-gray-600">+91 9837053329</p></a>
+                <a href='tel:+919837002076' className='underline underline-offset-2'><p className="text-gray-600">+91 9837002076</p></a>
+                <a href='tel:+919457815966' className='underline underline-offset-2'><p className="text-gray-600">+91 9457815966</p></a>
               </div>
             </div>
             <div className="flex items-center">
@@ -219,7 +219,9 @@ Message: ${message}`;
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Whatsapp</p>
+                <a className='underline underline-offset-2' href='tel:+919837053329'>
                 <p className="text-gray-600">+91 9837053329</p>
+                </a>
               </div>
             </div>
             <div className="flex items-center">
@@ -228,7 +230,9 @@ Message: ${message}`;
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Email</p>
+                <a href='mailto:Maheshwariwires@gmail.com' className='underline underline-offset-2'>
                 <p className="text-gray-600">Maheshwariwires@gmail.com</p>
+                </a>
               </div>
             </div>
             <div className="flex items-center">

@@ -179,7 +179,7 @@ const Infrastructure = () => {
               <TabsContent value="technology">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   {facilities.slice(0, 2).map((facility, index) => (
-                    <AnimatedSection key={index} animation="scale-in" delay={index * 200}>
+                    <AnimatedSection key={index} animation="scale-in" delay={index * 10}>
                       <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 hover-lift">
                         <div className="flex items-start space-x-4">
                           <div className="w-8 sm:w-12 h-8 sm:h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -316,7 +316,7 @@ const Infrastructure = () => {
                 </div>
               </AnimatedSection>
 
-              <AnimatedSection animation="fade-in" delay={200}>
+              <AnimatedSection animation="fade-in" delay={100}>
                 <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-200">
                   <h3 className="text-xl font-bold text-brand-blue mb-4">Quality Assurance</h3>
                   <p className="text-gray-700 leading-relaxed mb-4 text-sm">
@@ -360,7 +360,7 @@ const Infrastructure = () => {
               </div>
             </div>
 
-            <AnimatedSection animation="fade-in" delay={1000}>
+            <AnimatedSection animation="fade-in" delay={100}>
               <div className="text-center">
                 <p className="text-base text-gray-600 mb-4">
                   Each stage is optimized for output efficiency, material integrity, and precision control.
@@ -399,7 +399,7 @@ const Infrastructure = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
               {voicesOfTrust.map((testimonial, index) => (
-                <AnimatedSection key={index} animation="scale-in" delay={index * 200}>
+                <AnimatedSection key={index} animation="scale-in" delay={index * 10}>
                   <div className="h-full flex flex-col justify-between bg-white rounded-xl p-6 shadow-lg border border-gray-200 hover:border-brand-blue/30 hover-lift transition-all duration-300">
                     <div className="mb-4">
                       <div className="flex text-brand-gold mb-3">

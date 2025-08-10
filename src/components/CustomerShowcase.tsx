@@ -286,7 +286,7 @@ const CustomerShowcase = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {defenseBranches.map((org, index) => (
-                <AnimatedSection key={index} animation="scale-in" delay={index * 100}>
+                <AnimatedSection key={index} animation="scale-in" delay={index * 10}>
                   <div className="h-full  bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 hover-lift">
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center flex-shrink-0">
@@ -326,7 +326,7 @@ const CustomerShowcase = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {researchOrgs.map((org, index) => (
-                <AnimatedSection key={index} animation="fade-in" delay={index * 100}>
+                <AnimatedSection key={index} animation="fade-in" delay={index * 10}>
                   <div className="h-full bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-gold/30 hover-lift">
                     <div className="flex items-start space-x-4">
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-gold to-yellow-500 rounded-full flex items-center justify-center flex-shrink-0">
@@ -366,7 +366,7 @@ const CustomerShowcase = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
               {iits.map((iit, index) => (
-                <AnimatedSection key={index} animation="scale-in" delay={index * 150}>
+                <AnimatedSection key={index} animation="scale-in" delay={index * 10}>
                   <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 hover-lift">
                     <div className="text-center">
                       <div className="w-16 h-16 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -404,7 +404,7 @@ const CustomerShowcase = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-12">
               {drdobVendors.map((vendor, index) => (
-                <AnimatedSection key={index} animation="slide-left" delay={index * 50}>
+                <AnimatedSection key={index} animation="slide-left" delay={index * 10}>
                   <div className="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-brand-gold/30 hover-lift">
                     <div className="flex items-start space-x-3">
                       <div className="w-3 h-3 bg-brand-gold rounded-full flex-shrink-0 mt-2"></div>
@@ -441,7 +441,7 @@ const CustomerShowcase = () => {
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
               {additionalCustomers.map((customer, index) => (
-                <AnimatedSection key={index} animation="scale-in" delay={index * 100}>
+                <AnimatedSection key={index} animation="scale-in" delay={index * 10}>
                   <div className="h-full bg-white rounded-lg p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 hover:border-brand-blue/30 hover-lift text-center">
                     <div className="w-12 h-12 bg-gradient-to-br from-brand-blue to-blue-600 rounded-full flex items-center justify-center mx-auto mb-3">
                       <Building2 className="h-6 w-6 text-white" />

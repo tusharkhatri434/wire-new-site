@@ -4,6 +4,7 @@ import SectionHeading from "@/components/SectionHeading";
 import EnhancedContactForm from "@/components/EnhancedContactForm";
 import AnimatedSection from "@/components/AnimatedSection";
 import { MapPin, Phone, Mail, Clock, Globe, Award } from "lucide-react";
+import GoogleMap from "@/components/GoogleMap";
 
 const Connect = () => {
   return (
@@ -11,11 +12,12 @@ const Connect = () => {
       <HeroSection 
         title="Connect With Us" 
         subtitle="Ready to discuss your wire requirements? Our technical experts are here to help you find the perfect solution for your specific needs."
-        backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png"
+        // backgroundImage="/lovable-uploads/6ee12984-0671-4f3c-aa77-3720b1bbe079.png"
         buttonText="Contact Us Now"
         buttonLink="#contact-form"
         className="min-h-[60vh]"
-        opacity="opacity-100"
+        opacity="opacity-70"
+        backgroundImage="/lovable-uploads/connect_us_img.jpg"
       />
 
       {/* Contact Form Section */}
@@ -28,6 +30,7 @@ const Connect = () => {
             />
             
             <EnhancedContactForm className="mt-12" />
+            <GoogleMap />
           </div>
         </section>
       </AnimatedSection>
