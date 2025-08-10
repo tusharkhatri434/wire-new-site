@@ -269,7 +269,7 @@ const productsFooter = {
         },
         "drill_guide": {
           "id": "con_008",
-          "name": "DrillGuide",
+          "name": "Drill Guide",
           "hasLink": false,
           "children": [
             {
@@ -384,15 +384,21 @@ const Footer = () => {
               </h4>
               <div className="flex items-center space-x-3 text-sm">
                 <Phone className="h-4 w-4 text-brand-gold flex-shrink-0" />
+                <a href="tel:+919837053329">
                 <span className="text-blue-100">+91-9837053329</span>
+                </a>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Phone className="h-4 w-4 text-brand-gold flex-shrink-0" />
+                <a href="tel:+919837002076">
                 <span className="text-blue-100">+91-9837002076</span>
+                </a>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                    <Phone className="h-4 w-4 text-brand-gold flex-shrink-0" />
+                   <a href="tel:+919457815966">
                 <span className="text-blue-100">+91-9457815966</span>
+                </a>
               </div>
               <div className="flex items-center space-x-3 text-sm">
                 <Mail className="h-4 w-4 text-brand-gold flex-shrink-0" />

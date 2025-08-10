@@ -1386,7 +1386,7 @@ const ProductDetails = [
     "Yield Strength": "Approx. 310 MPa",
     "Elongation": "20–35%",
     "Density": "Approx. 8.4 g/cm³",
-    "Diameter Range": "1.35-1.6 mm",
+    "Diameter Range": "0.8-3.2 mm",
     "Standard": "Internal / Custom Specification",
     "Welding Process": "MIG / TIG / Manual Arc"
     },

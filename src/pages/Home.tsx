@@ -49,7 +49,7 @@ const Home = () => {
   }, {
     id: "coated-wires",
     link:2,
-    title: "Diffused Coated EDM Wire",
+    title: "Diffused EDM Wire",
     image: '/lovable-uploads/product/Diffusedcoatedwirefinal.webp',
     description: "Engineered using a multi-layer diffusion process that bonds a zinc-rich alloy into a brass core for high cutting speed and accuracy.",
     features: ["Multi-layer zinc-rich diffusion coating",
