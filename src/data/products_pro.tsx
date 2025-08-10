@@ -268,7 +268,7 @@ const ProductDetails = [
     technicalSpecifications: {
       "Material": "Copper/Brass (base metal)",
     "Purity": "Copper ≥ 99.90%, Brass alloys as per IS 319",
-    "Wire Diameter": "0.2 mm - 8 mm",
+    "Wire Diameter": "0.2 - 1.5 mm",
     "Coating Options": "Silver-plated, Gold-plated, Color-coated Enamel (Red, Green, Blue, etc.)",
     "Elongation": "8–12%",
     "Electrical Conductivity": "Low (Decorative Use)",
@@ -1386,7 +1386,7 @@ const ProductDetails = [
     "Yield Strength": "Approx. 310 MPa",
     "Elongation": "20–35%",
     "Density": "Approx. 8.4 g/cm³",
-    "Diameter Range": "0.8-3.2 mm",
+    "Diameter Range": "1.35-1.6 mm",
     "Standard": "Internal / Custom Specification",
     "Welding Process": "MIG / TIG / Manual Arc"
     },
