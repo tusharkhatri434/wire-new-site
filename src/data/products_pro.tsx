@@ -1199,7 +1199,7 @@ const ProductDetails = [
   {
     id: 24,
     name: "ER Cu (Pure Copper Welding Wire)",
-    image: "/lovable-uploads/product/ERCUfinal.webp",
+    image: "/lovable-uploads/product/ERCU_UPDATED.webp",
     description: "<p>ER Cu is a high-purity copper welding wire known for its excellent electrical and thermal conductivity. It is ideally suited for TIG and oxy-acetylene welding of copper, deoxidized copper, and copper alloys.</p><p>This wire ensures clean, strong welds with minimal porosity due to its low oxygen content. It is commonly used in electrical, refrigeration, plumbing, and heat exchanger applications where conductivity and corrosion resistance are critical.</p><p>The smooth feeding characteristics and consistent arc stability make it suitable for manual and automated welding processes.</p>",
     keyFeatures: [
       "Superior electrical and thermal conductivity",

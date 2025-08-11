@@ -255,7 +255,7 @@ export const allProducts = [
       "Suitable for copper-to-copper welding"
     ],
     tags: ["Copper", "Alloy"],
-        image: '/lovable-uploads/product/ERCUfinal.webp',
+        image: '/lovable-uploads/product/ERCU_UPDATED.webp',
         link:24,
     category: "Brazing and Welding",
     subcategory: "Copper Alloy"

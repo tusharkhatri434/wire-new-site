@@ -59,18 +59,56 @@ const Home = () => {
       "Better tolerance in taper cutting"],
     category: "Specialty Coatings"
   },
-  //  {
-  //   id: "Molly Wire",
-  //   title: "Molly Wires",
-  //   link:8,
-  //   image: '/lovable-uploads/product/molly_wire.webp',
-  //   description: "Molly Wire is a molybdenum-based alloy wire specifically designed for extreme environments where high temperature, corrosion resistance, and tensile strength are critical.",
-  //   features: [  "Extremely High Melting Point (2620°C)",
-  //     "Excellent Dimensional Stability",
-  //     "Corrosion & Oxidation Resistant",
-  //     "Good Workability & Long Service Life"],
-  //   category: "Non-Ferrous Wire"
-  // },
+   {
+    id:"molly-wire",
+    title: "Molly Wire",
+    description: "High-performance molybdenum wire for extreme temperatures, corrosion, and high load environments.",
+    heading: "High-Temperature Molly Wire",
+    tags: ["Molybdenum", "EDM", "Furnace"],
+    features: [
+      "Extremely High Melting Point (2620°C)",
+      "Excellent Dimensional Stability",
+      "Corrosion & Oxidation Resistant",
+      "Good Workability & Long Service Life"
+    ],
+    image: '/lovable-uploads/product/molly_wire.webp',
+    link:8,
+    category: "Non-Ferrous Wire",
+    subcategory: ""
+  },
+   {
+    id:"ErCu-Snc",
+    title: "Er Cu SnC",
+    heading: "Tin-Copper Brazing Alloy",
+    description: "Provides corrosion-resistant strong joints in copper piping.",
+    features: [
+      "Improved corrosion resistance",
+      "Strong joints",
+      "Ideal for piping and tubing applications"
+    ],
+    tags: ["Copper", "Tin"],
+    image: '/lovable-uploads/product/ER_CUS_C_Final.webp',
+    link:25,
+    category: "Brazing and Welding",
+    subcategory: "Copper Alloy"
+  },
+   {
+    id:"Induction-Brazing-Rings",
+    title: "Induction Brazing Rings",
+    heading: "Induction Supplies",
+    description: "Rings for induction heating and joining in industrial applications.",
+    features: [
+      "Pre-formed rings for uniform joints",
+      "Excellent repeatability",
+      "Reduces manual brazing time",
+      "Suited for automation"
+    ],
+    tags: ["Rings", "Induction"],
+     image: '/lovable-uploads/product/Brazing_ring_final.webp',
+     link:20,
+    category: "Brazing and Welding",
+    subcategory: "Brass Brazing Wire"
+  },
   {
     id: "View_All_Products",
     link:"",
