@@ -351,8 +351,8 @@ export const allProducts = [
     subcategory: "Aluminum"
   },
   {
-    title: "5357",
-    heading: "Aluminum Alloy 5357",
+    title: "5356",
+    heading: "Aluminum Alloy 5356",
     description: "Al-Mg alloy with excellent strength and ductility.",
     keyFeatures: [
       "High strength and impact resistance",

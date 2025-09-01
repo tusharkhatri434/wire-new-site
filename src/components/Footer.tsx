@@ -176,7 +176,7 @@ const productsFooter = {
             },
             {
               "id": "wab_005_002",
-              "name": "5357",
+              "name": "5356",
               "link": "/products/31",
               "hasLink": true
             },

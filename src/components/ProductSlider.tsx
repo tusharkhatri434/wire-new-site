@@ -143,7 +143,7 @@ const ProductSlider = ({
                 )}
               >
                 {/* MAIN FIX: Added flex flex-col h-full to make cards equal height */}
-                <div className="group/card relative bg-white rounded-xl overflow-hidden hover-lift transition-all duration-500 depth-2 hover:depth-4 border border-gray-200 hover:border-brand-blue/30 shadow-lg hover:shadow-2xl flex flex-col justify-evenly h-full">
+                <div className="group/card relative bg-white rounded-xl overflow-hidden hover-lift transition-all duration-500 depth-2 hover:depth-4 border border-gray-200 hover:border-brand-blue/30 shadow-lg hover:shadow-2xl flex flex-col justify-evenly h-full my-2">
                   {/* Category Badge */}
                   <div className="absolute top-4 left-4 z-20 bg-brand-blue text-white px-3 py-1 rounded-full text-xs font-semibold shadow-md">
                     {product.category}

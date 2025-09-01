@@ -1437,7 +1437,7 @@ const ProductDetails = [
   },
   {
     id: 31,
-    name: "5357 (Aluminum-Magnesium Welding Wire)",
+    name: "5356 (Aluminum-Magnesium Welding Wire)",
     image: "/lovable-uploads/product/Aluminium5357final.webp",
     description: "<p>4043 is a widely used aluminum-silicon welding wire containing approximately 5% silicon, offering excellent weldability and corrosion resistance. It is primarily used for welding 6XXX series aluminum alloys and cast aluminum parts, providing smooth bead appearance, minimal cracking, and stable arc performance in both MIG and TIG welding applications.</p><p>The wire delivers moderate strength, good fluidity, and reduced shrinkage, making it ideal for automotive components, frames, aerospace structures, marine fabrication, and general aluminum repair work. Its bright, clean weld finish and resistance to hot cracking make it a top choice for consistent, quality aluminum welds.</p>",
     keyFeatures: [
