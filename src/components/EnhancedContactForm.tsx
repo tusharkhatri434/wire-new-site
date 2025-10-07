@@ -219,7 +219,7 @@ Message: ${message}`;
               </div>
               <div>
                 <p className="font-medium text-brand-blue">Whatsapp</p>
-                <a className='underline underline-offset-2' href='tel:+919837053329'>
+                <a className='underline underline-offset-2' href='http://wa.me/9837053329'>
                 <p className="text-gray-600">+91 9837053329</p>
                 </a>
               </div>
