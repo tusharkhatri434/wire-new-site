@@ -159,6 +159,12 @@ const Header = ({
        "path": "/products/18",
         },
         {
+        "id": 121,
+       "name": "Copper Brazing Paste",
+       "link": true,
+       "path": "/products/33",
+        },
+        {
         "id": 13,
        "name": "Brass Brazing Wire",
        "link": true,

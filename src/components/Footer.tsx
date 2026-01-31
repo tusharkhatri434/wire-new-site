@@ -81,6 +81,13 @@ const productsFooter = {
           "hasLink": true,
           "children": []
         },
+        "copper_brazing_paste": {
+          "id": "wab_001a",
+          "name": "Copper Brazing Paste",
+          "link": "/products/33",
+          "hasLink": true,
+          "children": []
+        },
         "brazing_wire": {
           "id": "wab_002",
           "name": "Brass Brazing Wire",

@@ -15,6 +15,7 @@ const products = {
   },
   "Brazing And Welding": {
     "Copper Wire for Induction Brazing": null,
+    "Copper Brazing Paste": null,
     "Brass Brazing Wire": {
       " Induction Brazing Rings": null,
       "Brass Brazing RBCuZn-c": null,

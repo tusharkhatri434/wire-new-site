@@ -380,6 +380,23 @@ export const allProducts = [
     category: "Brazing and Welding",
     subcategory: "Aluminum"
   },
+  {
+    title: "Copper Brazing Paste",
+    heading: "Precision Filler Metal for Furnace Brazing",
+    description: "High-purity copper paste for flux-free furnace brazing in controlled atmospheres, delivering consistent joint quality and excellent capillary flow.",
+    keyFeatures: [
+      "High-purity copper filler for excellent joint strength",
+      "Flux-free brazing in controlled atmospheres",
+      "Uniform flow and excellent capillary action",
+      "Clean burnout with minimal residue",
+      "Ideal for batch and mass production"
+    ],
+    tags: ["Copper", "Brazing", "Furnace"],
+    image: '/lovable-uploads/product/copper-paste.png',
+    link: 33,
+    category: "Brazing and Welding",
+    subcategory: "Brass Brazing Wire"
+  },
 
   // consumableProducts Start
   {
