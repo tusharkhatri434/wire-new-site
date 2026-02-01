@@ -1510,19 +1510,14 @@ const ProductDetails = [
     description: "<p>Copper Brazing Paste is a high-performance, precision filler metal engineered for furnace brazing applications. It consists of high-purity copper powder suspended in a specially formulated organic binder system.</p><p>The optimized rheology ensures easy application, stable placement before brazing, and complete binder burnout during furnace heating. This results in strong, metallurgically sound brazed joints with minimal post-braze cleaning.</p><p>Designed for flux-free brazing in controlled atmospheres, it delivers consistent joint quality, excellent capillary flow, and clean results in hydrogen, dissociated ammonia, or vacuum environments.</p>",
     keyFeatures: [
       "High-purity copper filler for excellent joint strength",
-      "Flux-free brazing in controlled atmospheres",
       "Uniform flow and wetting at brazing temperature",
       "Excellent capillary action in tight joint gaps (0.02–0.08 mm)",
       "Clean burnout with minimal residue",
-      "Stable consistency for manual/automated dispensing",
-      "Ideal for batch and mass production"
     ],
     technicalSpecifications: {
       "Product Code": "MW-CP",
       "Material": "High-purity copper powder in organic binder",
       "Brazing Temperature": "1083–1100°C",
-      "Flux Requirement": "Not required",
-      "Furnace Atmosphere": "Hydrogen, dissociated ammonia, vacuum",
       "Joint Clearance": "0.02–0.08 mm",
       "Heating Method": "Controlled furnace cycle",
       "Packaging": "1 kg, 5 kg, 10 kg containers"
