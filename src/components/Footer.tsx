@@ -600,7 +600,7 @@ const Footer = () => {
               <p>© 2025 Maheshwari Industrial Corporation. All rights reserved.</p>
               <div>
                Website Developed by : 
-               <a className="underline" href="https://www.pixel8ai.com/" target="_blank" rel="noopener noreferrer">
+               <a className="underline" href="https://www.pixelinfiniteai.com/" target="_blank" rel="noopener noreferrer">
                Team Pixel8ai{" "} 
                </a>
                  & Promoted by : 
