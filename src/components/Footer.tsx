@@ -601,7 +601,7 @@ const Footer = () => {
               <div>
                Website Developed by : 
                <a className="underline" href="https://www.pixelinfiniteai.com/" target="_blank" rel="noopener noreferrer">
-               Team Pixel8ai{" "} 
+               Team pixelinfiniteai{" "} 
                </a>
                  & Promoted by : 
                 <a className="underline" href="https://www.sharadupadhyay.com/" target="_blank" rel="noopener noreferrer">
