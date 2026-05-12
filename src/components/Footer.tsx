@@ -549,8 +549,27 @@ const Footer = () => {
        
         </div>
 
+        {/* Manufacturing Partner Tab */}
+        <div className="flex justify-end mt-4 mb-2 w-full">
+          <div className="w-full sm:w-1/2 lg:w-1/3 xl:w-[28%]">
+            <a
+              href="https://rajatproducts.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-start justify-center border border-blue-700 bg-blue-800/30 hover:bg-brand-gold hover:border-brand-gold rounded-xl px-4 py-3 transition-all duration-300 shadow-sm w-full"
+            >
+              <span className="text-[11px] font-bold text-blue-200 group-hover:text-brand-blue mb-1 transition-colors uppercase tracking-wider">
+                Visit Our Manufacturing Partner
+              </span>
+              <span className="text-base sm:text-lg font-black text-white group-hover:text-brand-blue tracking-tight leading-tight transition-colors">
+                Rajat Products Pvt.Ltd.
+              </span>
+            </a>
+          </div>
+        </div>
+
         {/* Additional Address Section */}
-        <div className="mt-12 pt-8 border-t border-blue-800/50">
+        <div className="mt-8 pt-8 border-t border-blue-800/50">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
               <h4 className="text-white text-sm font-semibold mb-3 flex items-center">
@@ -580,7 +599,7 @@ const Footer = () => {
               <h4 className="text-white text-sm font-semibold mb-3">
                 Quality Certifications
               </h4>
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 mb-6">
                 {['ISO 9001:2015', 'CE Certified', 'Export Quality'].map((cert, index) => (
                   <span key={index} className="px-2 py-1 bg-blue-800/50 rounded text-xs text-blue-100 border border-blue-700">
                     {cert}
